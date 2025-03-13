@@ -25,6 +25,9 @@ print()
 for val in result["quotes"]:
     print(val)
 
+result_symbols = [val["symbol"] for val in result["quotes"]]
+print(result_symbols)
+
 #print(result)
 
 # https://yfinance-python.org/reference/index.html
