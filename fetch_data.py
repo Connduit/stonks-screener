@@ -53,7 +53,7 @@ def get_polygon_tickers():
 
 # Replace with your API key
 api_key = "your_polygon_api_key"
-tickers = get_polygon_tickers(api_key)
+tickers = get_polygon_tickers()
 for ticker in tickers[:10]:  # Display the first 10 tickers
     print(ticker['symbol'])
 
