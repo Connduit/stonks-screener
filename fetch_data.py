@@ -9,12 +9,17 @@ import os
 # Fetch stock data
 symbols = ["AAPL", "MSFT", "GOOG"] # TODO: fetch all stock symbols from file 
 data = {}
+equity_query = yf.EquityQuery(EquityQuery("and", [,
+                    yf.EquityQuery('eq', ['region', 'us']),
+                    yf.EquityQuery("gte", ["intradayprice", 5]),
+                    yf.EquityQuery("gt", ["dayvolume", 50000000])
+                    ]))
 
-equity_query = yf.EquityQuery('eq', ['region', 'us'])
-#result = yf.screen(equity_query)
+#equity_query = yf.EquityQuery('eq', ['region', 'us'])
+result = yf.screen(equity_query, size = 250) # default size is 100? max is 250?
 #result = yf.screen("aggressive_small_caps")
 #result = yf.screen("day_gainers")
-result = yf.screen("most_actives")
+#result = yf.screen("most_actives")
 print(result.keys())
 print()
 for key in result.keys():
