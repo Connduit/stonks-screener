@@ -42,7 +42,7 @@ print(result_symbols)
 import requests
 
 def get_polygon_tickers():
-    url = f'https://api.polygon.io/v3/reference/tickers?apiKey={a73jrAdWlq0ke5BtQiqYNBZuE8AjZKS2}'
+    url = f'https://api.polygon.io/v3/reference/tickers?apiKey=a73jrAdWlq0ke5BtQiqYNBZuE8AjZKS2'
 
     response = requests.get(url)
     tickers = response.json()
