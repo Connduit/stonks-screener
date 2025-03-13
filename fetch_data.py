@@ -6,9 +6,11 @@ import yfinance as yf
 import json
 import os
 
+
 # Fetch stock data
 symbols = ["AAPL", "MSFT", "GOOG"] # TODO: fetch all stock symbols from file 
 data = {}
+"""
 equity_query = yf.EquityQuery("and", [
                     yf.EquityQuery('eq', ['region', 'us']),
                     yf.EquityQuery("gte", ["intradayprice", 5]),
@@ -35,6 +37,27 @@ result_symbols = [val["symbol"] for val in result["quotes"]]
 print(result_symbols)
 
 #print(result)
+"""
+
+import requests
+
+def get_polygon_tickers():
+    url = f'https://api.polygon.io/v3/reference/tickers?apiKey={a73jrAdWlq0ke5BtQiqYNBZuE8AjZKS2}'
+
+    response = requests.get(url)
+    tickers = response.json()
+
+    print(tickers["results"])
+
+    return tickers['results']
+
+# Replace with your API key
+api_key = "your_polygon_api_key"
+tickers = get_polygon_tickers(api_key)
+for ticker in tickers[:10]:  # Display the first 10 tickers
+    print(ticker['symbol'])
+
+
 
 # https://yfinance-python.org/reference/index.html
 for symbol in symbols:
