@@ -2,12 +2,17 @@
 fetch data and parse it and store it as a json
 """
 import yfinance as yf
+# from yfinance import EquityQuery
 import json
 import os
 
 # Fetch stock data
 symbols = ["AAPL", "MSFT", "GOOG"] # TODO: fetch all stock symbols from file 
 data = {}
+
+equity_query = yf.EquityQuery('eq', ['region', 'us'])
+result = yf.screen(equity_query)
+print(result)
 
 # https://yfinance-python.org/reference/index.html
 for symbol in symbols:
