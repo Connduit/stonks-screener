@@ -20,8 +20,9 @@ for key in result.keys():
     print(result[key])
 
 print()
-for key in result["quotes"].keys():
-    print(result["quotes"][key])
+print()
+for val in result["quotes"]
+    print(val)
 
 #print(result)
 
