@@ -17,6 +17,8 @@ def get_polygon_tickers():
     response = requests.get(url)
     tickers = response.json()
 
+    print(tickers.keys())
+
     print(tickers["results"])
 
     return tickers['results']
