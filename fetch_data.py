@@ -9,7 +9,7 @@ import os
 # Fetch stock data
 symbols = ["AAPL", "MSFT", "GOOG"] # TODO: fetch all stock symbols from file 
 data = {}
-equity_query = yf.EquityQuery(EquityQuery("and", [,
+equity_query = yf.EquityQuery(yf.EquityQuery("and", [
                     yf.EquityQuery('eq', ['region', 'us']),
                     yf.EquityQuery("gte", ["intradayprice", 5]),
                     yf.EquityQuery("gt", ["dayvolume", 50000000])
