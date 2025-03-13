@@ -1,5 +1,9 @@
 # TODO
 
+### NOTES
+
+    - right now there's no reason to have google sheets stuff if im making a json file to then upload to google sheets. maybe this will be more useful it im directly uploading to drive instead of making any json file.
+
 ### Where I Left Off
 
     - token problem...? failing to push changes 
