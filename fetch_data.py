@@ -13,7 +13,7 @@ data = {}
 equity_query = yf.EquityQuery('eq', ['region', 'us'])
 result = yf.screen(equity_query)
 #result = yf.screen("aggressive_small_caps")
-print(type(result))
+print(result.keys())
 
 # https://yfinance-python.org/reference/index.html
 for symbol in symbols:
