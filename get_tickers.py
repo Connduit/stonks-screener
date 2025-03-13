@@ -19,6 +19,11 @@ def get_polygon_tickers():
 
     print(tickers.keys())
 
+    print(tickers["status"])
+    print(tickers["request_id"])
+    print(tickers["error"])
+
+    
     print(tickers["results"])
 
     return tickers['results']
