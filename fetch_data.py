@@ -19,6 +19,10 @@ print()
 for key in result.keys():
     print(result[key])
 
+print()
+for key in result["quotes"].keys()
+    print(result["quotes"][key])
+
 #print(result)
 
 # https://yfinance-python.org/reference/index.html
