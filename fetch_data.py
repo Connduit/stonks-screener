@@ -12,7 +12,7 @@ data = {}
 equity_query = yf.EquityQuery("and", [
                     yf.EquityQuery('eq', ['region', 'us']),
                     yf.EquityQuery("gte", ["intradayprice", 5]),
-                    yf.EquityQuery("btwn", ["dayvolume", 50000000, 1000000000000]) # Needs to be done like this because sometimes stocks with 0 volume show up as over 1trillion
+                    yf.EquityQuery("btwn", ["dayvolume", 50_000_000, 1_000_000_000_000]) # Needs to be done like this because sometimes stocks with 0 volume show up as over 1trillion
                     #yf.EquityQuery("gt", ["dayvolume", 50000000])
                     ])
 
