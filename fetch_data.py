@@ -21,7 +21,7 @@ for key in result.keys():
 
 print()
 print()
-for val in result["quotes"]
+for val in result["quotes"]:
     print(val)
 
 #print(result)
