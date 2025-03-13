@@ -13,7 +13,8 @@ data = {}
 equity_query = yf.EquityQuery('eq', ['region', 'us'])
 #result = yf.screen(equity_query)
 #result = yf.screen("aggressive_small_caps")
-result = yf.screen("day_gainers")
+#result = yf.screen("day_gainers")
+result = yf.screen("most_actives")
 print(result.keys())
 print()
 for key in result.keys():
