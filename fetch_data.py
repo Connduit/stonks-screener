@@ -3,7 +3,7 @@ import json
 import os
 
 # Fetch stock data
-symbols = ["AAPL", "MSFT", "GOOG"]
+symbols = ["AAPL", "MSFT", "GOOG"] # TODO: fetch all stock symbols from file 
 data = {}
 
 # https://yfinance-python.org/reference/index.html
