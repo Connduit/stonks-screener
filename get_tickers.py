@@ -1,5 +1,8 @@
 import requests
 
+# NYSE = XNYS
+# NASDAQ = XNAS
+
 # rename function
 def get_polygon_tickers():
     # TODO: url to be the correct query
