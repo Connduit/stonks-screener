@@ -3,6 +3,10 @@ import requests
 # NYSE = XNYS
 # NASDAQ = XNAS
 
+# TODO: use this instead??
+#     : https://stockanalysis.com/stocks/
+#     : https://stockanalysis.com/list/exchanges/
+
 # rename function
 def get_polygon_tickers():
     # TODO: url to be the correct query
