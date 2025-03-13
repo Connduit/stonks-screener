@@ -24,6 +24,7 @@
         https://github.com/kacperadach/ichimoku_screener/
         https://github.com/pranjal-joshi/Screeni-py/
         https://github.com/devfinwiz/Stock_Screeners_Raw
+        https://github.com/asafravid/sss
         
 
     - possible apis:
