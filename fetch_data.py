@@ -1,3 +1,6 @@
+"""
+fetch data and parse it and store it as a json
+"""
 import yfinance as yf
 import json
 import os
@@ -22,7 +25,7 @@ with open(os.path.join(output_dir, 'stock_data.json'), 'w') as file:
     json.dump(data, file, indent=4)
 """
 
-with open("stock_data.json", "w") as file:
+with open("stock_data.json", "w+") as file:
     json.dump(data, file, indent=4)
 
 print("Stock data saved successfully!")

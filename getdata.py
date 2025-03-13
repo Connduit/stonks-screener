@@ -1,3 +1,8 @@
+"""
+this file saves the json to a google sheet
+"""
+
+
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -9,7 +14,9 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", sco
 client = gspread.authorize(creds)
 
 # Open the spreadsheet by its name or URL
-spreadsheet = client.open("stock-data")
+#spreadsheet = client.open("stock-data")
+spreadsheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1nf7ZjJNYORrNdx00XEr7n2M_cZ5q72l_phtx6mAJtgs/")
+
 worksheet = spreadsheet.get_worksheet(0)  # Use the first sheet (index 0)
 
 # Fetch all the data from the sheet
@@ -20,5 +27,6 @@ import json
 json_data = json.dumps(data)
 
 # Save the data to a file for use on the webpage
-with open("stock_data.json", "w") as file:
+# TODO: this wipes out all data in stock_data.json
+with open("stock_data.json", "w+") as file:
     file.write(json_data)

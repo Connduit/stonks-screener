@@ -7,8 +7,18 @@
 ### Where I Left Off
 
     - token problem...? failing to push changes 
+    - stock data isn't being stored in google sheet
 
+    
+
+### Future Ideas
+    
     - use go, svelte, js, ts, css, html, and wasm files when using live data from a paid api
+    - maybe use azure web app?
+
+
+
+### Links
 
     - possible sources:
         https://github.com/kacperadach/ichimoku_screener/
