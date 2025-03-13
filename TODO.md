@@ -20,4 +20,11 @@
         https://site.financialmodelingprep.com/developer/docs/stable
         https://polygon.io/
         https://finnhub.io/dashboard
-        
+
+    - possible inspiration
+        https://stockfetcher.com/#
+        https://finviz.com/
+        https://www.chartmill.com/stock/stock-screener
+        https://www.stockrover.com/screening-strategies/
+        https://youtu.be/9iowl419L4s?t=113
+        https://youtu.be/7RbjGk9eNJU?t=758
