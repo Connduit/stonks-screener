@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Stock Data</h1>
+    <table id="stock-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Stock</th>
+                <th>Open</th>
+                <th>Close</th>
+                <th>Volume</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Stock data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch the JSON data from GitHub Pages or local file
+        fetch('stock_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('#stock-table tbody');
+
+                data.forEach(row => {
+                    const tableRow = document.createElement('tr');
+                    tableRow.innerHTML = `
+                        <td>${row.Date}</td>
+                        <td>${row.Stock}</td>
+                        <td>${row.Open}</td>
+                        <td>${row.Close}</td>
+                        <td>${row.Volume}</td>
+                    `;
+                    tableBody.appendChild(tableRow);
+                });
+            })
+            .catch(error => console.error('Error fetching stock data:', error));
+    </script>
+
+</body>
+</html>
