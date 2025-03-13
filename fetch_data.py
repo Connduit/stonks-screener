@@ -15,7 +15,11 @@ equity_query = yf.EquityQuery('eq', ['region', 'us'])
 #result = yf.screen("aggressive_small_caps")
 result = yf.screen("day_gainers")
 print(result.keys())
-print(result)
+print()
+for key in result.keys():
+    print(result[key])
+
+#print(result)
 
 # https://yfinance-python.org/reference/index.html
 for symbol in symbols:
