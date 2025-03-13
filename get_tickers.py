@@ -11,3 +11,5 @@ def get_polygon_tickers():
     print(tickers["results"])
 
     return tickers['results']
+
+get_polygon_tickers()
