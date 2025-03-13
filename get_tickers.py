@@ -23,5 +23,7 @@ def get_polygon_tickers():
 
 data = get_polygon_tickers()
 
+"""
 with open("ticker_symbols.json", "w+") as file:
     json.dump(data, file, indent=4)
+"""
