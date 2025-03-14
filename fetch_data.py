@@ -39,27 +39,6 @@ print(result_symbols)
 #print(result)
 """
 
-import requests
-
-def get_polygon_tickers():
-    url = f'https://api.polygon.io/v3/reference/tickers?apiKey=a73jrAdWlq0ke5BtQiqYNBZuE8AjZKS2'
-
-    response = requests.get(url)
-    tickers = response.json()
-    print(tickers.keys())
-
-    print(tickers["results"])
-
-    return tickers['results']
-
-# Replace with your API key
-tickers = get_polygon_tickers()
-#for ticker in tickers[:10]:  # Display the first 10 tickers
-for ticker in tickers:
-    print(ticker['ticker'])
-
-
-
 # https://yfinance-python.org/reference/index.html
 for symbol in symbols:
     ticker = yf.Ticker(symbol)
