@@ -51,7 +51,7 @@ for symbol in symbols:
     print(ticker.history().columns)
     print(ticker.fast_info)
     data[symbol] = ticker.history(period="1d").to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
-    print(data[symbbol])
+    print(data[symbol])
     #data[symbol]["last_price"] = ticker.fast_info["lastPrice"]
     #data[symbol]["last_volume"] = ticker.fast_info["lastVolume"]
 
