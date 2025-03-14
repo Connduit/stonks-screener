@@ -42,7 +42,7 @@ print(result_symbols)
 # https://yfinance-python.org/reference/index.html
 for symbol in symbols:
     ticker = yf.Ticker(symbol)
-    print(ticker.actions)
+    print(ticker.info)
     data[symbol] = ticker.history(period="1d").to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
 
 
