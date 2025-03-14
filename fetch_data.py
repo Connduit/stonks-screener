@@ -8,7 +8,7 @@ import os
 
 
 # Fetch stock data
-symbols = ["AAPL", "MSFT", "GOOG"] # TODO: fetch all stock symbols from file 
+symbols = ["AAPL", "MSFT", "GOOG", "NVDA"] # TODO: fetch all stock symbols from file 
 data = {}
 """
 equity_query = yf.EquityQuery("and", [
