@@ -27,11 +27,14 @@ jobs:
       - name: Run Python script
         run: |
           python fetch_data.py
-          
-      - name: Commit and push results
+
+      - name: Configure Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+          
+      - name: Commit and push changes
+        run: |
           git add stock_data.json
           git commit -m "Update stock data"
-          git push
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Connduit/stonks-screener.git
