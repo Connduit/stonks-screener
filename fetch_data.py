@@ -45,7 +45,7 @@ for symbol in symbols:
     # has key value = currentPrice, volume, regularMarketVolume, floatShares, shortRatio, previousClose, open, regularMarketOpen, regularMarketPreviousClose, 
     #print(ticker.info) 
     print(ticker.history().columns)
-    print(ticker.basic_info)
+    print(ticker.fast_info)
     data[symbol] = ticker.history(period="1d").to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
 
 
