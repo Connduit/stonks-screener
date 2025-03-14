@@ -42,9 +42,9 @@ def get_polygon_tickers():
     print(tickers["error"])
 
     
-    print(tickers["results"])
+    #print(tickers["results"])
 
-    return tickers['results']
+    #return tickers['results']
 
 data = get_polygon_tickers()
 
