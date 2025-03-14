@@ -1,5 +1,12 @@
 import requests
 
+####
+# Common Stock, Depositary Receipt, ETF
+# NYSE ARCA, NASDAQ, NYSE
+
+####
+
+
 # NYSE = XNYS
 # NASDAQ = XNAS
 
