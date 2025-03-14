@@ -30,11 +30,13 @@
         <thead>
             <tr>
                 <th>Stock</th>
+                <th>Price</th>
                 <th>Open</th>
                 <th>High</th>
                 <th>Low</th>
                 <th>Close</th>
                 <th>Volume</th>
+                <th>MyVolume</th>
                 <th>GAP - TODO</th>
                 <th>CURRENT PRICE - TODO</th>
                 <th>Change from close (%) - TODO</th>
@@ -68,11 +70,13 @@
                     const tableRow = document.createElement('tr');
                     tableRow.innerHTML = `
                         <td>${symbol}</td>
+                        <td>${stockInfo.Price}</td>
                         <td>${stockInfo.Open}</td>
                         <td>${stockInfo.High}</td>
                         <td>${stockInfo.Low}</td>
                         <td>${stockInfo.Close}</td>
                         <td>${stockInfo.Volume}</td>
+                        <td>${stockInfo.MyVolume}</td>
                     `;
                     tableBody.appendChild(tableRow);
                 }
