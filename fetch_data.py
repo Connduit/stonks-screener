@@ -1,5 +1,9 @@
 """
 fetch data and parse it and store it as a json
+
+TODO: maybe use function like get_fast_info to quickly see if stock is legit,
+      then save off that data. then to actual get_info checks on saved off tickers
+
 """
 import yfinance as yf
 # from yfinance import EquityQuery
