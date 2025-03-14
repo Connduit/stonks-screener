@@ -1,5 +1,15 @@
 import requests
 
+
+####
+# https://www.nasdaqtrader.com/trader.aspx?id=symboldirdefs#nasdaq
+
+###
+# https://datahub.io/core/nasdaq-listings
+###
+# https://datahub.io/core/nyse-other-listings
+
+
 ####
 # Common Stock, Depositary Receipt, ETF
 # NYSE ARCA, NASDAQ, NYSE
