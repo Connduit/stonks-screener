@@ -55,8 +55,6 @@
                 for (let symbol in data) {
                     const stockInfo = data[symbol][0];  // Get the first entry for each stock symbol
 
-		    console.log(`symbol: ${symbol}, news ${stockInfo.News}`);
-
                     // Create a new row in the table for each stock
                     const tableRow = document.createElement('tr');
                     tableRow.innerHTML = `
