@@ -5,7 +5,8 @@
             "currentVolume": 60060200.0,
             "Gap": 0.0,
             "floatShares": 14998187904,
-            "relativeVolume": 1.1216707735329416
+            "relativeVolume": 1.1216707735329416,
+            "News": "Tech Support: Apple\u2019s MacBook Air is $100 cheaper and still among the best laptops you can buy"
         }
     ],
     "MSFT": [
@@ -14,7 +15,8 @@
             "currentVolume": 19929300.0,
             "Gap": 0.0,
             "floatShares": 7423649000,
-            "relativeVolume": 0.8580061887761364
+            "relativeVolume": 0.8580061887761364,
+            "News": "Antitrust under Trump: Regulators lock in on Big Tech"
         }
     ],
     "GOOG": [
@@ -23,7 +25,8 @@
             "currentVolume": 18592900.0,
             "Gap": 0.0,
             "floatShares": 10917973500,
-            "relativeVolume": 0.9447510026894018
+            "relativeVolume": 0.9447510026894018,
+            "News": "Republican Congressman Jim Jordan asks Big Tech if Biden tried to censor AI"
         }
     ],
     "NVDA": [
@@ -32,7 +35,8 @@
             "currentVolume": 276742800.0,
             "Gap": 0.0,
             "floatShares": 23413264000,
-            "relativeVolume": 1.0109183422144072
+            "relativeVolume": 1.0109183422144072,
+            "News": "Fed meeting, Nike earnings, Nvidia's GTC: What to Watch"
         }
     ],
     "QBTS": [
@@ -41,7 +45,8 @@
             "currentVolume": 260221400.0,
             "Gap": 0.0,
             "floatShares": 220957321,
-            "relativeVolume": 2.9659298111523946
+            "relativeVolume": 2.9659298111523946,
+            "News": "Quantum Stocks Pick Up Speed in Front of AI Conference"
         }
     ]
 }
