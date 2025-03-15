@@ -99,8 +99,11 @@ def getStuff(ticker):
 
     currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
     gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
+    # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
     floatShares = ticker.get_info()["floatShares"]
-    print(floatShares)
+
+    # TODO: need to check which is the correct volume... volume, regularMarketVolume, or volume from ticker.history??
+    relativeVolume = ticker.get_info()["volume"]/ticker.get_info()["averageVolume"]
 
     """
     proper volume calculation: 
@@ -126,7 +129,8 @@ def getStuff(ticker):
             "currentPrice" : [currentPrice],
             "currentVolume" : [currentVolume],
             "Gap" : [gap],
-            "floatShares" : [floatShares]
+            "floatShares" : [floatShares],
+            "relativeVolume" : [relativeVolume]
     }
 
     print(finalDataFrame)
@@ -181,6 +185,7 @@ for symbol in symbols:
     data[symbol][0]["MyVolume"] = res["currentVolume"][0]
     data[symbol][0]["Gap"] = res["Gap"][0]
     data[symbol][0]["Float"] = res["floatShares"][0]
+    data[symbol][0]["RelativeVolume"] = res["relativeVolume"][0]
 
 # Ensure the directory exists, create it if necessary
 """
