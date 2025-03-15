@@ -126,7 +126,6 @@ def getStuff(ticker):
 
     # TODO: for news i should just make another webpage to brings u to a link of news acticles
     news = ticker.get_news()[0]["content"] # [0] means get first article
-    print(news["title"])
     #news["title"]
     #news["pubDate"]
     #news["displayTime"]
@@ -145,11 +144,11 @@ def getStuff(ticker):
             "currentVolume" : [currentVolume],
             "Gap" : [gap],
             "floatShares" : [floatShares],
-            "relativeVolume" : [relativeVolume]
+            "relativeVolume" : [relativeVolume],
             #"relativeVolumePercent" : [],
             #"changeFromClose" : [],
             #"shortInterest" : [],
-            #"News" : []
+            "News" : [news["title"]]
     }
 
     import pandas as pd

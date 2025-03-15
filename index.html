@@ -36,11 +36,6 @@
                 <th>GAP</th>
                 <th>FLOAT - TODO</th>
                 <th>RELATIVE VOLUME (DAY) - TODO</th>
-                <th>CURRENT PRICE - TODO</th>
-                <th>Change from close (%) - TODO</th>
-                <th>SHORT INTEREST - TODO</th>
-                <th>SHORT RATIO - TODO</th>
-                <th>RELATIVE VOLUME (5 min %) - TODO</th>
                 <th>News - TODO</th>
             </tr>
         </thead>
@@ -69,6 +64,7 @@
                         <td>${stockInfo.Gap}</td>
                         <td>${stockInfo.floatShares}</td>
                         <td>${stockInfo.relativeVolume}</td>
+                        <td>${stockInfo.News}</td>
                     `;
                     tableBody.appendChild(tableRow);
                 }
