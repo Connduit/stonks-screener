@@ -11,6 +11,49 @@ import json
 import os
 
 
+
+
+"""
+# TODO: note: these notes were taking from when it was 2am eastern time
+
+    previousClose = the previous day's close (time zone shit was already converted)
+    open = today's open
+    regularMarketPreviousClose = previous days close
+    regularMarketOpen = today's open
+    volume == regularMarketVolume
+    averageVolume = TODO: idk
+    bid == ask == 0
+    floatShares = float shares on the day?
+    sharesOutstanding = TODO:
+    sharesShort = TODO:
+    shortRatio = TODO:
+    shortPercentOfFloat = TODO: is this needed?
+    symbol = ticker
+    region = region... ie, US
+    regularMarketChangePercent = from market open (9:30) to market close (4:00), price change as a %
+    regularMarketPrice = close price?
+    marketState = is market open or close?
+    exchange = what stock exchange
+    exchangeTimezoneName = name of tz
+    exchangeTimezoneShortName = tz abreviation
+    postMarketTime = TODO: no idea what this is... guessing it's an epoch time for when it closes
+    regularMarketTime = TODO: similar to above
+    postMarketPrice = closing price at 4pm
+    postMarketChange = price change as a price from 4pm to 8pm... TODO: check if this percentage is only avaliable after 8pm
+    regularMarketChange = price change as price from 9:30 to 4pm... TODO: check if this is only avalible after 4pm
+    exchangeDataDelayedBy = price data delayed? 0 means realtime data?
+    sourceInterval = data updates this often?
+    postMarketChangePercent = post market change as %
+    hasPrePostMarketData = self explanatory
+
+
+
+
+
+
+"""
+
+
 # TODO: rename function
 #def getStuff():
 def getStuff(ticker):
@@ -26,10 +69,16 @@ def getStuff(ticker):
     short interest ???
 
     """
+
+    # TODO: need to localalize times to be time of exchange (EST)?
     #from datetime import date
     import datetime
     today = datetime.date.today()
     yesterday = today - datetime.timedelta(days=1)
+
+    import pandas as pd
+    today = pd.Timestamp.today()
+    today = pd.Timestamp.today()
     #ticker.history(period="1d", interval="1m", prepost=True).to_dict(orient='records')
     # TODO: need to check what this does during trading hours... i think it will just return yesterday value if market is still open today
     stock_data_yesterday = ticker.history(start=yesterday, interval="1d") 
@@ -45,16 +94,23 @@ def getStuff(ticker):
     # TODO: stock_now.tz_convert("America/New_York", level=1)
     # TODO: stock_now.tz_convert("America/New_York")
 
-    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is?
+    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
     currentPrice = stock_now.iloc[-1]["Close"]
 
     currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
-    gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this
+    gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
+    #floatShares
 
     """
     proper volume calculation: 
         if market is closed... get volume from stock_data_yesterday
         if market is open... get volume from stock_now.iloc[-1]
+
+        stock_now.between_time("09:30", "16:00")
+
+
+    gap:
+        TODO: maybe it's ok that gap = 0 when time is: 8pm < currentTime < 4am
 
     """
 
@@ -92,13 +148,6 @@ result = yf.screen(equity_query, size = 250) # default size is 100? max is 250?
 #result = yf.screen("aggressive_small_caps")
 #result = yf.screen("day_gainers")
 #result = yf.screen("most_actives")
-print(result.keys())
-print()
-for key in result.keys():
-    print(result[key])
-
-print()
-print()
 for val in result["quotes"]:
     print(val)
 
@@ -118,7 +167,8 @@ for symbol in symbols:
     res = getStuff(ticker)
     #data[symbol] = ticker.history(period="1d", interval="1m", prepost=True).to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
     #print(ticker.history(period="1d", interval="1m", prepost=True))
-    #print(ticker.fast_info)
+    #print(ticker.get_fast_info().last_price) # TODO: last price during active trade hours? 
+    print(ticker.get_fast_info().shares)
     #print(ticker.history().columns)
     #print(data[symbol])
     #print()
