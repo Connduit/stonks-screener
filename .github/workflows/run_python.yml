@@ -37,6 +37,6 @@ jobs:
         run: |
           git add stock_data.json
           git status
-          git commit -m "Update stock data"
+          git diff --cached --quiet || git commit -m "Update stock data"
           git status
           git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Connduit/stonks-screener.git
