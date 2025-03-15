@@ -67,7 +67,7 @@ def getStuff(ticker):
     # TODO: maybe i can just return as a dict so i dont have to call .to_dict(orient="records")... yea this def doesn't need to be a df
     finalDataFrame = {
             "currentPrice" : [currentPrice],
-            "currentVolume" : [currentVolume]
+            "currentVolume" : [currentVolume],
             "gap" : [gap]
     }
 
