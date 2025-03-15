@@ -24,10 +24,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install yfinance
 
-      # TODO: uncomment when project is done? or we switch to github action instead of pages
-      #- name: Run Python script
-        #run: |
-          #python fetch_data.py
+      - name: Run Python script
+        run: |
+          python fetch_data.py
 
       - name: Configure Git
         run: |
