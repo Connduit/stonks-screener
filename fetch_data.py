@@ -49,6 +49,7 @@ def getStuff(ticker):
     currentPrice = stock_now.iloc[-1]["Close"]
 
     currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
+    gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this
 
     """
     proper volume calculation: 
@@ -67,6 +68,7 @@ def getStuff(ticker):
     finalDataFrame = {
             "currentPrice" : [currentPrice],
             "currentVolume" : [currentVolume]
+            "gap" : [gap]
     }
 
     print(finalDataFrame)
@@ -125,6 +127,7 @@ for symbol in symbols:
     data[symbol][0]["last_price"] = ticker.fast_info["lastPrice"] # TODO: last price seems to be the same as close
     data[symbol][0]["Price"] = res["currentPrice"][0]
     data[symbol][0]["MyVolume"] = res["currentVolume"][0]
+    data[symbol][0]["Gap"] = res["gap"][0]
 
 # Ensure the directory exists, create it if necessary
 """
