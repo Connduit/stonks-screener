@@ -9,7 +9,8 @@
             "Dividends": 0.0,
             "Stock Splits": 0.0,
             "last_price": 213.49000549316406,
-            "Price": 213.32
+            "Price": 213.35,
+            "MyVolume": 60034237.0
         }
     ],
     "MSFT": [
@@ -22,7 +23,8 @@
             "Dividends": 0.0,
             "Stock Splits": 0.0,
             "last_price": 388.55999755859375,
-            "Price": 387.615
+            "Price": 387.87,
+            "MyVolume": 19749136.0
         }
     ],
     "GOOG": [
@@ -35,7 +37,8 @@
             "Dividends": 0.0,
             "Stock Splits": 0.0,
             "last_price": 167.6199951171875,
-            "Price": 167.4314
+            "Price": 167.41,
+            "MyVolume": 18312223.0
         }
     ],
     "NVDA": [
@@ -48,7 +51,8 @@
             "Dividends": 0.0,
             "Stock Splits": 0.0,
             "last_price": 121.66999816894531,
-            "Price": 121.4798
+            "Price": 121.5,
+            "MyVolume": 274061576.0
         }
     ]
 }

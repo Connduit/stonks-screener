@@ -33,13 +33,31 @@ def getStuff(ticker):
     #ticker.history(period="1d", interval="1m", prepost=True).to_dict(orient='records')
     # TODO: need to check what this does during trading hours... i think it will just return yesterday value if market is still open today
     stock_data_yesterday = ticker.history(start=yesterday, interval="1d") 
-    stock_now = ticker.history(period="1d", interval="1m", prepost=True) # TODO: see what happens after most market closes... past 8pm. Also what happens for stocks that are traadable 24hrs
+
+    #print(stock_data_yesterday.between_time(datetime.time(1), datetime.time(10,59,59))) # this doesn't work unless dataframe includes date not just time
+
+    #import pandas as pd
+    #dt = pd.to_datetime("2025-03-14 09:30:00")
+    #print(stock_data_yesterday.loc[dt])
+    #print(stock_data_yesterday.loc["2025-03-14 09:30:00-04:00"])
+    stock_now = ticker.history(period="1d", interval="1m", prepost=True) # TODO: see what happens after most market closes... past 8pm. Also what happens for stocks that are traadable 24hrs... TODO: do i even care what happens when the market is completly closed?
     #currentPrice = stock_now.iloc[-1]
-    print(stock_now)
+    # TODO: stock_now.tz_convert("America/New_York", level=1)
+    # TODO: stock_now.tz_convert("America/New_York")
+
     currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is?
     currentPrice = stock_now.iloc[-1]["Close"]
+
+    currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
+
+    """
+    proper volume calculation: 
+        if market is closed... get volume from stock_data_yesterday
+        if market is open... get volume from stock_now.iloc[-1]
+
+    """
+
     #currentPrice = stock_now.tail(1)
-    print(currentPrice)
     #print(stock_data_yesterday)
     #test = ticker.history(start=yesterday, interval="1m", prepost=True)
     #print(test)

@@ -2,7 +2,7 @@ name: Run Stock Screener
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Runs daily at 9 AM UTC
+    - cron: '0 9 * * *'  # Runs daily at 9 AM UTC # TODO: change to EST time? and run at before premarket, start of premarket, and other good times
   push:
     branches:
       - main
