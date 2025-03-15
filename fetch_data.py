@@ -68,7 +68,7 @@ def getStuff(ticker):
     finalDataFrame = {
             "currentPrice" : [currentPrice],
             "currentVolume" : [currentVolume],
-            "gap" : [gap]
+            "Gap" : [gap]
     }
 
     print(finalDataFrame)
@@ -127,7 +127,7 @@ for symbol in symbols:
     data[symbol][0]["last_price"] = ticker.fast_info["lastPrice"] # TODO: last price seems to be the same as close
     data[symbol][0]["Price"] = res["currentPrice"][0]
     data[symbol][0]["MyVolume"] = res["currentVolume"][0]
-    data[symbol][0]["Gap"] = res["gap"][0]
+    data[symbol][0]["Gap"] = res["Gap"][0]
 
 # Ensure the directory exists, create it if necessary
 """
