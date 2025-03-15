@@ -99,7 +99,8 @@ def getStuff(ticker):
 
     currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
     gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
-    #floatShares
+    floatShares = ticker.get_info()["floatShares"]
+    print(floatShares)
 
     """
     proper volume calculation: 
@@ -124,7 +125,8 @@ def getStuff(ticker):
     finalDataFrame = {
             "currentPrice" : [currentPrice],
             "currentVolume" : [currentVolume],
-            "Gap" : [gap]
+            "Gap" : [gap],
+            "floatShares" : [floatShares]
     }
 
     print(finalDataFrame)
@@ -134,7 +136,7 @@ def getStuff(ticker):
 
 # Fetch stock data
 symbols = ["AAPL", "MSFT", "GOOG", "NVDA"] # TODO: fetch all stock symbols from file 
-data = {}
+data = {} # TODO: this is data for the most active stocks
 """
 equity_query = yf.EquityQuery("and", [
                     yf.EquityQuery('eq', ['region', 'us']),
@@ -178,6 +180,7 @@ for symbol in symbols:
     data[symbol][0]["Price"] = res["currentPrice"][0]
     data[symbol][0]["MyVolume"] = res["currentVolume"][0]
     data[symbol][0]["Gap"] = res["Gap"][0]
+    data[symbol][0]["Float"] = res["floatShares"][0]
 
 # Ensure the directory exists, create it if necessary
 """
