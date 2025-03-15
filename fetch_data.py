@@ -15,6 +15,7 @@ import os
 
 """
 # TODO: note: these notes were taking from when it was 2am eastern time
+    get_info():
 
     previousClose = the previous day's close (time zone shit was already converted)
     open = today's open
@@ -76,9 +77,8 @@ def getStuff(ticker):
     today = datetime.date.today()
     yesterday = today - datetime.timedelta(days=1)
 
-    import pandas as pd
-    today = pd.Timestamp.today()
-    today = pd.Timestamp.today()
+    #import pandas as pd
+    #today = pd.Timestamp.today()
     #ticker.history(period="1d", interval="1m", prepost=True).to_dict(orient='records')
     # TODO: need to check what this does during trading hours... i think it will just return yesterday value if market is still open today
     stock_data_yesterday = ticker.history(start=yesterday, interval="1d") 
@@ -104,6 +104,14 @@ def getStuff(ticker):
 
     # TODO: need to check which is the correct volume... volume, regularMarketVolume, or volume from ticker.history??
     relativeVolume = ticker.get_info()["volume"]/ticker.get_info()["averageVolume"]
+    #stock_10d = ticker.history(start=today-datetime.timedelta(days=15), interval="1d")  # 14 = 10 trading days if there's no holidays
+    stock_10d = ticker.history(start=today-datetime.timedelta(days=15), interval="1d")  # 14 = 10 trading days if there's no holidays
+    #print(stock_10d.tail(10)["Volume"])
+    avg = sum(stock_10d.head(10)["Volume"])/10
+    #avg = sum(stock_10d.tail(10)["Volume"])/10
+    #print(ticker.get_info()["volume"]/avg)
+    print(currentVolume/avg) # TODO: this is the correct calculation of rel volume?? it's closer but still a litte off
+    #print(sum(stock_now["Volume"])) # TODO: how to get current volume when trading day is still going?
 
     """
     proper volume calculation: 
