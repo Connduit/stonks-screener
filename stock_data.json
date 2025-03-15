@@ -9,13 +9,8 @@
             "Dividends": 0.0,
             "Stock Splits": 0.0,
             "last_price": 213.49000549316406,
-<<<<<<< HEAD
             "Price": 213.35,
             "MyVolume": 60034237.0
-=======
-            "Price": 213.3499,
-            "MyVolume": 0.0
->>>>>>> 427bdc49af47bed2f1ae1e9450d459d5a6a20b83
         }
     ],
     "MSFT": [
@@ -29,11 +24,7 @@
             "Stock Splits": 0.0,
             "last_price": 388.55999755859375,
             "Price": 387.87,
-<<<<<<< HEAD
             "MyVolume": 19749136.0
-=======
-            "MyVolume": 0.0
->>>>>>> 427bdc49af47bed2f1ae1e9450d459d5a6a20b83
         }
     ],
     "GOOG": [
@@ -47,11 +38,7 @@
             "Stock Splits": 0.0,
             "last_price": 167.6199951171875,
             "Price": 167.41,
-<<<<<<< HEAD
             "MyVolume": 18312223.0
-=======
-            "MyVolume": 0.0
->>>>>>> 427bdc49af47bed2f1ae1e9450d459d5a6a20b83
         }
     ],
     "NVDA": [
@@ -65,11 +52,7 @@
             "Stock Splits": 0.0,
             "last_price": 121.66999816894531,
             "Price": 121.5,
-<<<<<<< HEAD
             "MyVolume": 274061576.0
-=======
-            "MyVolume": 0.0
->>>>>>> 427bdc49af47bed2f1ae1e9450d459d5a6a20b83
         }
     ]
 }
