@@ -101,16 +101,23 @@ def getStuff(ticker):
     # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
     floatShares = ticker.get_info()["floatShares"]
 
+
+
     # TODO: need to check which is the correct volume... volume, regularMarketVolume, or volume from ticker.history??
     relativeVolume = ticker.get_info()["volume"]/ticker.get_info()["averageVolume"]
     #stock_10d = ticker.history(start=today-datetime.timedelta(days=15), interval="1d")  # 14 = 10 trading days if there's no holidays
-    stock_10d = ticker.history(start=today-datetime.timedelta(days=15), interval="1d")  # 14 = 10 trading days if there's no holidays
+    stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")  # 14 = 10 trading days if there's no holidays
+
+    #stock_10d = ticker.history(start=yesterday-datetime.timedelta(days=20), end="2025-03-14", interval="1d")  # 14 = 10 trading days if there's no holidays
+    #stock_10d_download = yf.download("QBTS", period="11d", interval="1d")
+    #print(stock_10d_download)
+    print(stock_10d)
     #print(stock_10d.tail(10)["Volume"])
     avg = sum(stock_10d.head(10)["Volume"])/10
-    #avg = sum(stock_10d.tail(10)["Volume"])/10
-    #print(ticker.get_info()["volume"]/avg)
-    #print(currentVolume/avg) # TODO: this is the correct calculation of rel volume?? it's closer but still a litte off
-    #print(sum(stock_now["Volume"])) # TODO: how to get current volume when trading day is still going?
+    print(stock_10d.tail(1)["Volume"]/avg)
+    relativeVolume = stock_10d.tail(1)["Volume"]/avg
+
+
 
     # TODO: note: can only fetch 8 days worth of 1min data at a time
     #stock_8d_1m = ticker.history(start=today-datetime.timedelta(days=7), interval="1m")  # 14 = 10 trading days if there's no holidays
@@ -119,9 +126,9 @@ def getStuff(ticker):
     #print(stock_now.between_time("15:55","16:00"))
     #print(ticker.history(start="2025-03-12", end="2025-03-13", interval="1m").between_time("15:55","16:00"))
     #avg10d = (sum(stock_now.between_time("15:55","16:00")["Volume"]) + 
-    last5min = sum(stock_now.between_time("15:55", "16:00")["Volume"])
+    """ last5min = sum(stock_now.between_time("15:55", "16:00")["Volume"])
     stock_now_5m = ticker.history(period="1d", interval="5m")
-    print(sum(stock_now_5m["Volume"])/last5min)
+    #print(sum(stock_now_5m["Volume"])/last5min)
 
     d = yf.download(symbol, interval="5m", period="5d")
     # Filter for regular trading hours (9:30 AM - 4:00 PM)
@@ -130,19 +137,19 @@ def getStuff(ticker):
     # Calculate the average 5-minute volume for regular intervals
     d['Avg_5m_Vol'] = d['Volume'].rolling(window=20).mean()
 
-    print(d)
+    #print(d)
 
     # Identify the most recent 5-minute candle's volume
     last_volume = d['Volume'].iloc[-1]
 
     # Compare the last 5-minute volume with the calculated average
-    print(f"Last 5-Min Volume: {last_volume}")
-    print(f"Average 5-Min Volume: {d['Avg_5m_Vol'].iloc[-1]}")
-    print()
-    print(d["Avg_5m_Vol"].iloc[-1]/last_volume)
-    print()
+    #print(f"Last 5-Min Volume: {last_volume}")
+    #print(f"Average 5-Min Volume: {d['Avg_5m_Vol'].iloc[-1]}")
+    #print()
+    #print(d["Avg_5m_Vol"].iloc[-1]/last_volume)
+    #print()
     #print(f"Relative Volume (RVOL): {last_volume / d['Avg_5m_Vol'].iloc[-1]:.2f}")
-
+    """
 
     """
     avg10d = (
