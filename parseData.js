@@ -14,7 +14,7 @@ fetch('stock_data.json')
 	    const tableRow = document.createElement('tr');
 	    tableRow.innerHTML = `
 		<td>${symbol}</td>
-		<td>${stockInfo.currentPrice}</td>
+		<td>${currentPrice}</td>
 		<td>${stockInfo.currentVolume}</td>
 		<td>${stockInfo.Gap}</td>
 		<td>${stockInfo.changeFromClose}</td>
