@@ -100,7 +100,7 @@ def getStuff(ticker):
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
     # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
-    floatShares = ticker.get_info()["floatShares"]
+    floatShares = ticker.get_info()["floatShares"] # TODO: this doesn't match warrior trading or yahoo... it's close tho
 
 
 
@@ -133,6 +133,9 @@ def getStuff(ticker):
     now_close = stock_10d.tail(2)["Close"].iloc[-1]
     changeFromClose = (now_close - prev_close)/prev_close*100 # convert to percentage
     print(changeFromClose)
+
+    shortInterest = ticker.get_info()["sharesShort"]
+
 
 
 
@@ -236,7 +239,7 @@ def getStuff(ticker):
             "relativeVolume" : [relativeVolume],
             #"relativeVolumePercent" : [],
             "changeFromClose" : [changeFromClose],
-            #"shortInterest" : [],
+            "shortInterest" : [shortInterest],
             "News" : [news["title"]]
     }
 
