@@ -4,6 +4,8 @@ fetch data and parse it and store it as a json
 TODO: maybe use function like get_fast_info to quickly see if stock is legit,
       then save off that data. then to actual get_info checks on saved off tickers
 
+TODO: use yf.download instead?
+
 """
 import yfinance as yf
 # from yfinance import EquityQuery
@@ -107,8 +109,70 @@ def getStuff(ticker):
     avg = sum(stock_10d.head(10)["Volume"])/10
     #avg = sum(stock_10d.tail(10)["Volume"])/10
     #print(ticker.get_info()["volume"]/avg)
-    print(currentVolume/avg) # TODO: this is the correct calculation of rel volume?? it's closer but still a litte off
+    #print(currentVolume/avg) # TODO: this is the correct calculation of rel volume?? it's closer but still a litte off
     #print(sum(stock_now["Volume"])) # TODO: how to get current volume when trading day is still going?
+
+    # TODO: note: can only fetch 8 days worth of 1min data at a time
+    #stock_8d_1m = ticker.history(start=today-datetime.timedelta(days=7), interval="1m")  # 14 = 10 trading days if there's no holidays
+    #print(sum(ticker.history(start="2025-03-07", end="2025-03-08", interval="1m").between_time("15:55","16:00")["Volume"]))
+    
+    #print(stock_now.between_time("15:55","16:00"))
+    #print(ticker.history(start="2025-03-12", end="2025-03-13", interval="1m").between_time("15:55","16:00"))
+    #avg10d = (sum(stock_now.between_time("15:55","16:00")["Volume"]) + 
+    last5min = sum(stock_now.between_time("15:55", "16:00")["Volume"])
+    stock_now_5m = ticker.history(period="1d", interval="5m")
+    print(sum(stock_now_5m["Volume"])/last5min)
+
+    d = yf.download(symbol, interval="5m", period="5d")
+    # Filter for regular trading hours (9:30 AM - 4:00 PM)
+    d = d.between_time('09:30', '16:00')
+
+    # Calculate the average 5-minute volume for regular intervals
+    d['Avg_5m_Vol'] = d['Volume'].rolling(window=20).mean()
+
+    print(d)
+
+    # Identify the most recent 5-minute candle's volume
+    last_volume = d['Volume'].iloc[-1]
+
+    # Compare the last 5-minute volume with the calculated average
+    print(f"Last 5-Min Volume: {last_volume}")
+    print(f"Average 5-Min Volume: {d['Avg_5m_Vol'].iloc[-1]}")
+    print()
+    print(d["Avg_5m_Vol"].iloc[-1]/last_volume)
+    print()
+    #print(f"Relative Volume (RVOL): {last_volume / d['Avg_5m_Vol'].iloc[-1]:.2f}")
+
+
+    """
+    avg10d = (
+                sum(ticker.history(start="2025-03-13", end="2025-03-14", interval="1m").between_time("15:55","16:00")["Volume"]) + 
+                sum(ticker.history(start="2025-03-12", end="2025-03-13", interval="1m").between_time("15:55","16:00")["Volume"]) +
+                sum(ticker.history(start="2025-03-11", end="2025-03-12", interval="1m").between_time("15:55","16:00")["Volume"]) +
+                sum(ticker.history(start="2025-03-10", end="2025-03-11", interval="1m").between_time("15:55","16:00")["Volume"]) +
+                sum(ticker.history(start="2025-03-07", end="2025-03-08", interval="1m").between_time("15:55","16:00")["Volume"]) +
+                sum(ticker.history(start="2025-03-06", end="2025-03-07", interval="1m").between_time("15:55","16:00")["Volume"]) +
+                sum(ticker.history(start="2025-03-05", end="2025-03-06", interval="1m").between_time("15:55","16:00")["Volume"]) +
+                sum(ticker.history(start="2025-03-04", end="2025-03-05", interval="1m").between_time("15:55","16:00")["Volume"]) +
+                sum(ticker.history(start="2025-03-03", end="2025-03-04", interval="1m").between_time("15:55","16:00")["Volume"]) + 
+                sum(ticker.history(start="2025-02-28", end="2025-03-01", interval="1m").between_time("15:55","16:00")["Volume"])
+                #ticker.history(start="2025-03-04", end="2025-03-05", interval="1m").between_time("15:55","16:00")
+            )/10
+
+    print(ticker.get_info()["volume"]/avg10d)
+    """
+    #print(stock_8d_1m)
+    #print()
+    #stock_
+    #print(stock_10d_1m.between_time("15::55", "16:00"))
+
+    """
+    stock_5d_5m = ticker.history(start=today-datetime.timedelta(days=6), end=yesterday, interval="5m")
+    print(stock_5d_5m)
+    avg_5d = sum(stock_5d_5m["Volume"])/5
+    relativeVolumePercent = ticker.get_info()["volume"]/avg_5d
+    print(relativeVolumePercent)
+    """
 
     """
     proper volume calculation: 
