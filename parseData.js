@@ -8,6 +8,7 @@ fetch('stock_data.json')
 	for (let symbol in data) {
 	    const stockInfo = data[symbol][0];  // Get the first entry for each stock symbol
 
+	    console.log("shortInterest", stockInfo.shortInterest)
 	    // Create a new row in the table for each stock
 	    const tableRow = document.createElement('tr');
 	    tableRow.innerHTML = `
