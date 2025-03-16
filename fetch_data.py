@@ -111,11 +111,11 @@ def getStuff(ticker):
     #stock_10d = ticker.history(start=yesterday-datetime.timedelta(days=20), end="2025-03-14", interval="1d")  # 14 = 10 trading days if there's no holidays
     #stock_10d_download = yf.download("QBTS", period="11d", interval="1d")
     #print(stock_10d_download)
-    print(stock_10d)
-    #print(stock_10d.tail(10)["Volume"])
+
+    # TODO: NOTE: yfinance doesn't include pre/post market volume data for some reason?
     avg = sum(stock_10d.head(10)["Volume"])/10
     print(stock_10d.tail(1)["Volume"]/avg)
-    relativeVolume = stock_10d.tail(1)["Volume"]/avg
+    relativeVolume = sum(stock_10d.tail(1)["Volume"])/avg # TODO: .tail() returns a series so we need to call sum to convert it back to float... there has to be a better way to do this tho
 
 
 
