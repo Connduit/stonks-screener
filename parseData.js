@@ -9,11 +9,12 @@ fetch('stock_data.json')
 	    const stockInfo = data[symbol][0];  // Get the first entry for each stock symbol
 
 	    const currentPrice = toCurrency(stockInfo.currentPrice);
-	    const gap = formatRoundNumber(stockInfo.Gap);
 	    const currentVolume = formatLargeNumber(stockInfo.currentVolume);
+	    const gap = formatRoundNumber(stockInfo.Gap);
+	    const changeFromClose = formatRoundNumber(stockInfo.changeFromClose);
 	    const floatShares = formatLargeNumber(stockInfo.floatShares);
 	    const shortInterest = formatLargeNumber(stockInfo.shortInterest);
-	    const relativeVolume = formatLargeNumber(stockInfo.relativeVolume);
+	    const relativeVolume = formatRoundNumber(stockInfo.relativeVolume);
 
 	    // Create a new row in the table for each stock
 	    const tableRow = document.createElement('tr');
@@ -22,7 +23,7 @@ fetch('stock_data.json')
 		<td>$${currentPrice}</td>
 		<td>${currentVolume}</td>
 		<td>${gap}</td>
-		<td>${stockInfo.changeFromClose}</td>
+		<td>${changeFromClose}</td>
 		<td>${floatShares}</td>
 		<td>${shortInterest}</td>
 		<td>${relativeVolume}</td>
