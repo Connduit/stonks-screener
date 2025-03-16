@@ -15,6 +15,7 @@ fetch('stock_data.json')
 		<td>${stockInfo.currentPrice}</td>
 		<td>${stockInfo.currentVolume}</td>
 		<td>${stockInfo.Gap}</td>
+		<td>${stockInfo.changeFromClose}</td>
 		<td>${stockInfo.floatShares}</td>
 		<td>${stockInfo.relativeVolume}</td>
 		<td>${stockInfo.News}</td>

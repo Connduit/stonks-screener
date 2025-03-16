@@ -130,6 +130,10 @@ def getStuff(ticker):
     #gap = (now_open - prev_close)/prev_close
     gap = (now_open - prev_close)/prev_close*100 # convert to percentage
 
+    now_close = stock_10d.tail(2)["Close"].iloc[-1]
+    changeFromClose = (now_close - prev_close)/prev_close*100 # convert to percentage
+    print(changeFromClose)
+
 
 
 
@@ -231,7 +235,7 @@ def getStuff(ticker):
             "floatShares" : [floatShares],
             "relativeVolume" : [relativeVolume],
             #"relativeVolumePercent" : [],
-            #"changeFromClose" : [],
+            "changeFromClose" : [changeFromClose],
             #"shortInterest" : [],
             "News" : [news["title"]]
     }
