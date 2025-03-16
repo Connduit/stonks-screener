@@ -8,6 +8,8 @@ fetch('stock_data.json')
 	for (let symbol in data) {
 	    const stockInfo = data[symbol][0];  // Get the first entry for each stock symbol
 
+	    const currentPrice = toCurrency(stockInfo.currentPrice, 2);
+
 	    // Create a new row in the table for each stock
 	    const tableRow = document.createElement('tr');
 	    tableRow.innerHTML = `
