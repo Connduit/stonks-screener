@@ -2,50 +2,50 @@
     "AAPL": [
         {
             "currentPrice": 213.35,
-            "currentVolume": 60060200.0,
+            "currentVolume": 60034237.0,
             "Gap": 0.0,
             "floatShares": 14998187904,
-            "relativeVolume": 1.1216707735329416,
-            "News": "Tech Support: Apple\u2019s MacBook Air is $100 cheaper and still among the best laptops you can buy"
+            "relativeVolume": 1.1210220646872777,
+            "News": "Trump isn't backing down from Big Tech fights \u2014 but is willing to bend on AI"
         }
     ],
     "MSFT": [
         {
             "currentPrice": 387.87,
-            "currentVolume": 19929300.0,
+            "currentVolume": 19749136.0,
             "Gap": 0.0,
             "floatShares": 7423649000,
-            "relativeVolume": 0.8580061887761364,
-            "News": "Antitrust under Trump: Regulators lock in on Big Tech"
+            "relativeVolume": 0.8583736293998572,
+            "News": "Microsoft (MSFT)\u2019s AI-Powered Azure & Copilot Drive Bullish Market Sentiment"
         }
     ],
     "GOOG": [
         {
             "currentPrice": 167.41,
-            "currentVolume": 18592900.0,
+            "currentVolume": 18312223.0,
             "Gap": 0.0,
             "floatShares": 10917973500,
-            "relativeVolume": 0.9447510026894018,
-            "News": "Republican Congressman Jim Jordan asks Big Tech if Biden tried to censor AI"
+            "relativeVolume": 0.9555003265838639,
+            "News": "Trump isn't backing down from Big Tech fights \u2014 but is willing to bend on AI"
         }
     ],
     "NVDA": [
         {
             "currentPrice": 121.5,
-            "currentVolume": 276742800.0,
+            "currentVolume": 274061576.0,
             "Gap": 0.0,
             "floatShares": 23413264000,
-            "relativeVolume": 1.0109183422144072,
-            "News": "Fed meeting, Nike earnings, Nvidia's GTC: What to Watch"
+            "relativeVolume": 1.008827491634512,
+            "News": "13 things that should bother you about the stock market right now"
         }
     ],
     "QBTS": [
         {
             "currentPrice": 9.9598,
-            "currentVolume": 260221400.0,
+            "currentVolume": 259528824.0,
             "Gap": 0.0,
-            "floatShares": 220957321,
-            "relativeVolume": 2.9659298111523946,
+            "floatShares": 241472404,
+            "relativeVolume": 3.010475534912238,
             "News": "Quantum Stocks Pick Up Speed in Front of AI Conference"
         }
     ]
