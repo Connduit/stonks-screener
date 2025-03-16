@@ -2,7 +2,7 @@
     "AAPL": [
         {
             "currentPrice": 213.35,
-            "currentVolume": 60034237.0,
+            "currentVolume": 60107582.0,
             "Gap": 0.0,
             "floatShares": 14998187904,
             "relativeVolume": 1.0562607333829865,
@@ -12,7 +12,7 @@
     "MSFT": [
         {
             "currentPrice": 387.87,
-            "currentVolume": 19749136.0,
+            "currentVolume": 19952846.0,
             "Gap": 0.0,
             "floatShares": 7423649000,
             "relativeVolume": 0.7609071645381135,
@@ -22,7 +22,7 @@
     "GOOG": [
         {
             "currentPrice": 167.41,
-            "currentVolume": 18312223.0,
+            "currentVolume": 18611094.0,
             "Gap": 0.0,
             "floatShares": 10917973500,
             "relativeVolume": 0.819100073218504,
@@ -32,7 +32,7 @@
     "NVDA": [
         {
             "currentPrice": 121.5,
-            "currentVolume": 274061576.0,
+            "currentVolume": 277593455.0,
             "Gap": 0.0,
             "floatShares": 23413264000,
             "relativeVolume": 0.7929241419320426,
