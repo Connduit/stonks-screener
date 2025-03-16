@@ -10,10 +10,10 @@
             "Stock Splits": 0.0,
             "last_price": 213.49000549316406,
             "Price": 213.35,
-            "MyVolume": 60060200.0,
+            "MyVolume": 60034237.0,
             "Gap": 0.0,
             "Float": 14998187904,
-            "RelativeVolume": 1.1216707735329416
+            "RelativeVolume": 1.1210220646872777
         }
     ],
     "MSFT": [
@@ -27,10 +27,10 @@
             "Stock Splits": 0.0,
             "last_price": 388.55999755859375,
             "Price": 387.87,
-            "MyVolume": 19929300.0,
+            "MyVolume": 19749136.0,
             "Gap": 0.0,
             "Float": 7423649000,
-            "RelativeVolume": 0.8580061887761364
+            "RelativeVolume": 0.8583736293998572
         }
     ],
     "GOOG": [
@@ -44,10 +44,10 @@
             "Stock Splits": 0.0,
             "last_price": 167.6199951171875,
             "Price": 167.41,
-            "MyVolume": 18592900.0,
+            "MyVolume": 18312223.0,
             "Gap": 0.0,
             "Float": 10917973500,
-            "RelativeVolume": 0.9447510026894018
+            "RelativeVolume": 0.9555003265838639
         }
     ],
     "NVDA": [
@@ -61,10 +61,10 @@
             "Stock Splits": 0.0,
             "last_price": 121.66999816894531,
             "Price": 121.5,
-            "MyVolume": 276742800.0,
+            "MyVolume": 274061576.0,
             "Gap": 0.0,
             "Float": 23413264000,
-            "RelativeVolume": 1.0109183422144072
+            "RelativeVolume": 1.008827491634512
         }
     ],
     "QBTS": [
@@ -78,10 +78,10 @@
             "Stock Splits": 0.0,
             "last_price": 10.149999618530273,
             "Price": 9.9598,
-            "MyVolume": 260221400.0,
+            "MyVolume": 259528824.0,
             "Gap": 0.0,
-            "Float": 220957321,
-            "RelativeVolume": 2.9659298111523946
+            "Float": 241472404,
+            "RelativeVolume": 3.010475534912238
         }
     ]
 }
