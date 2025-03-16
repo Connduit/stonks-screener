@@ -97,7 +97,8 @@ def getStuff(ticker):
     currentPrice = stock_now.iloc[-1]["Close"]
 
     currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
-    gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
+    # TODO: this gap is wrong... should be prev_close - now_open
+    #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
     # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
     floatShares = ticker.get_info()["floatShares"]
 
@@ -116,6 +117,19 @@ def getStuff(ticker):
     avg = sum(stock_10d.head(10)["Volume"])/10
     print(stock_10d.tail(1)["Volume"]/avg)
     relativeVolume = sum(stock_10d.tail(1)["Volume"])/avg # TODO: .tail() returns a series so we need to call sum to convert it back to float... there has to be a better way to do this tho
+
+    #stock_10d.tail(3)["Close"]
+    #print(stock_10d.tail(3)["Close"].head(2)) # TODO: is this the most efficent way to do this?
+    #print(stock_10d.tail(3)["Close"].head(2).iloc[0]) # TODO: is this the most efficent way to do this?
+    print(stock_10d.tail(2)["Close"])
+
+    #prev_close = stock_10d.tail(3)["Close"].head(2).iloc[1]
+    prev_close = stock_10d.tail(2)["Close"].iloc[0]
+    now_open = stock_10d.tail(2)["Open"].iloc[-1]
+
+    #gap = (now_open - prev_close)/prev_close
+    gap = (now_open - prev_close)/prev_close*100 # convert to percentage
+
 
 
 

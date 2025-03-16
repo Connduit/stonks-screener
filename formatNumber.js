@@ -15,3 +15,9 @@ function formatRoundNumber(number)
 {
 
 }
+
+// TODO: convert to percentage
+function toPercent(number)
+{
+
+}
