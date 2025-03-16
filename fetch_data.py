@@ -55,7 +55,7 @@ import os
 """
 
 
-# TODO: rename function
+# TODO: rename function to getColumnData?
 #def getStuff():
 def getStuff(ticker):
     """
@@ -77,9 +77,6 @@ def getStuff(ticker):
     today = datetime.date.today()
     yesterday = today - datetime.timedelta(days=1)
 
-    #import pandas as pd
-    #today = pd.Timestamp.today()
-    #ticker.history(period="1d", interval="1m", prepost=True).to_dict(orient='records')
     # TODO: need to check what this does during trading hours... i think it will just return yesterday value if market is still open today
     stock_data_yesterday = ticker.history(start=yesterday, interval="1d") 
 
@@ -126,6 +123,15 @@ def getStuff(ticker):
 
     """
 
+
+    # TODO: for news i should just make another webpage to brings u to a link of news acticles
+    news = ticker.get_news()[0]["content"] # [0] means get first article
+    #news["title"]
+    #news["pubDate"]
+    #news["displayTime"]
+    #news["canonicalUrl"]
+    #news["canonicalUrl"]["url"]
+
     #currentPrice = stock_now.tail(1)
     #print(stock_data_yesterday)
     #test = ticker.history(start=yesterday, interval="1m", prepost=True)
@@ -138,38 +144,21 @@ def getStuff(ticker):
             "currentVolume" : [currentVolume],
             "Gap" : [gap],
             "floatShares" : [floatShares],
-            "relativeVolume" : [relativeVolume]
+            "relativeVolume" : [relativeVolume],
+            #"relativeVolumePercent" : [],
+            #"changeFromClose" : [],
+            #"shortInterest" : [],
+            "News" : [news["title"]]
     }
 
-    print(finalDataFrame)
+    import pandas as pd
+    return pd.DataFrame(finalDataFrame)
 
-    return finalDataFrame
 
 
 # Fetch stock data
 symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS"] # TODO: fetch all stock symbols from file 
 data = {} # TODO: this is data for the most active stocks
-"""
-equity_query = yf.EquityQuery("and", [
-                    yf.EquityQuery('eq', ['region', 'us']),
-                    yf.EquityQuery("gte", ["intradayprice", 5]),
-                    yf.EquityQuery("btwn", ["dayvolume", 50_000_000, 1_000_000_000_000]) # Needs to be done like this because sometimes stocks with 0 volume show up as over 1trillion
-                    #yf.EquityQuery("gt", ["dayvolume", 50000000])
-                    ])
-
-#equity_query = yf.EquityQuery('eq', ['region', 'us'])
-result = yf.screen(equity_query, size = 250) # default size is 100? max is 250?
-#result = yf.screen("aggressive_small_caps")
-#result = yf.screen("day_gainers")
-#result = yf.screen("most_actives")
-for val in result["quotes"]:
-    print(val)
-
-result_symbols = [val["symbol"] for val in result["quotes"]]
-print(result_symbols)
-
-#print(result)
-"""
 
 # https://yfinance-python.org/reference/index.html
 for symbol in symbols:
@@ -177,34 +166,17 @@ for symbol in symbols:
     # has key value = currentPrice, volume, regularMarketVolume, floatShares, shortRatio, previousClose, open, regularMarketOpen, regularMarketPreviousClose, 
     #print(ticker.info) 
     # TODO: note: 1d is the smallest period
-    data[symbol] = ticker.history(period="1d").to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
+    #data[symbol] = ticker.history(period="1d").to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
     res = getStuff(ticker)
-    #data[symbol] = ticker.history(period="1d", interval="1m", prepost=True).to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
+    data[symbol] = res.to_dict(orient="records")
     #print(ticker.history(period="1d", interval="1m", prepost=True))
     #print(ticker.get_fast_info().last_price) # TODO: last price during active trade hours? 
-    print(ticker.get_fast_info().shares)
+    #print(ticker.get_fast_info().shares)
     #print(ticker.history().columns)
     #print(data[symbol])
     #print()
     #data[symbol]["last_price"] = ticker.fast_info["lastPrice"]
     #data[symbol]["last_volume"] = ticker.fast_info["lastVolume"]
-    data[symbol][0]["last_price"] = ticker.fast_info["lastPrice"] # TODO: last price seems to be the same as close
-    data[symbol][0]["Price"] = res["currentPrice"][0]
-    data[symbol][0]["MyVolume"] = res["currentVolume"][0]
-    data[symbol][0]["Gap"] = res["Gap"][0]
-    data[symbol][0]["Float"] = res["floatShares"][0]
-    data[symbol][0]["RelativeVolume"] = res["relativeVolume"][0]
-
-# Ensure the directory exists, create it if necessary
-"""
-output_dir = 'assets'
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
-
-# Save data as JSON
-with open(os.path.join(output_dir, 'stock_data.json'), 'w') as file:
-    json.dump(data, file, indent=4)
-"""
 
 with open("stock_data.json", "w+") as file:
     json.dump(data, file, indent=4)

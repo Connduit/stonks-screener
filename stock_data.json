@@ -1,87 +1,52 @@
 {
     "AAPL": [
         {
-            "Open": 211.25,
-            "High": 213.9499969482422,
-            "Low": 209.5800018310547,
-            "Close": 213.49000549316406,
-            "Volume": 60060200,
-            "Dividends": 0.0,
-            "Stock Splits": 0.0,
-            "last_price": 213.49000549316406,
-            "Price": 213.35,
-            "MyVolume": 60034237.0,
+            "currentPrice": 213.35,
+            "currentVolume": 60060200.0,
             "Gap": 0.0,
-            "Float": 14998187904,
-            "RelativeVolume": 1.1210220646872777
+            "floatShares": 14998187904,
+            "relativeVolume": 1.1216707735329416,
+            "News": "Tech Support: Apple\u2019s MacBook Air is $100 cheaper and still among the best laptops you can buy"
         }
     ],
     "MSFT": [
         {
-            "Open": 379.7799987792969,
-            "High": 390.2300109863281,
-            "Low": 379.510009765625,
-            "Close": 388.55999755859375,
-            "Volume": 19929300,
-            "Dividends": 0.0,
-            "Stock Splits": 0.0,
-            "last_price": 388.55999755859375,
-            "Price": 387.87,
-            "MyVolume": 19749136.0,
+            "currentPrice": 387.87,
+            "currentVolume": 19929300.0,
             "Gap": 0.0,
-            "Float": 7423649000,
-            "RelativeVolume": 0.8583736293998572
+            "floatShares": 7423649000,
+            "relativeVolume": 0.8580061887761364,
+            "News": "Antitrust under Trump: Regulators lock in on Big Tech"
         }
     ],
     "GOOG": [
         {
-            "Open": 165.31500244140625,
-            "High": 168.25,
-            "Low": 164.50999450683594,
-            "Close": 167.6199951171875,
-            "Volume": 18592900,
-            "Dividends": 0.0,
-            "Stock Splits": 0.0,
-            "last_price": 167.6199951171875,
-            "Price": 167.41,
-            "MyVolume": 18312223.0,
+            "currentPrice": 167.41,
+            "currentVolume": 18592900.0,
             "Gap": 0.0,
-            "Float": 10917973500,
-            "RelativeVolume": 0.9555003265838639
+            "floatShares": 10917973500,
+            "relativeVolume": 0.9447510026894018,
+            "News": "Republican Congressman Jim Jordan asks Big Tech if Biden tried to censor AI"
         }
     ],
     "NVDA": [
         {
-            "Open": 118.61000061035156,
-            "High": 121.87999725341797,
-            "Low": 118.1500015258789,
-            "Close": 121.66999816894531,
-            "Volume": 276742800,
-            "Dividends": 0.0,
-            "Stock Splits": 0.0,
-            "last_price": 121.66999816894531,
-            "Price": 121.5,
-            "MyVolume": 274061576.0,
+            "currentPrice": 121.5,
+            "currentVolume": 276742800.0,
             "Gap": 0.0,
-            "Float": 23413264000,
-            "RelativeVolume": 1.008827491634512
+            "floatShares": 23413264000,
+            "relativeVolume": 1.0109183422144072,
+            "News": "Fed meeting, Nike earnings, Nvidia's GTC: What to Watch"
         }
     ],
     "QBTS": [
         {
-            "Open": 7.699999809265137,
-            "High": 10.199999809265137,
-            "Low": 7.619999885559082,
-            "Close": 10.149999618530273,
-            "Volume": 260221400,
-            "Dividends": 0.0,
-            "Stock Splits": 0.0,
-            "last_price": 10.149999618530273,
-            "Price": 9.9598,
-            "MyVolume": 259528824.0,
+            "currentPrice": 9.9598,
+            "currentVolume": 260221400.0,
             "Gap": 0.0,
-            "Float": 241472404,
-            "RelativeVolume": 3.010475534912238
+            "floatShares": 220957321,
+            "relativeVolume": 2.9659298111523946,
+            "News": "Quantum Stocks Pick Up Speed in Front of AI Conference"
         }
     ]
 }

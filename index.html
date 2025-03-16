@@ -31,21 +31,11 @@
             <tr>
                 <th>Stock</th>
                 <th>Price</th>
-                <th>Open</th>
-                <th>High</th>
-                <th>Low</th>
-                <th>Close</th>
             	<!-- TODO: work on formatting... add M for million, etc... -->
                 <th>Volume</th>
-                <th>MyVolume</th>
                 <th>GAP</th>
                 <th>FLOAT - TODO</th>
                 <th>RELATIVE VOLUME (DAY) - TODO</th>
-                <th>CURRENT PRICE - TODO</th>
-                <th>Change from close (%) - TODO</th>
-                <th>SHORT INTEREST - TODO</th>
-                <th>SHORT RATIO - TODO</th>
-                <th>RELATIVE VOLUME (5 min %) - TODO</th>
                 <th>News - TODO</th>
             </tr>
         </thead>
@@ -69,16 +59,12 @@
                     const tableRow = document.createElement('tr');
                     tableRow.innerHTML = `
                         <td>${symbol}</td>
-                        <td>${stockInfo.Price}</td>
-                        <td>${stockInfo.Open}</td>
-                        <td>${stockInfo.High}</td>
-                        <td>${stockInfo.Low}</td>
-                        <td>${stockInfo.Close}</td>
-                        <td>${stockInfo.Volume}</td>
-                        <td>${stockInfo.MyVolume}</td>
+                        <td>${stockInfo.currentPrice}</td>
+                        <td>${stockInfo.currentVolume}</td>
                         <td>${stockInfo.Gap}</td>
-                        <td>${stockInfo.Float}</td>
-                        <td>${stockInfo.RelativeVolume}</td>
+                        <td>${stockInfo.floatShares}</td>
+                        <td>${stockInfo.relativeVolume}</td>
+                        <td>${stockInfo.News}</td>
                     `;
                     tableBody.appendChild(tableRow);
                 }
