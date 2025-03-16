@@ -8,19 +8,24 @@ fetch('stock_data.json')
 	for (let symbol in data) {
 	    const stockInfo = data[symbol][0];  // Get the first entry for each stock symbol
 
-	    const currentPrice = toCurrency(stockInfo.currentPrice, 2);
+	    const currentPrice = toCurrency(stockInfo.currentPrice);
+	    const gap = formatRoundNumber(stockInfo.Gap);
+	    const currentVolume = formatLargeNumber(stockInfo.currentVolume);
+	    const floatShares = formatLargeNumber(stockInfo.floatShares);
+	    const shortInterest = formatLargeNumber(stockInfo.shortInterest);
+	    const relativeVolume = formatLargeNumber(stockInfo.relativeVolume);
 
 	    // Create a new row in the table for each stock
 	    const tableRow = document.createElement('tr');
 	    tableRow.innerHTML = `
 		<td>${symbol}</td>
-		<td>${currentPrice}</td>
-		<td>${stockInfo.currentVolume}</td>
-		<td>${stockInfo.Gap}</td>
+		<td>$${currentPrice}</td>
+		<td>${currentVolume}</td>
+		<td>${gap}</td>
 		<td>${stockInfo.changeFromClose}</td>
-		<td>${stockInfo.floatShares}</td>
-		<td>${stockInfo.shortInterest}</td>
-		<td>${stockInfo.relativeVolume}</td>
+		<td>${floatShares}</td>
+		<td>${shortInterest}</td>
+		<td>${relativeVolume}</td>
 		<td>${stockInfo.News}</td>
 	    `;
 	    tableBody.appendChild(tableRow);
