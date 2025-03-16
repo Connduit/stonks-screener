@@ -2,40 +2,48 @@
     "AAPL": [
         {
             "currentPrice": 213.35,
-            "currentVolume": 60034237.0,
-            "Gap": 0.0,
+            "currentVolume": 60107582.0,
+            "Gap": 0.7487635344619559,
             "floatShares": 14998187904,
-            "relativeVolume": 1.1210220646872777,
+            "relativeVolume": 1.0562607333829865,
+            "changeFromClose": 1.8170607356296813,
+            "shortInterest": 134441154,
             "News": "Trump isn't backing down from Big Tech fights \u2014 but is willing to bend on AI"
         }
     ],
     "MSFT": [
         {
             "currentPrice": 387.87,
-            "currentVolume": 19749136.0,
-            "Gap": 0.0,
+            "currentVolume": 19952846.0,
+            "Gap": 0.2666551719831592,
             "floatShares": 7423649000,
-            "relativeVolume": 0.8583736293998572,
+            "relativeVolume": 0.7609071645381135,
+            "changeFromClose": 2.584684327925595,
+            "shortInterest": 66334396,
             "News": "Microsoft (MSFT)\u2019s AI-Powered Azure & Copilot Drive Bullish Market Sentiment"
         }
     ],
     "GOOG": [
         {
             "currentPrice": 167.41,
-            "currentVolume": 18312223.0,
-            "Gap": 0.0,
+            "currentVolume": 18611094.0,
+            "Gap": 0.3551306556425703,
             "floatShares": 10917973500,
-            "relativeVolume": 0.9555003265838639,
+            "relativeVolume": 0.819100073218504,
+            "changeFromClose": 1.7543856398979412,
+            "shortInterest": 38855537,
             "News": "Trump isn't backing down from Big Tech fights \u2014 but is willing to bend on AI"
         }
     ],
     "NVDA": [
         {
             "currentPrice": 121.5,
-            "currentVolume": 274061576.0,
-            "Gap": 0.0,
+            "currentVolume": 277593455.0,
+            "Gap": 2.6215597259860552,
             "floatShares": 23413264000,
-            "relativeVolume": 1.008827491634512,
+            "relativeVolume": 0.7929241419320426,
+            "changeFromClose": 5.269074443165764,
+            "shortInterest": 241358114,
             "News": "13 things that should bother you about the stock market right now"
         }
     ],
@@ -43,9 +51,11 @@
         {
             "currentPrice": 9.9598,
             "currentVolume": 259528824.0,
-            "Gap": 0.0,
+            "Gap": 11.43270592326993,
             "floatShares": 241472404,
-            "relativeVolume": 3.010475534912238,
+            "relativeVolume": 4.863653219017601,
+            "changeFromClose": 46.888565016851466,
+            "shortInterest": 54448997,
             "News": "Quantum Stocks Pick Up Speed in Front of AI Conference"
         }
     ]
