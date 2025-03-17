@@ -68,12 +68,15 @@ def properRVOL(ticker):
     time_total = time_close - time_open
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
-    currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
+    currentCandleVolumeRatio = currentCandleVolume / (time_total.total_seconds() * timePassed.total_seconds())
+    #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
     print(stock_10d["Volume"])
 
-    average_volume = (stock_10d["Volume"].iloc[:-1].tail(10).mean())/(time_total * timePassed)
+    average_volume = (stock_10d["Volume"].iloc[:-1].tail(10).mean())/(time_total.total_seconds() * timePassed.total_seconds())
+    print(currentCandleVolumeRatio)
     print(average_volume)
 
+    
     return currentCandleVolumeRatio
     # return currentCandleVolumeRatio / previousCandleVolumeRatio
   
