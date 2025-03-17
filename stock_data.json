@@ -1,91 +1,91 @@
 {
     "AAPL": [
         {
-            "currentPrice": 211.0399932861328,
+            "currentPrice": 211.3699951171875,
             "currentVolume": -1,
             "Gap": -0.060895067435211975,
             "floatShares": 14998187904,
-            "relativeVolume": 0.31786856529197155,
+            "relativeVolume": 0.33328428683423267,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": -1.147600423435138,
+            "changeFromClose": -0.9930255850054045,
             "shortInterest": 134441154,
             "News": "Are Nvidia and Tesla deeply oversold screaming buys?"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 386.7749938964844,
+            "currentPrice": 386.94000244140625,
             "currentVolume": -1,
             "Gap": -0.46067751599981593,
             "floatShares": 7423649000,
-            "relativeVolume": 0.2400162089264759,
+            "relativeVolume": 0.24889344759368126,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": -0.4593894567955883,
+            "changeFromClose": -0.4169227731537674,
             "shortInterest": 66334396,
             "News": "Nvidia GTC 2025: What to expect from Nvidia's biggest event of the year"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 166.35000610351562,
+            "currentPrice": 166.56179809570312,
             "currentVolume": -1,
             "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 0.2656438470057517,
+            "relativeVolume": 0.2796886722289523,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": -0.7576596173887207,
+            "changeFromClose": -0.6313071544624268,
             "shortInterest": 38855537,
             "News": "Nvidia GTC 2025: What to expect from Nvidia's biggest event of the year"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 119.23979949951172,
+            "currentPrice": 119.30500030517578,
             "currentVolume": -1,
             "Gap": 0.8777848356453946,
             "floatShares": 23413264000,
-            "relativeVolume": 0.3642190397821782,
+            "relativeVolume": 0.37433977345949215,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": -1.9973688715431166,
+            "changeFromClose": -1.9396734165102685,
             "shortInterest": 241358114,
             "News": "Nvidia stock slides ahead of GTC as investors look to new Blackwell Ultra"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 10.954999923706055,
+            "currentPrice": 11.134699821472168,
             "currentVolume": -1,
             "Gap": 7.487687265468927,
             "floatShares": 241472404,
-            "relativeVolume": 1.730207911984469,
+            "relativeVolume": 1.7940447596563822,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": 7.931037787490536,
+            "changeFromClose": 9.61773537387699,
             "shortInterest": 54448997,
             "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "RDUS": [
         {
-            "currentPrice": 28.739999771118164,
+            "currentPrice": 28.695100784301758,
             "currentVolume": -1,
             "Gap": 1.330459713552031,
             "floatShares": 26193798,
-            "relativeVolume": 1.1845120884181441,
+            "relativeVolume": 1.2333594289661525,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": 3.3441219814286924,
+            "changeFromClose": 3.1826729067122694,
             "shortInterest": 601722,
             "News": "The past three years for Radius Recycling (NASDAQ:RDUS) investors has not been profitable"
         }
     ],
     "NAOV": [
         {
-            "currentPrice": 3.020699977874756,
+            "currentPrice": 2.9899001121520996,
             "currentVolume": -1,
             "Gap": 74.97732267618899,
             "floatShares": 336518,
-            "relativeVolume": 402.0658666946133,
+            "relativeVolume": 405.2360197023685,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": 36.9310904407231,
+            "changeFromClose": 35.53490438129246,
             "shortInterest": 24325,
             "News": "Transforming catheter care: NanoVibronix completes successful UroShield US trial"
         }
