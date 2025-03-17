@@ -27,6 +27,7 @@ fetch('stock_data.json')
 		<td>${floatShares}</td>
 		<td>${shortInterest}</td>
 		<td>${relativeVolume}</td>
+		<td>${stockInfo.relativeVolumePercent}</td>
 		<td>${stockInfo.News}</td>
 	    `;
 	    tableBody.appendChild(tableRow);
