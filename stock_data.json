@@ -1,78 +1,78 @@
 {
     "AAPL": [
         {
-            "currentPrice": 214.26980590820312,
+            "currentPrice": 214.0,
             "currentVolume": 0.0,
             "Gap": -0.060895067435211975,
             "floatShares": 14998187904,
-            "relativeVolume": 0.5870865592598468,
-            "relativeVolumePercent": 180.9308453634243,
-            "changeFromClose": 0.365356109994503,
+            "relativeVolume": 0.8366282391368329,
+            "relativeVolumePercent": 14.666441988702658,
+            "changeFromClose": 0.23888448813228752,
             "shortInterest": 134441154,
             "News": "Are Nvidia and Tesla deeply oversold screaming buys?"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 391.05999755859375,
+            "currentPrice": 388.49,
             "currentVolume": 0.0,
             "Gap": -0.46067751599981593,
             "floatShares": 7423649000,
-            "relativeVolume": 0.4805128221604459,
-            "relativeVolumePercent": 184.02992830780977,
-            "changeFromClose": 0.6434012805507616,
+            "relativeVolume": 0.8628521606145577,
+            "relativeVolumePercent": 11.934833581810544,
+            "changeFromClose": 0.03603424164022088,
             "shortInterest": 66334396,
             "News": "Elon Musk and Sam Altman finally agree on something: When their courtroom showdown should start"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 167.25999450683594,
+            "currentPrice": 166.25,
             "currentVolume": 0.0,
             "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 0.5211821380203392,
-            "relativeVolumePercent": 231.4145982209641,
-            "changeFromClose": -0.20880017594671493,
+            "relativeVolume": 0.8240632491536174,
+            "relativeVolumePercent": 16.777784665826328,
+            "changeFromClose": -0.6264096310435256,
             "shortInterest": 38855537,
             "News": "Nvidia GTC 2025: What to expect from Nvidia's biggest event of the year"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 119.93990325927734,
+            "currentPrice": 119.51,
             "currentVolume": 0.0,
-            "Gap": 2.6215597259860552,
+            "Gap": 0.8794277232900642,
             "floatShares": 23413264000,
-            "relativeVolume": 0.8031712473368413,
-            "relativeVolumePercent": 227.87499875114202,
-            "changeFromClose": 5.269074443165764,
+            "relativeVolume": 0.7445742584721772,
+            "relativeVolumePercent": 26.980650115606792,
+            "changeFromClose": -1.7588554465801285,
             "shortInterest": 241358114,
-            "News": "Is Nvidia stock washed out yet on the charts?"
+            "News": "Nvidia stock slides ahead of GTC as investors look to new Blackwell Ultra"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 11.478599548339844,
+            "currentPrice": 11.45,
             "currentVolume": 0.0,
             "Gap": 7.487687265468927,
             "floatShares": 241472404,
-            "relativeVolume": 2.6623702467845862,
-            "relativeVolumePercent": 549.6022073770145,
-            "changeFromClose": 13.024635992365344,
+            "relativeVolume": 2.765152216557396,
+            "relativeVolumePercent": 54.41146129334881,
+            "changeFromClose": 10.147790397598582,
             "shortInterest": 54448997,
             "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 1.559999942779541,
+            "currentPrice": 1.57,
             "currentVolume": 0.0,
             "Gap": 55.55555392031153,
             "floatShares": 6559425,
-            "relativeVolume": 214.71422553269431,
-            "relativeVolumePercent": 274.6973252858624,
-            "changeFromClose": 92.59258496145382,
+            "relativeVolume": 217.46117589596435,
+            "relativeVolumePercent": 108.69194606534136,
+            "changeFromClose": 98.76543327977501,
             "shortInterest": 33075,
             "News": "No News"
         }
