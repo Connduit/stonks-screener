@@ -62,28 +62,32 @@ def properRVOL(ticker):
     
     time_close = "20:00" 
     currentTime = datetime.datetime.now()
-    time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 20, 0) # 8PM
+    time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
     time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
     timePassed = time_close - currentTime
     time_total = time_close - time_open
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
-    currentCandleVolumeRatio = currentCandleVolume / (time_total.total_seconds() * timePassed.total_seconds())
+ 
+    currentCandleVolumeRatio = currentCandleVolume / (timePassed.total_seconds() * 1000) # x1000 to convert to ms
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
+    res = currentCandleVolumeRatio * time_total
     print(stock_10d["Volume"])
 
     average_volume = (stock_10d["Volume"].iloc[:-1].tail(10).mean())/(time_total.total_seconds() * timePassed.total_seconds())
-    print(currentCandleVolumeRatio)
-    print(average_volume)
+    print(f"currentCandleVolume = {currentCandleVolume}")
+    print(f"currentCandleVolumeRatio = {currentCandleVolume}")
+    print(f"average_volume = {average_volume}")
 
     
-    return currentCandleVolumeRatio
+    return res
+    #return currentCandleVolumeRatio
     # return currentCandleVolumeRatio / previousCandleVolumeRatio
   
     
     #close_time = stock_10d.iloc[-1].name + datetime.timedelta(days=1)
     
-    return -10
+    #return -10
     #return currVol / pastVol
 
 # TODO: rename function to getColumnData?
