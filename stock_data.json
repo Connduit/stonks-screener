@@ -1,80 +1,93 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.35,
-            "currentVolume": 60107582.0,
-            "Gap": 0.7487635344619559,
+            "currentPrice": 211.0399932861328,
+            "currentVolume": -1,
+            "Gap": -0.060895067435211975,
             "floatShares": 14998187904,
-            "relativeVolume": 1.0562607333829865,
-            "relativeVolumePercent": -576.5991759484269,
-            "changeFromClose": 1.8170607356296813,
+            "relativeVolume": 0.31786856529197155,
+            "relativeVolumePercent": 100.0,
+            "changeFromClose": -1.147600423435138,
             "shortInterest": 134441154,
-            "News": "Trump isn't backing down from Big Tech fights \u2014 but is willing to bend on AI"
+            "News": "Are Nvidia and Tesla deeply oversold screaming buys?"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 387.87,
-            "currentVolume": 19952846.0,
-            "Gap": 0.2666551719831592,
+            "currentPrice": 386.7749938964844,
+            "currentVolume": -1,
+            "Gap": -0.46067751599981593,
             "floatShares": 7423649000,
-            "relativeVolume": 0.7609071645381135,
-            "relativeVolumePercent": -620.6446595579432,
-            "changeFromClose": 2.584684327925595,
+            "relativeVolume": 0.2400162089264759,
+            "relativeVolumePercent": 100.0,
+            "changeFromClose": -0.4593894567955883,
             "shortInterest": 66334396,
-            "News": "Can This Unstoppable Stock Join Apple, Microsoft, Nvidia, Amazon, Alphabet, and Meta Platforms in the $1 Trillion Club by 2035?"
+            "News": "Nvidia GTC 2025: What to expect from Nvidia's biggest event of the year"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 167.41,
-            "currentVolume": 18611094.0,
-            "Gap": 0.3551306556425703,
+            "currentPrice": 166.35000610351562,
+            "currentVolume": -1,
+            "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 0.819100073218504,
-            "relativeVolumePercent": -786.4110136367584,
-            "changeFromClose": 1.7543856398979412,
+            "relativeVolume": 0.2656438470057517,
+            "relativeVolumePercent": 100.0,
+            "changeFromClose": -0.7576596173887207,
             "shortInterest": 38855537,
-            "News": "People are using Google's new AI model to remove watermarks from images"
+            "News": "Nvidia GTC 2025: What to expect from Nvidia's biggest event of the year"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 121.5,
-            "currentVolume": 277593455.0,
-            "Gap": 2.6215597259860552,
+            "currentPrice": 119.23979949951172,
+            "currentVolume": -1,
+            "Gap": 0.8777848356453946,
             "floatShares": 23413264000,
-            "relativeVolume": 0.7929241419320426,
-            "relativeVolumePercent": -419.4457826668578,
-            "changeFromClose": 5.269074443165764,
+            "relativeVolume": 0.3642190397821782,
+            "relativeVolumePercent": 100.0,
+            "changeFromClose": -1.9973688715431166,
             "shortInterest": 241358114,
-            "News": "13 things that should bother you about the stock market right now"
+            "News": "Nvidia stock slides ahead of GTC as investors look to new Blackwell Ultra"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 9.9598,
-            "currentVolume": 259528824.0,
-            "Gap": 11.43270592326993,
+            "currentPrice": 10.954999923706055,
+            "currentVolume": -1,
+            "Gap": 7.487687265468927,
             "floatShares": 241472404,
-            "relativeVolume": 4.863653219017601,
-            "relativeVolumePercent": -137.7022001781764,
-            "changeFromClose": 46.888565016851466,
+            "relativeVolume": 1.730207911984469,
+            "relativeVolumePercent": 100.0,
+            "changeFromClose": 7.931037787490536,
             "shortInterest": 54448997,
-            "News": "Quantum Stocks Pick Up Speed in Front of AI Conference"
+            "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "RDUS": [
         {
-            "currentPrice": 28.27,
-            "currentVolume": 8534952.0,
-            "Gap": 107.54026865410722,
+            "currentPrice": 28.739999771118164,
+            "currentVolume": -1,
+            "Gap": 1.330459713552031,
             "floatShares": 26193798,
-            "relativeVolume": 23.170585836618187,
-            "relativeVolumePercent": -578.412797850846,
-            "changeFromClose": 103.5871140306857,
+            "relativeVolume": 1.1845120884181441,
+            "relativeVolumePercent": 100.0,
+            "changeFromClose": 3.3441219814286924,
             "shortInterest": 601722,
             "News": "The past three years for Radius Recycling (NASDAQ:RDUS) investors has not been profitable"
+        }
+    ],
+    "NAOV": [
+        {
+            "currentPrice": 3.020699977874756,
+            "currentVolume": -1,
+            "Gap": 74.97732267618899,
+            "floatShares": 336518,
+            "relativeVolume": 402.0658666946133,
+            "relativeVolumePercent": 100.0,
+            "changeFromClose": 36.9310904407231,
+            "shortInterest": 24325,
+            "News": "Transforming catheter care: NanoVibronix completes successful UroShield US trial"
         }
     ]
 }
