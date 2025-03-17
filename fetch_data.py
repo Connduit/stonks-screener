@@ -83,7 +83,9 @@ def properRVOL5M(ticker):
     print(f"final = {res/average_volume}")
 
     reg5mRVOL = res/average_volume
+    print(f"reg5mRVOL = {reg5mRVOL}")
     volumeInPast5mins = res
+    print(f"volumeInPast5mins = {volumeInPast5mins}")
 
     print(f"final5mins = {reg5mRVOL/volumeInPast5mins}")
     
