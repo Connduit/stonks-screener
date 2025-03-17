@@ -1,91 +1,91 @@
 {
     "AAPL": [
         {
-            "currentPrice": 214.00999450683594,
+            "currentPrice": 214.5399932861328,
             "currentVolume": 0.0,
             "Gap": -0.060895067435211975,
             "floatShares": 14998187904,
-            "relativeVolume": 0.4531100487672826,
-            "relativeVolumePercent": 100.0,
-            "changeFromClose": 0.24356597512407907,
+            "relativeVolume": 0.47450894772175983,
+            "relativeVolumePercent": NaN,
+            "changeFromClose": 0.49182058454833405,
             "shortInterest": 134441154,
             "News": "Are Nvidia and Tesla deeply oversold screaming buys?"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 390.7200012207031,
+            "currentPrice": 391.7699890136719,
             "currentVolume": 0.0,
             "Gap": -0.46067751599981593,
             "floatShares": 7423649000,
-            "relativeVolume": 0.35207973056876624,
-            "relativeVolumePercent": 100.0,
-            "changeFromClose": 0.5558996488782025,
+            "relativeVolume": 0.3740066410011944,
+            "relativeVolumePercent": NaN,
+            "changeFromClose": 0.8261250451017073,
             "shortInterest": 66334396,
             "News": "Elon Musk and Sam Altman finally agree on something: When their courtroom showdown should start"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 167.17999267578125,
+            "currentPrice": 167.51499938964844,
             "currentVolume": 0.0,
             "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 0.38013324060279796,
-            "relativeVolumePercent": 100.0,
-            "changeFromClose": -0.2624999726903898,
+            "relativeVolume": 0.3961516673169867,
+            "relativeVolumePercent": NaN,
+            "changeFromClose": -0.0626391424636764,
             "shortInterest": 38855537,
             "News": "Nvidia GTC 2025: What to expect from Nvidia's biggest event of the year"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 119.45140075683594,
+            "currentPrice": 120.44000244140625,
             "currentVolume": 0.0,
             "Gap": 0.8777848356453946,
             "floatShares": 23413264000,
-            "relativeVolume": 0.5148681044932562,
-            "relativeVolumePercent": 100.0,
-            "changeFromClose": -1.8178677199541244,
+            "relativeVolume": 0.5430318048117914,
+            "relativeVolumePercent": NaN,
+            "changeFromClose": -1.0109277110624655,
             "shortInterest": 241358114,
             "News": "Is Nvidia stock washed out yet on the charts?"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 10.845000267028809,
+            "currentPrice": 11.182000160217285,
             "currentVolume": 0.0,
-            "Gap": 7.487687265468927,
+            "Gap": 11.43270592326993,
             "floatShares": 241472404,
-            "relativeVolume": 2.1267217581974256,
-            "relativeVolumePercent": 100.0,
-            "changeFromClose": 6.847297286885729,
+            "relativeVolume": 4.785872598933209,
+            "relativeVolumePercent": NaN,
+            "changeFromClose": 46.888565016851466,
             "shortInterest": 54448997,
             "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "RDUS": [
         {
-            "currentPrice": 28.84000015258789,
+            "currentPrice": 28.829999923706055,
             "currentVolume": 0.0,
             "Gap": 1.330459713552031,
             "floatShares": 26193798,
-            "relativeVolume": 1.88559152659452,
-            "relativeVolumePercent": 100.0,
-            "changeFromClose": 3.7037062438886483,
+            "relativeVolume": 1.940034998848722,
+            "relativeVolumePercent": 3.1058408442917746e-05,
+            "changeFromClose": 3.667747131792718,
             "shortInterest": 601722,
             "News": "The past three years for Radius Recycling (NASDAQ:RDUS) investors has not been profitable"
         }
     ],
     "QNTM": [
         {
-            "currentPrice": 7.904399871826172,
+            "currentPrice": 7.895400047302246,
             "currentVolume": 0.0,
             "Gap": 15.132929819222154,
             "floatShares": 1596221,
-            "relativeVolume": 63.44638039141175,
-            "relativeVolumePercent": 100.0,
-            "changeFromClose": 61.64417357146068,
+            "relativeVolume": 67.63297548926468,
+            "relativeVolumePercent": NaN,
+            "changeFromClose": 61.46012807514876,
             "shortInterest": 49138,
             "News": "Psychedelic: GH Research, Compass Pathways report earnings results"
         }
