@@ -63,7 +63,7 @@ def properRVOL(ticker):
     currentTime = datetime.datetime.now()
     time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
     time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
-    timePassed = time_close - currentTime
+    timePassed = currentTime - time_open
     time_total = time_close - time_open
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
