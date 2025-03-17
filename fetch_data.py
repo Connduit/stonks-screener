@@ -55,6 +55,40 @@ import os
 
 
 """
+def properRVOL5M(ticker):
+    # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
+    import datetime
+    today = datetime.date.today()
+    
+    currentTime = datetime.datetime.now()
+    time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
+    time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
+    #timePassed = (currentTime - time_open).total_seconds() * 1000
+    timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
+    time_total = (time_close - time_open).total_seconds() * 1000
+    stock_5m = ticker.history(period="1d", interval="5m")
+    currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
+ 
+    currentCandleVolumeRatio = currentCandleVolume / timePassed
+    #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
+    res = currentCandleVolumeRatio * time_total
+    print(stock_10d["Volume"])
+
+    average_volume = ((stock_10d["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    print(f"currentCandleVolume = {currentCandleVolume}")
+    print(f"timePassed = {timePassed}")
+    print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
+    print(f"res = {res}")
+    print(f"average_volume = {average_volume}")
+    print(f"final = {res/average_volume}")
+
+    reg5mRVOL = res/average_volume
+    volumeInPast5mins = res
+
+    print(f"final5mins = {reg5mVOL/volumeInPast5mins}")
+    
+    return reg5mVOL/volumeInPast5mins
+
 def properRVOL(ticker):
     # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
     import datetime
@@ -240,7 +274,7 @@ def getStuff(ticker):
 
 
 
-
+    relativeVolumePercent = properRVOL5M(ticker)
 
 
 
