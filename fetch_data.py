@@ -56,10 +56,31 @@ import os
 
 """
 def properRVOL(ticker):
+    # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
     import datetime
     today = datetime.date.today()
+    
+    time_close = "20:00" 
+    currentTime = datetime.datetime.now()
+    time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 20, 0) # 8PM
+    time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
+    timePassed = time_close - currentTime
+    time_total = time_close - time_open
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
+    currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
+    currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
     print(stock_10d["Volume"])
+
+    average_volume = (stock_10d["Volume"].iloc[:-1].tail(10).mean())/(time_total * timePassed)
+    print(average_volume)
+
+    return currentCandleVolumeRatio
+    # return currentCandleVolumeRatio / previousCandleVolumeRatio
+  
+    
+    #close_time = stock_10d.iloc[-1].name + datetime.timedelta(days=1)
+    
+    return -10
     #return currVol / pastVol
 
 # TODO: rename function to getColumnData?
@@ -123,7 +144,7 @@ def getStuff(ticker):
     avg = sum(stock_10d.head(10)["Volume"])/10
     relativeVolume = sum(stock_10d.tail(1)["Volume"])/avg # TODO: .tail() returns a series so we need to call sum to convert it back to float... there has to be a better way to do this tho
 
-    rvol_val = properRVOL(ticker)
+    relativeVolume = properRVOL(ticker)
     
     relativeVolumePercent = -1
     stock_now_5m = ticker.history(period="1d", interval="5m")
