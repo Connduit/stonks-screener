@@ -297,6 +297,8 @@ def getStuff(ticker):
     #prev_close = stock_10d.tail(3)["Close"].head(2).iloc[1]
     prev_close = stock_10d.tail(2)["Close"].iloc[0]
     now_open = stock_10d.tail(2)["Open"].iloc[-1]
+    prev_close = stock_10d["Close"].iloc[-2]
+    now_open = stock_10d["Open"].iloc[-1]
 
     #gap = (now_open - prev_close)/prev_close
     # TODO: add premarket gap (preday close to current price (if we're in premarket)) or regular gap if market is already open
