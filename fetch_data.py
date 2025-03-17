@@ -71,6 +71,11 @@ def properRVOL5M(ticker):
     print(stock_5m["Volume"])
     # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
     currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
+
+    if (currentCandleVolume == 0):
+        currentCandleVolume = stock_5m["Volume"].iloc[-2]
+        timePassed = (time_close - time_open).total_seconds() * 1000
+        time_total = timePassed
  
     currentCandleVolumeRatio = currentCandleVolume / timePassed
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
