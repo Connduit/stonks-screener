@@ -71,7 +71,7 @@ def properRVOL(ticker):
  
     currentCandleVolumeRatio = currentCandleVolume / (timePassed.total_seconds() * 1000) # x1000 to convert to ms
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
-    res = currentCandleVolumeRatio * time_total
+    res = currentCandleVolumeRatio * time_total.total_seconds() * 1000 # x1000 to convert to ms
     print(stock_10d["Volume"])
 
     average_volume = (stock_10d["Volume"].iloc[:-1].tail(10).mean())/(time_total.total_seconds() * timePassed.total_seconds())
