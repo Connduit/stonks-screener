@@ -1,9 +1,9 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.81,
+            "currentPrice": 213.8086,
             "currentVolume": 47841607.0,
-            "Gap": -0.08431679701093846,
+            "Gap": -0.060895067435211975,
             "floatShares": 14998187904,
             "relativeVolume": 0.8366282391368329,
             "relativeVolumePercent": 14.666441988702658,
@@ -14,7 +14,7 @@
     ],
     "MSFT": [
         {
-            "currentPrice": 388.96,
+            "currentPrice": 388.98,
             "currentVolume": 21484898.0,
             "Gap": -0.47868678280038834,
             "floatShares": 7423649000,
@@ -27,7 +27,7 @@
     ],
     "GOOG": [
         {
-            "currentPrice": 166.4694,
+            "currentPrice": 166.54,
             "currentVolume": 17761439.0,
             "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
@@ -40,7 +40,7 @@
     ],
     "NVDA": [
         {
-            "currentPrice": 119.6,
+            "currentPrice": 119.6701,
             "currentVolume": 252270022.0,
             "Gap": 0.8794277232900642,
             "floatShares": 23413264000,
@@ -53,7 +53,7 @@
     ],
     "QBTS": [
         {
-            "currentPrice": 11.26,
+            "currentPrice": 11.3,
             "currentVolume": 207269395.0,
             "Gap": 7.487687265468927,
             "floatShares": 241472404,
@@ -66,7 +66,7 @@
     ],
     "ANTE": [
         {
-            "currentPrice": 1.38,
+            "currentPrice": 1.32,
             "currentVolume": 106853898.0,
             "Gap": 55.55555392031153,
             "floatShares": 6559425,
