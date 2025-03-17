@@ -60,7 +60,6 @@ def properRVOL(ticker):
     import datetime
     today = datetime.date.today()
     
-    time_close = "20:00" 
     currentTime = datetime.datetime.now()
     time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
     time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
@@ -76,7 +75,7 @@ def properRVOL(ticker):
 
     average_volume = (stock_10d["Volume"].iloc[:-1].tail(10).mean())/(time_total.total_seconds() * timePassed.total_seconds())
     print(f"currentCandleVolume = {currentCandleVolume}")
-    print(f"currentCandleVolumeRatio = {currentCandleVolume}")
+    print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
     print(f"res = {res}")
     print(f"average_volume = {average_volume}")
 
