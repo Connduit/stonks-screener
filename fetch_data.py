@@ -67,6 +67,7 @@ def properRVOL5M(ticker):
     timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_5m = ticker.history(period="1d", interval="5m")
+    print(stock_5m["Volume"])
     currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
  
     currentCandleVolumeRatio = currentCandleVolume / timePassed
@@ -275,7 +276,7 @@ def getStuff(ticker):
     shortInterest = ticker.get_info()["sharesShort"]
 
 
-
+    print()
     relativeVolumePercent = properRVOL5M(ticker)
 
 
