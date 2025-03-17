@@ -63,24 +63,25 @@ def properRVOL(ticker):
     currentTime = datetime.datetime.now()
     time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
     time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
-    timePassed = currentTime - time_open
-    time_total = time_close - time_open
+    timePassed = (currentTime - time_open).total_seconds() * 1000
+    time_total = (time_close - time_open).total_seconds() * 1000
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
  
-    currentCandleVolumeRatio = currentCandleVolume / (timePassed.total_seconds() * 1000) # x1000 to convert to ms
+    currentCandleVolumeRatio = currentCandleVolume / timePassed
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
-    res = currentCandleVolumeRatio * time_total.total_seconds() * 1000 # x1000 to convert to ms
+    res = currentCandleVolumeRatio * time_total
     print(stock_10d["Volume"])
 
-    average_volume = (stock_10d["Volume"].iloc[:-1].tail(10).mean())/(time_total.total_seconds() * timePassed.total_seconds())
+    average_volume = ((stock_10d["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
     print(f"currentCandleVolume = {currentCandleVolume}")
     print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
     print(f"res = {res}")
     print(f"average_volume = {average_volume}")
+    print(f"final = {res/average_volume}")
 
     
-    return res
+    return res/average_volume
     #return currentCandleVolumeRatio
     # return currentCandleVolumeRatio / previousCandleVolumeRatio
   
