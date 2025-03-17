@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - from_work
 
 jobs:
   stock-screener:
