@@ -76,6 +76,7 @@ def properRVOL(ticker):
 
     average_volume = ((stock_10d["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
     print(f"currentCandleVolume = {currentCandleVolume}")
+    print(f"timePassed = {timePassed}")
     print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
     print(f"res = {res}")
     print(f"average_volume = {average_volume}")
