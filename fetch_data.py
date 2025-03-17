@@ -56,9 +56,11 @@ import os
 
 """
 def properRVOL(ticker):
-      stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
-      print(stock_10d)
-      return currVol / pastVol
+    import datetime
+    today = datetime.date.today()
+    stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
+    print(stock_10d)
+    return currVol / pastVol
 
 # TODO: rename function to getColumnData?
 #def getStuff():
