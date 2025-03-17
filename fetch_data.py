@@ -276,6 +276,7 @@ def getStuff(ticker):
     now_open = stock_10d.tail(2)["Open"].iloc[-1]
 
     #gap = (now_open - prev_close)/prev_close
+    # TODO: add premarket gap (preday close to current price (if we're in premarket)) or regular gap if market is already open
     gap = (now_open - prev_close)/prev_close*100 # convert to percentage
 
     now_close = stock_10d.tail(2)["Close"].iloc[-1]
@@ -321,35 +322,8 @@ def getStuff(ticker):
     #print(f"Relative Volume (RVOL): {last_volume / d['Avg_5m_Vol'].iloc[-1]:.2f}")
     """
 
-    """
-    avg10d = (
-                sum(ticker.history(start="2025-03-13", end="2025-03-14", interval="1m").between_time("15:55","16:00")["Volume"]) + 
-                sum(ticker.history(start="2025-03-12", end="2025-03-13", interval="1m").between_time("15:55","16:00")["Volume"]) +
-                sum(ticker.history(start="2025-03-11", end="2025-03-12", interval="1m").between_time("15:55","16:00")["Volume"]) +
-                sum(ticker.history(start="2025-03-10", end="2025-03-11", interval="1m").between_time("15:55","16:00")["Volume"]) +
-                sum(ticker.history(start="2025-03-07", end="2025-03-08", interval="1m").between_time("15:55","16:00")["Volume"]) +
-                sum(ticker.history(start="2025-03-06", end="2025-03-07", interval="1m").between_time("15:55","16:00")["Volume"]) +
-                sum(ticker.history(start="2025-03-05", end="2025-03-06", interval="1m").between_time("15:55","16:00")["Volume"]) +
-                sum(ticker.history(start="2025-03-04", end="2025-03-05", interval="1m").between_time("15:55","16:00")["Volume"]) +
-                sum(ticker.history(start="2025-03-03", end="2025-03-04", interval="1m").between_time("15:55","16:00")["Volume"]) + 
-                sum(ticker.history(start="2025-02-28", end="2025-03-01", interval="1m").between_time("15:55","16:00")["Volume"])
-                #ticker.history(start="2025-03-04", end="2025-03-05", interval="1m").between_time("15:55","16:00")
-            )/10
 
-    print(ticker.get_info()["volume"]/avg10d)
-    """
-    #print(stock_8d_1m)
-    #print()
-    #stock_
-    #print(stock_10d_1m.between_time("15::55", "16:00"))
 
-    """
-    stock_5d_5m = ticker.history(start=today-datetime.timedelta(days=6), end=yesterday, interval="5m")
-    print(stock_5d_5m)
-    avg_5d = sum(stock_5d_5m["Volume"])/5
-    relativeVolumePercent = ticker.get_info()["volume"]/avg_5d
-    print(relativeVolumePercent)
-    """
 
     """
     proper volume calculation: 
@@ -366,18 +340,15 @@ def getStuff(ticker):
 
 
     # TODO: for news i should just make another webpage to brings u to a link of news acticles
-    news = ticker.get_news()[0]["content"] # [0] means get first article
+    if not ticker.get_news():
+        news = "No News"
+    else:
+        news = ticker.get_news()[0]["content"] # [0] means get first article
     #news["title"]
     #news["pubDate"]
     #news["displayTime"]
     #news["canonicalUrl"]
     #news["canonicalUrl"]["url"]
-
-    #currentPrice = stock_now.tail(1)
-    #print(stock_data_yesterday)
-    #test = ticker.history(start=yesterday, interval="1m", prepost=True)
-    #print(test)
-    #ticker.history(start="", end="", interval="1m", prepost=True).to_dict(orient='records')
 
     # TODO: maybe i can just return as a dict so i dont have to call .to_dict(orient="records")... yea this def doesn't need to be a df
     finalDataFrame = {
@@ -404,8 +375,6 @@ data = {} # TODO: this is data for the most active stocks
 # https://yfinance-python.org/reference/index.html
 for symbol in symbols:
     ticker = yf.Ticker(symbol)
-    # has key value = currentPrice, volume, regularMarketVolume, floatShares, shortRatio, previousClose, open, regularMarketOpen, regularMarketPreviousClose, 
-    #print(ticker.info) 
     # TODO: note: 1d is the smallest period
     #data[symbol] = ticker.history(period="1d").to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
     res = getStuff(ticker)
