@@ -63,7 +63,8 @@ def properRVOL(ticker):
     currentTime = datetime.datetime.now()
     time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
     time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
-    timePassed = (currentTime - time_open).total_seconds() * 1000
+    #timePassed = (currentTime - time_open).total_seconds() * 1000
+    timePassed = min(currentTime, time_close) - time_open
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
@@ -131,7 +132,7 @@ def getStuff(ticker):
     currentPrice = stock_now.iloc[-1]["Close"]
 
     ##currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
-    currentVolume = -1 # TODO: temp
+    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: temp
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
     # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
