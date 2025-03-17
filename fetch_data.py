@@ -55,7 +55,43 @@ import os
 
 
 """
+def properRVOL(ticker):
+    # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
+    import datetime
+    today = datetime.date.today()
+    
+    currentTime = datetime.datetime.now()
+    time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
+    time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
+    #timePassed = (currentTime - time_open).total_seconds() * 1000
+    timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
+    time_total = (time_close - time_open).total_seconds() * 1000
+    stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
+    currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
+ 
+    currentCandleVolumeRatio = currentCandleVolume / timePassed
+    #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
+    res = currentCandleVolumeRatio * time_total
+    print(stock_10d["Volume"])
 
+    average_volume = ((stock_10d["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    print(f"currentCandleVolume = {currentCandleVolume}")
+    print(f"timePassed = {timePassed}")
+    print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
+    print(f"res = {res}")
+    print(f"average_volume = {average_volume}")
+    print(f"final = {res/average_volume}")
+
+    
+    return res/average_volume
+    #return currentCandleVolumeRatio
+    # return currentCandleVolumeRatio / previousCandleVolumeRatio
+  
+    
+    #close_time = stock_10d.iloc[-1].name + datetime.timedelta(days=1)
+    
+    #return -10
+    #return currVol / pastVol
 
 # TODO: rename function to getColumnData?
 #def getStuff():
@@ -80,7 +116,7 @@ def getStuff(ticker):
     yesterday = today - datetime.timedelta(days=1)
 
     # TODO: need to check what this does during trading hours... i think it will just return yesterday value if market is still open today
-    stock_data_yesterday = ticker.history(start=yesterday, interval="1d") 
+    ## stock_data_yesterday = ticker.history(start=yesterday, interval="1d") # TODO: this borks if the current trading day hasn't ended yet
 
     #print(stock_data_yesterday.between_time(datetime.time(1), datetime.time(10,59,59))) # this doesn't work unless dataframe includes date not just time
 
@@ -96,7 +132,8 @@ def getStuff(ticker):
     currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
     currentPrice = stock_now.iloc[-1]["Close"]
 
-    currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
+    ##currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
+    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: temp
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
     # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
@@ -117,18 +154,20 @@ def getStuff(ticker):
     avg = sum(stock_10d.head(10)["Volume"])/10
     relativeVolume = sum(stock_10d.tail(1)["Volume"])/avg # TODO: .tail() returns a series so we need to call sum to convert it back to float... there has to be a better way to do this tho
 
+    relativeVolume = properRVOL(ticker)
+    
     relativeVolumePercent = -1
     stock_now_5m = ticker.history(period="1d", interval="5m")
     x = stock_now_5m["Volume"].tail(11)
-    print(x)
-    print(x.head(10))
+    ##print(x)
+    ##print(x.head(10))
     avg5m = sum(x.head(10))/10
     #currentVolume5m = x.tail(1)
-    print(stock_now.between_time("15:55", "15:59")["Volume"])
+    ##print(stock_now.between_time("15:55", "15:59")["Volume"])
     #currentVolume5m = sum(stock_now.between_time("15:55", "15:59")["Volume"])/5 # average 1 min volume over the past 5 mins
     currentVolume5m = sum(stock_now.between_time("15:55", "15:59")["Volume"])
-    print(avg5m)
-    print(currentVolume5m)
+    ##print(avg5m)
+    ##print(currentVolume5m)
     #popped_row = stock_now_5m.iloc[-1] # TODO: this is correct.. like im pretty sure
     #stock_now_5m.drop(stock_now_5m.index[-1])
     #print(stock_now_5m)
@@ -141,9 +180,9 @@ def getStuff(ticker):
     #relativeVolumePercent = (av5m - popped_row["Volume"])/av5m*100 # convert to percentage
     relativeVolumePercent = (avg5m - currentVolume5m)/avg5m*100 # convert to percentage
     #relativeVolumePercent = (currentVolume5m - avg5m)/currentVolume5m*100 # convert to percentage
-    print(relativeVolumePercent)
-    print()
-    print()
+    ##print(relativeVolumePercent)
+    ##print()
+    ##print()
 
     my_data = ticker.history(interval="5m", period="1d")
     #relvol5m = currentVolume5m/5
@@ -157,7 +196,7 @@ def getStuff(ticker):
     cVol = my_data['Volume'].iloc[-1]
     relvol5m = cVol/average_volume
     # CORRECT STUFF: END
-    print(relvol5m)
+    ##print(relvol5m)
     # Latest 5-minute volume
 
     last_volume = sum(stock_now.between_time("15:55", "15:59")["Volume"]) # TODO: equivalent to stock_now_5m["Volume"].iloc[-1]
@@ -168,14 +207,14 @@ def getStuff(ticker):
 
 
     # Comparison
-    print(f"Latest 5-min Volume: {last_volume}")
-    print(f"Average 5-min Volume: {average_volume}")
-    print(f"Volume Surge: {last_volume / average_volume:.2f}x")
+    ##print(f"Latest 5-min Volume: {last_volume}")
+    ##print(f"Average 5-min Volume: {average_volume}")
+    ##print(f"Volume Surge: {last_volume / average_volume:.2f}x")
 
     #val = (test123 - last_volume)/last_volume
     val = (last_volume - test123)/test123
     #print(f"does this work: {last_volume/test123*100}")
-    print(f"does this work: {val}")
+    ##print(f"does this work: {val}")
 
     temp = stock_now_5m.between_time("09:30", "15:59")/last_volume
     #last_volume
@@ -314,7 +353,7 @@ def getStuff(ticker):
 
 
 # Fetch stock data
-symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS", "RDUS"] # TODO: fetch all stock symbols from file 
+symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS", "RDUS", "QNTM"] # TODO: fetch all stock symbols from file 
 data = {} # TODO: this is data for the most active stocks
 
 # https://yfinance-python.org/reference/index.html
