@@ -55,7 +55,10 @@ import os
 
 
 """
-
+def properRVOL(ticker):
+      stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
+      print(stock_10d)
+      return currVol / pastVol
 
 # TODO: rename function to getColumnData?
 #def getStuff():
@@ -117,18 +120,20 @@ def getStuff(ticker):
     avg = sum(stock_10d.head(10)["Volume"])/10
     relativeVolume = sum(stock_10d.tail(1)["Volume"])/avg # TODO: .tail() returns a series so we need to call sum to convert it back to float... there has to be a better way to do this tho
 
+    properRVOL = properRVOL(ticker)
+    
     relativeVolumePercent = -1
     stock_now_5m = ticker.history(period="1d", interval="5m")
     x = stock_now_5m["Volume"].tail(11)
-    print(x)
-    print(x.head(10))
+    ##print(x)
+    ##print(x.head(10))
     avg5m = sum(x.head(10))/10
     #currentVolume5m = x.tail(1)
-    print(stock_now.between_time("15:55", "15:59")["Volume"])
+    ##print(stock_now.between_time("15:55", "15:59")["Volume"])
     #currentVolume5m = sum(stock_now.between_time("15:55", "15:59")["Volume"])/5 # average 1 min volume over the past 5 mins
     currentVolume5m = sum(stock_now.between_time("15:55", "15:59")["Volume"])
-    print(avg5m)
-    print(currentVolume5m)
+    ##print(avg5m)
+    ##print(currentVolume5m)
     #popped_row = stock_now_5m.iloc[-1] # TODO: this is correct.. like im pretty sure
     #stock_now_5m.drop(stock_now_5m.index[-1])
     #print(stock_now_5m)
@@ -141,9 +146,9 @@ def getStuff(ticker):
     #relativeVolumePercent = (av5m - popped_row["Volume"])/av5m*100 # convert to percentage
     relativeVolumePercent = (avg5m - currentVolume5m)/avg5m*100 # convert to percentage
     #relativeVolumePercent = (currentVolume5m - avg5m)/currentVolume5m*100 # convert to percentage
-    print(relativeVolumePercent)
-    print()
-    print()
+    ##print(relativeVolumePercent)
+    ##print()
+    ##print()
 
     my_data = ticker.history(interval="5m", period="1d")
     #relvol5m = currentVolume5m/5
@@ -157,7 +162,7 @@ def getStuff(ticker):
     cVol = my_data['Volume'].iloc[-1]
     relvol5m = cVol/average_volume
     # CORRECT STUFF: END
-    print(relvol5m)
+    ##print(relvol5m)
     # Latest 5-minute volume
 
     last_volume = sum(stock_now.between_time("15:55", "15:59")["Volume"]) # TODO: equivalent to stock_now_5m["Volume"].iloc[-1]
@@ -168,14 +173,14 @@ def getStuff(ticker):
 
 
     # Comparison
-    print(f"Latest 5-min Volume: {last_volume}")
-    print(f"Average 5-min Volume: {average_volume}")
-    print(f"Volume Surge: {last_volume / average_volume:.2f}x")
+    ##print(f"Latest 5-min Volume: {last_volume}")
+    ##print(f"Average 5-min Volume: {average_volume}")
+    ##print(f"Volume Surge: {last_volume / average_volume:.2f}x")
 
     #val = (test123 - last_volume)/last_volume
     val = (last_volume - test123)/test123
     #print(f"does this work: {last_volume/test123*100}")
-    print(f"does this work: {val}")
+    ##print(f"does this work: {val}")
 
     temp = stock_now_5m.between_time("09:30", "15:59")/last_volume
     #last_volume
