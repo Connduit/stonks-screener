@@ -87,9 +87,9 @@ def properRVOL5M(ticker):
     print(f"volumeInPast5mins = {approximateCurrentVolume}")
 
     #print(f"final5mins = {reg5mRVOL/volumeInPast5mins}")
-    print(f"final5mins = {approximateCurrentVolume/average_volume}")
+    print(f"final5mins = {average_volume/approximateCurrentVolume}")
 
-    return (approximateCurrentVolume/average_volume)*100
+    return (average_volume/approximateCurrentVolume/)*100 # TODO: NOTE: im like 99% sure this is correct now
     #return reg5mRVOL/volumeInPast5mins
 
 def properRVOL(ticker):
