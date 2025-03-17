@@ -8,6 +8,8 @@
         - chatgpt formula:
 	        RV = (current volume of in-progress candle)/(average volume for time period)
 		     * (time elapsed)/(time remaining)
+	- yfinance sucks at getting news... maybe use alpaca-py? data/news might be delayed by 15 mins tho
+
 
 ### Where I Left Off
 
