@@ -248,7 +248,7 @@ def getStuff(ticker):
 
     # TODO: for some reason it looks like it's not looking at the 5 min interval
 
-    test123 = stock_now.between_time("09:30", "16:00")['Volume'].iloc[:-1].tail(10).mean()
+    #test123 = stock_now.between_time("09:30", "16:00")['Volume'].iloc[:-1].tail(10).mean()
 
 
     # Comparison
@@ -256,12 +256,8 @@ def getStuff(ticker):
     ##print(f"Average 5-min Volume: {average_volume}")
     ##print(f"Volume Surge: {last_volume / average_volume:.2f}x")
 
-    #val = (test123 - last_volume)/last_volume
-    val = (last_volume - test123)/test123
-    #print(f"does this work: {last_volume/test123*100}")
-    ##print(f"does this work: {val}")
+   
 
-    temp = stock_now_5m.between_time("09:30", "15:59")/last_volume
     #last_volume
 
     # AvgVol = ta.sma(volume[1],10) # ON 5-min interval
