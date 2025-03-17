@@ -55,6 +55,33 @@ import os
 
 
 """
+
+def getActiveVolume(ticker):
+    import datetime
+    today = datetime.date.today()
+    
+    currentTime = datetime.datetime.now()
+    # TODO: have this include pre/post market too?
+    time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
+    time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
+    #timePassed = (currentTime - time_open).total_seconds() * 1000
+    timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
+    time_total = (time_close - time_open).total_seconds() * 1000
+    stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
+    print(stock_10d["Volume"])
+    # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
+    currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
+
+    if (currentCandleVolume == 0):
+        currentCandleVolume = stock_10d["Volume"].iloc[-2]
+        timePassed = (time_close - time_open).total_seconds() * 1000
+        time_total = timePassed
+ 
+    currentCandleVolumeRatio = currentCandleVolume / timePassed
+    #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
+    approximateCurrentVolume = currentCandleVolumeRatio * time_total
+    return approximateCurrentVolume
+
 # TODO: merge/combine this function with properRVOL by adding addition params like "period", "interval", and other useful stuff?
 def properRVOL5M(ticker):
     # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
@@ -345,6 +372,8 @@ def getStuff(ticker):
     #news["displayTime"]
     #news["canonicalUrl"]
     #news["canonicalUrl"]["url"]
+
+    currentVolume = getActiveVolume(ticker)
 
     # TODO: maybe i can just return as a dict so i dont have to call .to_dict(orient="records")... yea this def doesn't need to be a df
     finalDataFrame = {
