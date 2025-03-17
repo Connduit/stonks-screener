@@ -1,26 +1,26 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.3000030517578,
+            "currentPrice": 213.5500030517578,
             "currentVolume": -1,
             "Gap": -0.060895067435211975,
             "floatShares": 14998187904,
-            "relativeVolume": 19069684.73133878,
+            "relativeVolume": 0.4330182326017687,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": -0.07494667571897097,
+            "changeFromClose": 0.02341458226734207,
             "shortInterest": 134441154,
             "News": "Are Nvidia and Tesla deeply oversold screaming buys?"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 390.1000061035156,
+            "currentPrice": 389.9800109863281,
             "currentVolume": -1,
             "Gap": -0.46067751599981593,
             "floatShares": 7423649000,
-            "relativeVolume": 6382261.505713577,
+            "relativeVolume": 0.33338998693165345,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": 0.39633738794473977,
+            "changeFromClose": 0.3654553831214293,
             "shortInterest": 66334396,
             "News": "Elon Musk and Sam Altman finally agree on something: When their courtroom showdown should start"
         }
@@ -31,7 +31,7 @@
             "currentVolume": -1,
             "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 6046969.44782006,
+            "relativeVolume": 0.36359039765717754,
             "relativeVolumePercent": 100.0,
             "changeFromClose": -0.22073447557901835,
             "shortInterest": 38855537,
@@ -40,52 +40,52 @@
     ],
     "NVDA": [
         {
-            "currentPrice": 119.53500366210938,
+            "currentPrice": 119.44499969482422,
             "currentVolume": -1,
             "Gap": 0.8777848356453946,
             "floatShares": 23413264000,
-            "relativeVolume": 129744346.76217602,
+            "relativeVolume": 0.4985661730475088,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": -1.754741956904925,
+            "changeFromClose": -1.828715794859768,
             "shortInterest": 241358114,
             "News": "Is Nvidia stock washed out yet on the charts?"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 11.0,
+            "currentPrice": 10.984999656677246,
             "currentVolume": -1,
             "Gap": 7.487687265468927,
             "floatShares": 241472404,
-            "relativeVolume": 121031405.41164842,
+            "relativeVolume": 2.0795335981583207,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": 8.374388309512145,
+            "changeFromClose": 8.226601670236134,
             "shortInterest": 54448997,
             "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "RDUS": [
         {
-            "currentPrice": 28.81999969482422,
+            "currentPrice": 28.809999465942383,
             "currentVolume": -1,
             "Gap": 1.330459713552031,
             "floatShares": 26193798,
-            "relativeVolume": 1483374.5604782924,
+            "relativeVolume": 1.785763757771126,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": 3.631788019696787,
+            "changeFromClose": 3.5958289076008567,
             "shortInterest": 601722,
             "News": "The past three years for Radius Recycling (NASDAQ:RDUS) investors has not been profitable"
         }
     ],
     "QNTM": [
         {
-            "currentPrice": 8.170000076293945,
+            "currentPrice": 8.399399757385254,
             "currentVolume": -1,
             "Gap": 15.132929819222154,
             "floatShares": 1596221,
-            "relativeVolume": 4696370.84568938,
+            "relativeVolume": 58.50422762682881,
             "relativeVolumePercent": 100.0,
-            "changeFromClose": 67.07567074364074,
+            "changeFromClose": 71.76687089404435,
             "shortInterest": 49138,
             "News": "Psychedelic: GH Research, Compass Pathways report earnings results"
         }
