@@ -55,6 +55,7 @@ import os
 
 
 """
+# TODO: merge/combine this function with properRVOL by adding addition params like "period", "interval", and other useful stuff?
 def properRVOL5M(ticker):
     # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
     import datetime
@@ -68,6 +69,7 @@ def properRVOL5M(ticker):
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_5m = ticker.history(period="1d", interval="5m")
     print(stock_5m["Volume"])
+    # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
     currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
  
     currentCandleVolumeRatio = currentCandleVolume / timePassed
@@ -104,6 +106,7 @@ def properRVOL(ticker):
     timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
+    # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
  
     currentCandleVolumeRatio = currentCandleVolume / timePassed
