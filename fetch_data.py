@@ -341,9 +341,9 @@ def getStuff(ticker):
 
     # TODO: for news i should just make another webpage to brings u to a link of news acticles
     if not ticker.get_news():
-        news = "No News"
+        news_title = "No News"
     else:
-        news = ticker.get_news()[0]["content"] # [0] means get first article
+        news_title = ticker.get_news()[0]["content"]["title"] # [0] means get first article
     #news["title"]
     #news["pubDate"]
     #news["displayTime"]
@@ -360,7 +360,7 @@ def getStuff(ticker):
             "relativeVolumePercent" : [relativeVolumePercent],
             "changeFromClose" : [changeFromClose],
             "shortInterest" : [shortInterest],
-            "News" : [news["title"]]
+            "News" : [news_title]
     }
 
     import pandas as pd
