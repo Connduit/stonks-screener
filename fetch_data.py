@@ -346,7 +346,7 @@ def getStuff(ticker):
 
 
 # Fetch stock data
-symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS", "RDUS", "NAOV"] # TODO: fetch all stock symbols from file 
+symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS", "RDUS", "WLDSW"] # TODO: fetch all stock symbols from file 
 data = {} # TODO: this is data for the most active stocks
 
 # https://yfinance-python.org/reference/index.html
