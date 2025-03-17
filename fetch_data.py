@@ -55,6 +55,50 @@ import os
 
 
 """
+# TODO: merge/combine this function with properRVOL by adding addition params like "period", "interval", and other useful stuff?
+def properRVOL5M(ticker):
+    # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
+    import datetime
+    today = datetime.date.today()
+    
+    currentTime = datetime.datetime.now()
+    time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
+    time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
+    #timePassed = (currentTime - time_open).total_seconds() * 1000
+    timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
+    time_total = (time_close - time_open).total_seconds() * 1000
+    stock_5m = ticker.history(period="1d", interval="5m")
+    print(stock_5m["Volume"])
+    # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
+    currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
+
+    if (currentCandleVolume == 0):
+        currentCandleVolume = stock_5m["Volume"].iloc[-2]
+        timePassed = (time_close - time_open).total_seconds() * 1000
+        time_total = timePassed
+ 
+    currentCandleVolumeRatio = currentCandleVolume / timePassed
+    #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
+    approximateCurrentVolume = currentCandleVolumeRatio * time_total
+
+    average_volume = ((stock_5m["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    print(f"currentCandleVolume = {currentCandleVolume}")
+    print(f"timePassed = {timePassed}")
+    print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
+    print(f"approximateCurrentVolume = {approximateCurrentVolume}")
+    print(f"average_volume = {average_volume}")
+    print(f"final = {approximateCurrentVolume/average_volume}")
+
+    #reg5mRVOL = res/average_volume
+    #print(f"reg5mRVOL = {reg5mRVOL}")
+    print(f"volumeInPast5mins = {approximateCurrentVolume}")
+
+    #print(f"final5mins = {reg5mRVOL/volumeInPast5mins}")
+    print(f"final5mins = {average_volume/approximateCurrentVolume}")
+
+    return (average_volume/approximateCurrentVolume)*100 # TODO: NOTE: im like 99% sure this is correct now
+    #return reg5mRVOL/volumeInPast5mins
+
 def properRVOL(ticker):
     # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
     import datetime
@@ -67,6 +111,7 @@ def properRVOL(ticker):
     timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
+    # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
  
     currentCandleVolumeRatio = currentCandleVolume / timePassed
@@ -239,8 +284,8 @@ def getStuff(ticker):
     shortInterest = ticker.get_info()["sharesShort"]
 
 
-
-
+    print()
+    relativeVolumePercent = properRVOL5M(ticker)
 
 
 
