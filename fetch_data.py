@@ -85,9 +85,9 @@ def properRVOL5M(ticker):
     reg5mRVOL = res/average_volume
     volumeInPast5mins = res
 
-    print(f"final5mins = {reg5mVOL/volumeInPast5mins}")
+    print(f"final5mins = {reg5mRVOL/volumeInPast5mins}")
     
-    return reg5mVOL/volumeInPast5mins
+    return reg5mRVOL/volumeInPast5mins
 
 def properRVOL(ticker):
     # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
