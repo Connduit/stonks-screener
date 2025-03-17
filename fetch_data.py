@@ -83,7 +83,7 @@ def getStuff(ticker):
     yesterday = today - datetime.timedelta(days=1)
 
     # TODO: need to check what this does during trading hours... i think it will just return yesterday value if market is still open today
-    stock_data_yesterday = ticker.history(start=yesterday, interval="1d") 
+    ## stock_data_yesterday = ticker.history(start=yesterday, interval="1d") # TODO: this borks if the current trading day hasn't ended yet
 
     #print(stock_data_yesterday.between_time(datetime.time(1), datetime.time(10,59,59))) # this doesn't work unless dataframe includes date not just time
 
@@ -99,7 +99,8 @@ def getStuff(ticker):
     currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
     currentPrice = stock_now.iloc[-1]["Close"]
 
-    currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
+    ##currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
+    currentVolume = -1 # TODO: temp
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
     # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
