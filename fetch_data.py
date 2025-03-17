@@ -120,7 +120,7 @@ def getStuff(ticker):
     avg = sum(stock_10d.head(10)["Volume"])/10
     relativeVolume = sum(stock_10d.tail(1)["Volume"])/avg # TODO: .tail() returns a series so we need to call sum to convert it back to float... there has to be a better way to do this tho
 
-    properRVOL = properRVOL(ticker)
+    rvol_val = properRVOL(ticker)
     
     relativeVolumePercent = -1
     stock_now_5m = ticker.history(period="1d", interval="5m")
