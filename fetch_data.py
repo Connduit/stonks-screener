@@ -207,10 +207,10 @@ def getStuff(ticker):
 
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")  # 14 = 10 trading days if there's no holidays... need to change to 17 days cuz weekend + holiday?
     """ Get Current Volume """
-    currentVolume = stock_10d["Volume"].iloc[-1] # TODO: if it is past 4pm, will this include post market volume?
-
-    print(f"currentVolume = {currentVolume}")
-    print(f"get_info() volume = {ticker.get_info()['volume']}")
+    #currentVolume = stock_10d["Volume"].iloc[-1] # TODO: if it is past 4pm, will this include post market volume?
+    currentVolume = ticker.get_info()["volume"] # TODO: this seems to get slightly more accurate/ up to date volume ?
+    #print(f"currentVolume = {currentVolume}")
+    #print(f"get_info() volume = {ticker.get_info()['volume']}")
 
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
