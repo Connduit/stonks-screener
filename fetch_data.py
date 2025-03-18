@@ -208,6 +208,7 @@ def getStuff(ticker):
 
     ##currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
     currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
+    cu
     #currentVolume = getActiveVolume(ticker)
 
     # TODO: this gap is wrong... should be prev_close - now_open
@@ -221,6 +222,8 @@ def getStuff(ticker):
     relativeVolume = ticker.get_info()["volume"]/ticker.get_info()["averageVolume"]
     #stock_10d = ticker.history(start=today-datetime.timedelta(days=15), interval="1d")  # 14 = 10 trading days if there's no holidays
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")  # 14 = 10 trading days if there's no holidays
+    print("stock_10d Stuff")
+    print(stock_10d["Volume"])
 
     #stock_10d = ticker.history(start=yesterday-datetime.timedelta(days=20), end="2025-03-14", interval="1d")  # 14 = 10 trading days if there's no holidays
     #stock_10d_download = yf.download("QBTS", period="11d", interval="1d")
@@ -366,7 +369,7 @@ def getStuff(ticker):
 
 
 # Fetch stock data
-symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS", "ANTE"] # TODO: fetch all stock symbols from file 
+symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS", "ANTE", "ADTX"] # TODO: fetch all stock symbols from file 
 data = {} # TODO: this is data for the most active stocks
 
 # https://yfinance-python.org/reference/index.html
