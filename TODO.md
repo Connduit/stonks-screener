@@ -5,6 +5,12 @@
     - right now there's no reason to have google sheets stuff if im making a json file to then upload to google sheets. maybe this will be more useful it im directly uploading to drive instead of making any json file.
     - RelativeVolume (TradingView) = volume/ta.sma(volume[1], 10)
         - meaning get the average of 10 volume not including the current day tho
+        - chatgpt formula:
+	        RV = (current volume of in-progress candle)/(average volume for time period)
+		     * (time elapsed)/(time remaining)
+	- yfinance sucks at getting news... maybe use alpaca-py? data/news might be delayed by 15 mins tho
+ 	- auto commit update yml run for 9am isn't working 
+
 
 ### Where I Left Off
 

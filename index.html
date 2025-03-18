@@ -4,24 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Data STUFF </title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+	<link rel="stylesheet", href="styles.css">
 </head>
 <body>
 
@@ -29,15 +12,16 @@
     <table id="stock-table">
         <thead>
             <tr>
-                <th>Stock</th>
-                <th>Price</th>
+				<th onclick="sortTable(0)">Stock</th>
+				<th onclick="sortTable(1)">Price</th>
             	<!-- TODO: work on formatting... add M for million, etc... -->
-                <th>Volume</th>
-                <th>Gap</th>
-                <th>Change From Close (%)</th>
-                <th>Float</th>
-                <th>Short Interest</th>
-                <th>Relative Volume (Daily)</th>
+				<th onclick="sortTable(2)">Volume</th>
+				<th onclick="sortTable(3)">Gap</th>
+				<th onclick="sortTable(4)">Change From Close (%)</th>
+				<th onclick="sortTable(5)">Float</th>
+				<th onclick="sortTable(6)">Short Interest</th>
+				<th onclick="sortTable(7)">Relative Volume (Daily)</th>
+				<th onclick="sortTable(8)">Relative Volume Percent (5min)</th>
                 <th>News - TODO</th>
             </tr>
         </thead>
@@ -46,6 +30,7 @@
         </tbody>
     </table>
 
+    <script src="sortTable.js"></script>
     <script src="formatNumber.js"></script>
     <script src="parseData.js"></script>
 </body>
