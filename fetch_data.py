@@ -105,7 +105,12 @@ def properRVOL5M(ticker):
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
     approximateCurrentVolume = currentCandleVolumeRatio * time_total
 
-    average_volume = ((stock_5m["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    print(f"approximateCurrentVolume = {approximateCurrentVolume}")
+
+    average_volume1 = ((stock_5m["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    print(f"average_volume1 = {average_volume1}")
+    average_volume = stock_5m["Volume"].iloc[:-1].tail(10).mean()
+    print(f"average_volume = {average_volume}")
     """
     print(f"currentCandleVolume = {currentCandleVolume}")
     print(f"timePassed = {timePassed}")
