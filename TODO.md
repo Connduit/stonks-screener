@@ -10,6 +10,7 @@
 		     * (time elapsed)/(time remaining)
 	- yfinance sucks at getting news... maybe use alpaca-py? data/news might be delayed by 15 mins tho
  	- auto commit update yml run for 9am isn't working 
+  	- I HAVE A FEELING RVOL5MIN uses RVOL at TIME...............
 
 
 ### Where I Left Off
