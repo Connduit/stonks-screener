@@ -2,10 +2,10 @@
     "AAPL": [
         {
             "currentPrice": 213.93,
-            "currentVolume": -55822180.728507884,
+            "currentVolume": -57837093.20058455,
             "Gap": -0.08431679701093846,
             "floatShares": 14998187904,
-            "relativeVolume": 0.8400769594343763,
+            "relativeVolume": 0.8400769594343764,
             "relativeVolumePercent": 14.666441988702658,
             "changeFromClose": 0.23888448813228752,
             "shortInterest": 134441154,
@@ -15,11 +15,11 @@
     "MSFT": [
         {
             "currentPrice": 388.805,
-            "currentVolume": -26101801.389261764,
+            "currentVolume": -27043750.101781238,
             "Gap": -0.47868678280038834,
             "floatShares": 7423649000,
             "relativeVolume": 0.9020645155590609,
-            "relativeVolumePercent": 11.934833581810544,
+            "relativeVolumePercent": 11.934833581810548,
             "changeFromClose": 0.03603424164022088,
             "shortInterest": 66334396,
             "News": "Elon Musk and Sam Altman finally agree on something: When their courtroom showdown should start"
@@ -28,7 +28,7 @@
     "GOOG": [
         {
             "currentPrice": 166.64,
-            "currentVolume": -20706980.736232422,
+            "currentVolume": -21454319.535823014,
             "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
             "relativeVolume": 0.8267150878368253,
@@ -41,11 +41,11 @@
     "NVDA": [
         {
             "currentPrice": 119.51,
-            "currentVolume": -296054693.0264919,
+            "currentVolume": -306740932.30805343,
             "Gap": 0.8794277232900642,
             "floatShares": 23413264000,
-            "relativeVolume": 0.7540658460408473,
-            "relativeVolumePercent": 26.980650115606792,
+            "relativeVolume": 0.7540658460408471,
+            "relativeVolumePercent": 26.980650115606785,
             "changeFromClose": -1.7588554465801285,
             "shortInterest": 241358114,
             "News": "Fed meeting, US housing starts, Nvidia GTC: What to Watch"
@@ -54,7 +54,7 @@
     "QBTS": [
         {
             "currentPrice": 10.8899,
-            "currentVolume": -242817326.40553063,
+            "currentVolume": -251582457.04879862,
             "Gap": 7.487687265468927,
             "floatShares": 241472404,
             "relativeVolume": 2.7838308057698558,
@@ -67,11 +67,11 @@
     "ANTE": [
         {
             "currentPrice": 1.18,
-            "currentVolume": -126953181.02412346,
+            "currentVolume": -131535847.66902448,
             "Gap": 55.55555392031153,
             "floatShares": 6559425,
-            "relativeVolume": 221.9348285389241,
-            "relativeVolumePercent": 108.69194606534138,
+            "relativeVolume": 221.93482853892417,
+            "relativeVolumePercent": 108.69194606534136,
             "changeFromClose": 98.76543327977501,
             "shortInterest": 33075,
             "News": "No News"
