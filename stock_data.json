@@ -1,80 +1,93 @@
 {
     "AAPL": [
         {
-            "currentPrice": 212.16000366210938,
-            "currentVolume": 33869.0,
+            "currentPrice": 212.58250427246094,
+            "currentVolume": 0.0,
             "Gap": 0.06542027553665304,
             "floatShares": 14998187904,
-            "relativeVolume": 0.45081112084009545,
-            "relativeVolumePercent": 164.26138831577805,
-            "changeFromClose": -0.8621501031323013,
+            "relativeVolume": 0.4641693634770827,
+            "relativeVolumePercent": 104.49693807716582,
+            "changeFromClose": -0.6623811810930198,
             "shortInterest": 134441154,
             "News": "Apple stock rout shaves nearly $700 billion from market cap since record close"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 383.05999755859375,
+            "currentPrice": 383.8540954589844,
             "currentVolume": 0.0,
             "Gap": -0.3653237414816547,
             "floatShares": 7423649000,
-            "relativeVolume": 0.36630874066013147,
-            "relativeVolumePercent": 183.7409429692528,
-            "changeFromClose": -1.4509942040942074,
+            "relativeVolume": 0.3798832732743127,
+            "relativeVolumePercent": 79.17155627653332,
+            "changeFromClose": -1.24669837814819,
             "shortInterest": 66334396,
-            "News": "Google is testing Trump's new antitrust cops with $32 billion Wiz deal"
+            "News": "Nvidia debuts next-generation Vera Rubin superchip at GTC 2025"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 162.375,
+            "currentPrice": 162.75999450683594,
             "currentVolume": 0.0,
-            "Gap": -0.3662127535146421,
+            "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 0.8134274498784236,
-            "relativeVolumePercent": 100.43535217232855,
-            "changeFromClose": -2.5184649935527794,
+            "relativeVolume": 0.8267150878368253,
+            "relativeVolumePercent": 90.39517052354023,
+            "changeFromClose": -0.6264096310435256,
             "shortInterest": 38855537,
-            "News": "Google is testing Trump's new antitrust cops with $32 billion Wiz deal"
+            "News": "Nvidia debuts next-generation Vera Rubin superchip at GTC 2025"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 116.7699966430664,
+            "currentPrice": 117.54000091552734,
             "currentVolume": 0.0,
-            "Gap": -1.238179321219406,
+            "Gap": 0.8794277232900642,
             "floatShares": 23413264000,
-            "relativeVolume": 0.6626880728808328,
-            "relativeVolumePercent": 139.53573517407608,
-            "changeFromClose": -2.3090455654790096,
+            "relativeVolume": 0.7540658460408473,
+            "relativeVolumePercent": 140.33499141366357,
+            "changeFromClose": -1.7588554465801285,
             "shortInterest": 241358114,
-            "News": "Nvidia, GM partner on next-gen AI for self driving cars and factory robotics"
+            "News": "Nvidia debuts next-generation Vera Rubin superchip at GTC 2025"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 10.760000228881836,
+            "currentPrice": 10.961600303649902,
             "currentVolume": 0.0,
             "Gap": -9.83900135459282,
             "floatShares": 241472404,
-            "relativeVolume": 1.4741496866353863,
-            "relativeVolumePercent": 91.87160581973265,
-            "changeFromClose": -3.756708987740423,
+            "relativeVolume": 1.5104103140065896,
+            "relativeVolumePercent": 197.74321471541296,
+            "changeFromClose": -1.9534883324177605,
             "shortInterest": 54448997,
             "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.6700999736785889,
+            "currentPrice": 0.6991000175476074,
             "currentVolume": 0.0,
             "Gap": -27.950313272384562,
             "floatShares": 6559425,
-            "relativeVolume": 1.325276554250232,
-            "relativeVolumePercent": 408.2337860310422,
-            "changeFromClose": -58.37888399225836,
+            "relativeVolume": 1.3356054554080115,
+            "relativeVolumePercent": 236.54372214538188,
+            "changeFromClose": -56.577639047454106,
             "shortInterest": 33075,
             "News": "No News"
+        }
+    ],
+    "ADTX": [
+        {
+            "currentPrice": 6.929299831390381,
+            "currentVolume": 0.0,
+            "Gap": 32.51716341024342,
+            "floatShares": 56937,
+            "relativeVolume": 201.7717218386039,
+            "relativeVolumePercent": 244.299525759862,
+            "changeFromClose": 58.56521768544328,
+            "shortInterest": 39180,
+            "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
         }
     ]
 }
