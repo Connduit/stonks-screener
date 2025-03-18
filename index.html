@@ -4,24 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Data STUFF </title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+	<link rel="stylesheet", href="styles.css">
 </head>
 <body>
 
@@ -30,7 +13,9 @@
         <thead>
             <tr>
                 <th>Stock</th>
+				<th onclick="sortTable(1)"=</th>
                 <th>Price</th>
+				<!-- Price -->
             	<!-- TODO: work on formatting... add M for million, etc... -->
                 <th>Volume</th>
                 <th>Gap</th>
@@ -47,6 +32,7 @@
         </tbody>
     </table>
 
+    <script src="sortTable.js"></script>
     <script src="formatNumber.js"></script>
     <script src="parseData.js"></script>
 </body>
