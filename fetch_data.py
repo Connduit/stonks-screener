@@ -209,8 +209,8 @@ def getStuff(ticker):
     """ Get Current Volume """
     currentVolume = stock_10d["Volume"].iloc[-1] # TODO: if it is past 4pm, will this include post market volume?
 
-    print("currentVolume = {currentVolume}")
-    print("get_info() volume = {ticker.get_info()['volume']}")
+    print(f"currentVolume = {currentVolume}")
+    print(f"get_info() volume = {ticker.get_info()['volume']}")
 
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
