@@ -15,7 +15,7 @@ fetch('stock_data.json')
 	    const floatShares = formatLargeNumber(stockInfo.floatShares);
 	    const shortInterest = formatLargeNumber(stockInfo.shortInterest);
 	    const relativeVolume = formatRoundNumber(stockInfo.relativeVolume);
-		const relativeVolumePercent = formatRoundNumber(relativeVolumePercent);
+		const relativeVolumePercent = formatRoundNumber(stockInfo.relativeVolumePercent);
 
 	    // Create a new row in the table for each stock
 	    const tableRow = document.createElement('tr');
