@@ -1,5 +1,5 @@
 function sortTable(columnIndex) {
-  const table = document.getElementById("sortableTable");
+  const table = document.getElementById("stock-table");
   const rows = Array.from(table.rows).slice(1); // Get all rows except the header
   const isAscending = table.rows[0].cells[columnIndex].getAttribute("data-sort-direction") === "asc";
 
