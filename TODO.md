@@ -11,6 +11,8 @@
 	- yfinance sucks at getting news... maybe use alpaca-py? data/news might be delayed by 15 mins tho
  	- auto commit update yml run for 9am isn't working 
   	- I HAVE A FEELING RVOL5MIN uses RVOL at TIME...............
+   	- SUM OF VOLUME AT TIME X FOR N DAYS (NOT INCLUDING THE CURRENT DAY)
+    		- x = volume[1] at TIME... then volume/x == ANSWER
 
 
 ### Where I Left Off
