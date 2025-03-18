@@ -50,10 +50,6 @@ import os
     hasPrePostMarketData = self explanatory
 
 
-
-
-
-
 """
 
 def getActiveVolume(ticker):
@@ -200,7 +196,8 @@ def getStuff(ticker):
     #currentPrice = stock_now.iloc[-1]
     # TODO: stock_now.tz_convert("America/New_York", level=1)
     # TODO: stock_now.tz_convert("America/New_York")
-    print(stock_now)
+    print("Volume Stuff: ")
+    print(stock_now["Volume"])
 
     """ Get Current Price """
     currentPrice = stock_now.iloc[-1]["Close"]
