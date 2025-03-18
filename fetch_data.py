@@ -201,11 +201,13 @@ def getStuff(ticker):
     # TODO: stock_now.tz_convert("America/New_York", level=1)
     # TODO: stock_now.tz_convert("America/New_York")
 
-    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
+    """ Get Current Price """
     currentPrice = stock_now.iloc[-1]["Close"]
 
     ##currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
-    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: temp
+    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
+    #currentVolume = getActiveVolume(ticker)
+
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
     # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
@@ -341,7 +343,7 @@ def getStuff(ticker):
     #news["canonicalUrl"]
     #news["canonicalUrl"]["url"]
 
-    currentVolume = getActiveVolume(ticker)
+
 
     # TODO: maybe i can just return as a dict so i dont have to call .to_dict(orient="records")... yea this def doesn't need to be a df
     finalDataFrame = {
