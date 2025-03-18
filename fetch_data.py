@@ -200,15 +200,17 @@ def getStuff(ticker):
     #currentPrice = stock_now.iloc[-1]
     # TODO: stock_now.tz_convert("America/New_York", level=1)
     # TODO: stock_now.tz_convert("America/New_York")
-    print("Volume Stuff: ")
-    print(stock_now["Volume"])
+
 
     """ Get Current Price """
     currentPrice = stock_now.iloc[-1]["Close"]
 
-    ##currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
-    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
-    #currentVolume = getActiveVolume(ticker)
+    stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")  # 14 = 10 trading days if there's no holidays... need to change to 17 days cuz weekend + holiday?
+    """ Get Current Volume """
+    currentVolume = stock_10d["Volume"].iloc[-1] # TODO: if it is past 4pm, will this include post market volume?
+
+    print("currentVolume = {currentVolume}")
+    print("get_info() volume = {ticker.get_info()['volume']}")
 
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
@@ -219,18 +221,13 @@ def getStuff(ticker):
 
     # TODO: need to check which is the correct volume... volume, regularMarketVolume, or volume from ticker.history??
     relativeVolume = ticker.get_info()["volume"]/ticker.get_info()["averageVolume"]
-    #stock_10d = ticker.history(start=today-datetime.timedelta(days=15), interval="1d")  # 14 = 10 trading days if there's no holidays
-    stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")  # 14 = 10 trading days if there's no holidays
-    print("stock_10d Stuff")
-    print(stock_10d["Volume"])
 
-    #stock_10d = ticker.history(start=yesterday-datetime.timedelta(days=20), end="2025-03-14", interval="1d")  # 14 = 10 trading days if there's no holidays
+
+
+
     #stock_10d_download = yf.download("QBTS", period="11d", interval="1d")
-    #print(stock_10d_download)
 
     # TODO: NOTE: yfinance doesn't include pre/post market volume data for some reason?
-    avg = sum(stock_10d.head(10)["Volume"])/10
-    relativeVolume = sum(stock_10d.tail(1)["Volume"])/avg # TODO: .tail() returns a series so we need to call sum to convert it back to float... there has to be a better way to do this tho
 
     relativeVolume = properRVOL(ticker)
     
