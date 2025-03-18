@@ -273,26 +273,8 @@ def getStuff(ticker):
 
     last_volume = sum(stock_now.between_time("15:55", "15:59")["Volume"]) # TODO: equivalent to stock_now_5m["Volume"].iloc[-1]
 
-    # TODO: for some reason it looks like it's not looking at the 5 min interval
-
-    #test123 = stock_now.between_time("09:30", "16:00")['Volume'].iloc[:-1].tail(10).mean()
 
 
-    # Comparison
-    ##print(f"Latest 5-min Volume: {last_volume}")
-    ##print(f"Average 5-min Volume: {average_volume}")
-    ##print(f"Volume Surge: {last_volume / average_volume:.2f}x")
-
-   
-
-    #last_volume
-
-    # AvgVol = ta.sma(volume[1],10) # ON 5-min interval
-    #relativeVolumePercent = (AvgVol - current5minVol)/current5minVol
-
-    #stock_10d.tail(3)["Close"]
-    #print(stock_10d.tail(3)["Close"].head(2)) # TODO: is this the most efficent way to do this?
-    #print(stock_10d.tail(3)["Close"].head(2).iloc[0]) # TODO: is this the most efficent way to do this?
 
     #prev_close = stock_10d.tail(3)["Close"].head(2).iloc[1]
     prev_close = stock_10d.tail(2)["Close"].iloc[0]
@@ -302,9 +284,12 @@ def getStuff(ticker):
 
     #gap = (now_open - prev_close)/prev_close
     # TODO: add premarket gap (preday close to current price (if we're in premarket)) or regular gap if market is already open
+    # or just calculate gap as (current_price - prev_close)/prev_close if it is premarket
+    # or TODO: maybe it's ok that gap = 0 when time is: 8pm < currentTime < 4am
     gap = (now_open - prev_close)/prev_close*100 # convert to percentage
 
     now_close = stock_10d.tail(2)["Close"].iloc[-1]
+    # TODO: this only works if trade day is over
     changeFromClose = (now_close - prev_close)/prev_close*100 # convert to percentage
 
     shortInterest = ticker.get_info()["sharesShort"]
@@ -317,11 +302,7 @@ def getStuff(ticker):
 
     # TODO: note: can only fetch 8 days worth of 1min data at a time
     #stock_8d_1m = ticker.history(start=today-datetime.timedelta(days=7), interval="1m")  # 14 = 10 trading days if there's no holidays
-    #print(sum(ticker.history(start="2025-03-07", end="2025-03-08", interval="1m").between_time("15:55","16:00")["Volume"]))
-    
-    #print(stock_now.between_time("15:55","16:00"))
-    #print(ticker.history(start="2025-03-12", end="2025-03-13", interval="1m").between_time("15:55","16:00"))
-    #avg10d = (sum(stock_now.between_time("15:55","16:00")["Volume"]) + 
+
     """ last5min = sum(stock_now.between_time("15:55", "16:00")["Volume"])
     stock_now_5m = ticker.history(period="1d", interval="5m")
     #print(sum(stock_now_5m["Volume"])/last5min)
@@ -347,21 +328,6 @@ def getStuff(ticker):
     #print(f"Relative Volume (RVOL): {last_volume / d['Avg_5m_Vol'].iloc[-1]:.2f}")
     """
 
-
-
-
-    """
-    proper volume calculation: 
-        if market is closed... get volume from stock_data_yesterday
-        if market is open... get volume from stock_now.iloc[-1]
-
-        stock_now.between_time("09:30", "16:00")
-
-
-    gap:
-        TODO: maybe it's ok that gap = 0 when time is: 8pm < currentTime < 4am
-
-    """
 
 
     # TODO: for news i should just make another webpage to brings u to a link of news acticles
