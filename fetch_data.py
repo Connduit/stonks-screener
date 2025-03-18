@@ -208,7 +208,6 @@ def getStuff(ticker):
 
     ##currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
     currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
-    cu
     #currentVolume = getActiveVolume(ticker)
 
     # TODO: this gap is wrong... should be prev_close - now_open
