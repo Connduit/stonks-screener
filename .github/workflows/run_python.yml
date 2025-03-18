@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - cleanupv2
 
 jobs:
   stock-screener:
