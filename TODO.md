@@ -9,6 +9,7 @@
 	        RV = (current volume of in-progress candle)/(average volume for time period)
 		     * (time elapsed)/(time remaining)
 	- yfinance sucks at getting news... maybe use alpaca-py? data/news might be delayed by 15 mins tho
+ 	- auto commit update yml run for 9am isn't working 
 
 
 ### Where I Left Off
