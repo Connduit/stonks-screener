@@ -1,62 +1,62 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.35,
-            "currentVolume": 60107582.0,
-            "Gap": 0.7487635344619559,
+            "currentPrice": 213.84,
+            "currentVolume": 48042800.0,
+            "Gap": -0.08431679701093846,
             "floatShares": 14998187904,
-            "relativeVolume": 1.0562607333829865,
-            "changeFromClose": 1.8170607356296813,
+            "relativeVolume": 0.8400769594343764,
+            "changeFromClose": 0.23888448813228752,
             "shortInterest": 134441154,
-            "News": "Trump isn't backing down from Big Tech fights \u2014 but is willing to bend on AI"
+            "News": "Are Nvidia and Tesla deeply oversold screaming buys?"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 387.87,
-            "currentVolume": 19952846.0,
-            "Gap": 0.2666551719831592,
+            "currentPrice": 388.15,
+            "currentVolume": 22463400.0,
+            "Gap": -0.47868678280038834,
             "floatShares": 7423649000,
-            "relativeVolume": 0.7609071645381135,
-            "changeFromClose": 2.584684327925595,
+            "relativeVolume": 0.9020645155590609,
+            "changeFromClose": 0.03603424164022088,
             "shortInterest": 66334396,
-            "News": "Better Artificial Intelligence (AI) Stock: Palantir Technologies vs. Microsoft"
+            "News": "Elon Musk and Sam Altman finally agree on something: When their courtroom showdown should start"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 167.41,
-            "currentVolume": 18611094.0,
-            "Gap": 0.3551306556425703,
+            "currentPrice": 166.84,
+            "currentVolume": 17820100.0,
+            "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 0.819100073218504,
-            "changeFromClose": 1.7543856398979412,
+            "relativeVolume": 0.8267150878368253,
+            "changeFromClose": -0.6264096310435256,
             "shortInterest": 38855537,
-            "News": "Trump isn't backing down from Big Tech fights \u2014 but is willing to bend on AI"
+            "News": "People are using Google's new AI model to remove watermarks from images"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 121.5,
-            "currentVolume": 277593455.0,
-            "Gap": 2.6215597259860552,
+            "currentPrice": 120.29,
+            "currentVolume": 254773000.0,
+            "Gap": 0.8794277232900642,
             "floatShares": 23413264000,
-            "relativeVolume": 0.7929241419320426,
-            "changeFromClose": 5.269074443165764,
+            "relativeVolume": 0.7540658460408473,
+            "changeFromClose": -1.7588554465801285,
             "shortInterest": 241358114,
-            "News": "13 things that should bother you about the stock market right now"
+            "News": "Fed meeting, US housing starts, Nvidia GTC: What to Watch"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 9.9598,
-            "currentVolume": 259528824.0,
-            "Gap": 11.43270592326993,
+            "currentPrice": 11.1,
+            "currentVolume": 208953700.0,
+            "Gap": 7.487687265468927,
             "floatShares": 241472404,
-            "relativeVolume": 4.863653219017601,
-            "changeFromClose": 46.888565016851466,
+            "relativeVolume": 2.7838308057698553,
+            "changeFromClose": 10.147790397598582,
             "shortInterest": 54448997,
-            "News": "Quantum Stocks Pick Up Speed in Front of AI Conference"
+            "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ]
 }
