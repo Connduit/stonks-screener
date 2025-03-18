@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - main
-      - cleanupv2
+      - debug-branch
 
 jobs:
   stock-screener:
