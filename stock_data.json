@@ -1,78 +1,78 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.9199981689453,
-            "currentVolume": 14234490.684395272,
+            "currentPrice": 213.30499267578125,
+            "currentVolume": 14822786.382901136,
             "Gap": 0.06542027553665304,
             "floatShares": 14998187904,
-            "relativeVolume": 0.20591977749240714,
-            "relativeVolumePercent": 295.1720637045715,
-            "changeFromClose": -0.037384033203125,
+            "relativeVolume": 0.22128664701276046,
+            "relativeVolumePercent": 162.28222296101006,
+            "changeFromClose": -0.3247697776723131,
             "shortInterest": 134441154,
             "News": "Magnificent Seven Stocks: Nvidia Sells Off Ahead Of Jensen Huang Speech; Google, Meta, Tesla Tumble"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 383.0,
-            "currentVolume": 4772954.469944013,
+            "currentPrice": 382.4549865722656,
+            "currentVolume": 5008520.51676946,
             "Gap": -0.3653237414816547,
             "floatShares": 7423649000,
-            "relativeVolume": 0.15915848417846584,
-            "relativeVolumePercent": 287.86639816450156,
-            "changeFromClose": -1.4664296444619822,
+            "relativeVolume": 0.17235382798785245,
+            "relativeVolumePercent": 136.70692849203408,
+            "changeFromClose": -1.6066440541914286,
             "shortInterest": 66334396,
             "News": "Elon Musk and Sam Altman finally agree on something: When their courtroom showdown should start"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 160.0800018310547,
-            "currentVolume": 12243190.56592126,
-            "Gap": -0.3662127535146421,
+            "currentPrice": 160.02999877929688,
+            "currentVolume": 12527123.886909373,
+            "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 0.4848030979033813,
-            "relativeVolumePercent": 592.2398093199728,
-            "changeFromClose": -3.896262957191115,
+            "relativeVolume": 0.8267150878368253,
+            "relativeVolumePercent": 315.5963968552058,
+            "changeFromClose": -0.6264096310435256,
             "shortInterest": 38855537,
             "News": "People are using Google's new AI model to remove watermarks from images"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 115.95999908447266,
-            "currentVolume": 105097262.61431055,
+            "currentPrice": 115.68499755859375,
+            "currentVolume": 107797820.46929684,
             "Gap": -1.238179321219406,
             "floatShares": 23413264000,
-            "relativeVolume": 0.2702817846830874,
-            "relativeVolumePercent": 245.78305674553835,
-            "changeFromClose": -2.986697675297357,
+            "relativeVolume": 0.28609071966880206,
+            "relativeVolumePercent": 162.21037704482154,
+            "changeFromClose": -3.2167667196271204,
             "shortInterest": 241358114,
             "News": "Nvidia's GTC event could be a 'wake-up moment' for investors as the AI trade falters"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 10.404999732971191,
-            "currentVolume": 83678865.31607518,
+            "currentPrice": 10.69950008392334,
+            "currentVolume": 85093475.54857765,
             "Gap": -9.83900135459282,
             "floatShares": 241472404,
-            "relativeVolume": 0.7622416994076341,
-            "relativeVolumePercent": 225.93211970485237,
-            "changeFromClose": -6.9320263957935975,
+            "relativeVolume": 0.799908177622052,
+            "relativeVolumePercent": 188.81603143268651,
+            "changeFromClose": -4.2978551711666215,
             "shortInterest": 54448997,
             "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.800000011920929,
-            "currentVolume": 12739854.782255882,
+            "currentPrice": 0.7950000166893005,
+            "currentVolume": 12551341.207083868,
             "Gap": -27.950313272384562,
             "floatShares": 6559425,
-            "relativeVolume": 0.9257668324311432,
-            "relativeVolumePercent": 175.72293070560502,
-            "changeFromClose": -50.31055870727966,
+            "relativeVolume": 0.9412207233948892,
+            "relativeVolumePercent": 1338.6034286610961,
+            "changeFromClose": -50.621117414559336,
             "shortInterest": 33075,
             "News": "No News"
         }
