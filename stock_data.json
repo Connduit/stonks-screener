@@ -1,91 +1,91 @@
 {
     "AAPL": [
         {
-            "currentPrice": 212.57000732421875,
-            "currentVolume": 28247988,
+            "currentPrice": 212.5343017578125,
+            "currentVolume": 28922730,
             "Gap": 0.06542027553665304,
             "floatShares": 14998187904,
-            "relativeVolume": 0.49317765384703344,
-            "relativeVolumePercent": 328.8297757847534,
-            "changeFromClose": -0.6682208765332944,
+            "relativeVolume": 0.5049586478183147,
+            "relativeVolumePercent": 508.56652492443254,
+            "changeFromClose": -0.6849057206483645,
             "shortInterest": 134441154,
             "News": "The 'Magnificent 7' stocks are having their worst quarter in more than 2 years"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 383.6400146484375,
-            "currentVolume": 10149701,
-            "Gap": -0.3653237414816547,
+            "currentPrice": 383.4549865722656,
+            "currentVolume": 10497839,
+            "Gap": -0.47868678280038834,
             "floatShares": 7423649000,
-            "relativeVolume": 0.40845720549868064,
-            "relativeVolumePercent": 457.6324432937903,
-            "changeFromClose": -1.3017744789518222,
+            "relativeVolume": 0.9025022277139257,
+            "relativeVolumePercent": 291.810656098635,
+            "changeFromClose": 0.03603424164022088,
             "shortInterest": 66334396,
             "News": "The 'Magnificent 7' stocks are having their worst quarter in more than 2 years"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 162.7899932861328,
-            "currentVolume": 18191657,
+            "currentPrice": 162.6999969482422,
+            "currentVolume": 18560811,
             "Gap": -0.3662127535146421,
             "floatShares": 10917973500,
-            "relativeVolume": 0.8692903719688708,
-            "relativeVolumePercent": 349.84089955965607,
-            "changeFromClose": -2.269324531353572,
+            "relativeVolume": 0.8869516538905204,
+            "relativeVolumePercent": 453.21196439022896,
+            "changeFromClose": -2.32335366861323,
             "shortInterest": 38855537,
             "News": "The 'Magnificent 7' stocks are having their worst quarter in more than 2 years"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 116.74500274658203,
-            "currentVolume": 235601274,
+            "currentPrice": 116.125,
+            "currentVolume": 241657418,
             "Gap": -1.238179321219406,
             "floatShares": 23413264000,
-            "relativeVolume": 0.7310504328052702,
-            "relativeVolumePercent": 506.32027006631296,
-            "changeFromClose": -2.3129773876820097,
+            "relativeVolume": 0.7498538015642595,
+            "relativeVolumePercent": 475.2660809324019,
+            "changeFromClose": -2.8486562486994984,
             "shortInterest": 241358114,
-            "News": "The 'Magnificent 7' stocks are having their worst quarter in more than 2 years"
+            "News": "Stock market today: Nasdaq leads stocks lower as Nvidia falls with GTC event underway"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 10.880999565124512,
-            "currentVolume": 141363139,
+            "currentPrice": 10.875,
+            "currentVolume": 142483819,
             "Gap": -9.83900135459282,
             "floatShares": 241472404,
-            "relativeVolume": 1.5520798627050276,
-            "relativeVolumePercent": 770.6820562967104,
-            "changeFromClose": -2.683364781269086,
+            "relativeVolume": 1.5643886499104467,
+            "relativeVolumePercent": 630.9655542706096,
+            "changeFromClose": -2.728088522811411,
             "shortInterest": 54448997,
             "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.6829000115394592,
-            "currentVolume": 15501100,
+            "currentPrice": 0.6721000075340271,
+            "currentVolume": 15626121,
             "Gap": -27.950313272384562,
             "floatShares": 6559425,
-            "relativeVolume": 1.3532063039225357,
-            "relativeVolumePercent": 839.8927720413026,
-            "changeFromClose": -57.58385059181488,
+            "relativeVolume": 1.364120316819859,
+            "relativeVolumePercent": 232.8481363796843,
+            "changeFromClose": -58.254658288055396,
             "shortInterest": 33075,
             "News": "No News"
         }
     ],
     "ADTX": [
         {
-            "currentPrice": 7.289899826049805,
-            "currentVolume": 88788480,
+            "currentPrice": 7.349699974060059,
+            "currentVolume": 89198590,
             "Gap": 32.51716341024342,
             "floatShares": 56937,
-            "relativeVolume": 202.74241042017997,
-            "relativeVolumePercent": 163.08710920598503,
-            "changeFromClose": 67.73684785969945,
+            "relativeVolume": 203.68097561309784,
+            "relativeVolumePercent": 774.4023802998865,
+            "changeFromClose": 68.18535850189764,
             "shortInterest": 39180,
             "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
         }
