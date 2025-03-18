@@ -15,7 +15,6 @@
 
 ### Where I Left Off
 
-    - token problem...? failing to push changes 
     - stock data isn't being stored in google sheet
 
     
