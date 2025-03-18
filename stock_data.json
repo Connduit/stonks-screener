@@ -1,19 +1,19 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.84,
+            "currentPrice": 213.13,
             "currentVolume": 48042800.0,
             "Gap": -0.08431679701093846,
             "floatShares": 14998187904,
             "relativeVolume": 0.8400769594343764,
             "changeFromClose": 0.23888448813228752,
             "shortInterest": 134441154,
-            "News": "Are Nvidia and Tesla deeply oversold screaming buys?"
+            "News": "German Court Deals Blow to Apple, Upholds Antitrust Ruling"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 388.15,
+            "currentPrice": 386.5,
             "currentVolume": 22463400.0,
             "Gap": -0.47868678280038834,
             "floatShares": 7423649000,
@@ -25,7 +25,7 @@
     ],
     "GOOG": [
         {
-            "currentPrice": 166.84,
+            "currentPrice": 166.2,
             "currentVolume": 17820100.0,
             "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
@@ -37,19 +37,19 @@
     ],
     "NVDA": [
         {
-            "currentPrice": 120.29,
+            "currentPrice": 118.1899,
             "currentVolume": 254773000.0,
             "Gap": 0.8794277232900642,
             "floatShares": 23413264000,
             "relativeVolume": 0.7540658460408473,
             "changeFromClose": -1.7588554465801285,
             "shortInterest": 241358114,
-            "News": "Fed meeting, US housing starts, Nvidia GTC: What to Watch"
+            "News": "US stocks, Fed meeting, Nvidia CEO keynote at GTC: 3 Things"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 11.1,
+            "currentPrice": 9.92,
             "currentVolume": 208953700.0,
             "Gap": 7.487687265468927,
             "floatShares": 241472404,
