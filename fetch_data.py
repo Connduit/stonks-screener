@@ -156,14 +156,7 @@ def properRVOL(ticker):
     """
     
     return res/average_volume
-    #return currentCandleVolumeRatio
-    # return currentCandleVolumeRatio / previousCandleVolumeRatio
-  
-    
-    #close_time = stock_10d.iloc[-1].name + datetime.timedelta(days=1)
-    
-    #return -10
-    #return currVol / pastVol
+
 
 # TODO: rename function to getColumnData?
 #def getStuff():
@@ -235,9 +228,6 @@ def getStuff(ticker):
 
     my_data = ticker.history(interval="5m", period="1d")
     #relvol5m = currentVolume5m/5
-
-    if symbol == "QBTS":
-        print("QBTS DATA:")
 
     # Calculate average volume for the last 10 intervals (excluding the current candle)
     # CORRECT STUFF: START - ACCORDING TO TRADINGVIEW
