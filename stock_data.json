@@ -1,11 +1,11 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.7505,
-            "currentVolume": 47841607.0,
-            "Gap": -0.060895067435211975,
+            "currentPrice": 213.93,
+            "currentVolume": -55822180.728507884,
+            "Gap": -0.08431679701093846,
             "floatShares": 14998187904,
-            "relativeVolume": 0.8366282391368329,
+            "relativeVolume": 0.8400769594343763,
             "relativeVolumePercent": 14.666441988702658,
             "changeFromClose": 0.23888448813228752,
             "shortInterest": 134441154,
@@ -14,11 +14,11 @@
     ],
     "MSFT": [
         {
-            "currentPrice": 387.4255,
-            "currentVolume": 21484898.0,
-            "Gap": -0.46067751599981593,
+            "currentPrice": 388.805,
+            "currentVolume": -26101801.389261764,
+            "Gap": -0.47868678280038834,
             "floatShares": 7423649000,
-            "relativeVolume": 0.8628521606145577,
+            "relativeVolume": 0.9020645155590609,
             "relativeVolumePercent": 11.934833581810544,
             "changeFromClose": 0.03603424164022088,
             "shortInterest": 66334396,
@@ -27,12 +27,12 @@
     ],
     "GOOG": [
         {
-            "currentPrice": 166.4,
-            "currentVolume": 17761439.0,
+            "currentPrice": 166.64,
+            "currentVolume": -20706980.736232422,
             "Gap": -0.17599223096210664,
             "floatShares": 10917973500,
-            "relativeVolume": 0.8240632491536174,
-            "relativeVolumePercent": 16.777784665826328,
+            "relativeVolume": 0.8267150878368253,
+            "relativeVolumePercent": 16.038063356270534,
             "changeFromClose": -0.6264096310435256,
             "shortInterest": 38855537,
             "News": "People are using Google's new AI model to remove watermarks from images"
@@ -40,24 +40,24 @@
     ],
     "NVDA": [
         {
-            "currentPrice": 122.0,
-            "currentVolume": 252270022.0,
+            "currentPrice": 119.51,
+            "currentVolume": -296054693.0264919,
             "Gap": 0.8794277232900642,
             "floatShares": 23413264000,
-            "relativeVolume": 0.7468456881707107,
+            "relativeVolume": 0.7540658460408473,
             "relativeVolumePercent": 26.980650115606792,
             "changeFromClose": -1.7588554465801285,
             "shortInterest": 241358114,
-            "News": "Nvidia stock slides ahead of GTC as investors look to new Blackwell Ultra"
+            "News": "Fed meeting, US housing starts, Nvidia GTC: What to Watch"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 11.26,
-            "currentVolume": 207269395.0,
+            "currentPrice": 10.8899,
+            "currentVolume": -242817326.40553063,
             "Gap": 7.487687265468927,
             "floatShares": 241472404,
-            "relativeVolume": 2.765152216557396,
+            "relativeVolume": 2.7838308057698558,
             "relativeVolumePercent": 54.41146129334881,
             "changeFromClose": 10.147790397598582,
             "shortInterest": 54448997,
@@ -66,12 +66,12 @@
     ],
     "ANTE": [
         {
-            "currentPrice": 1.32,
-            "currentVolume": 106853898.0,
+            "currentPrice": 1.18,
+            "currentVolume": -126953181.02412346,
             "Gap": 55.55555392031153,
             "floatShares": 6559425,
-            "relativeVolume": 217.46117589596435,
-            "relativeVolumePercent": 108.69194606534136,
+            "relativeVolume": 221.9348285389241,
+            "relativeVolumePercent": 108.69194606534138,
             "changeFromClose": 98.76543327977501,
             "shortInterest": 33075,
             "News": "No News"
