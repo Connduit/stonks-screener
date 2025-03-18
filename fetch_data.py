@@ -96,7 +96,7 @@ def properRVOL5M(ticker):
     currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
 
     if (currentCandleVolume == 0):
-        print(f"ticker: {ticker.symbol} has 0 volume... recalculating")
+        print(f"ticker: {ticker.get_info()['symbol']} has 0 volume... recalculating")
         currentCandleVolume = stock_5m["Volume"].iloc[-2]
         timePassed = (time_close - time_open).total_seconds() * 1000
         time_total = timePassed
