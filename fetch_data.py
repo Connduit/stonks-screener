@@ -200,6 +200,7 @@ def getStuff(ticker):
     #currentPrice = stock_now.iloc[-1]
     # TODO: stock_now.tz_convert("America/New_York", level=1)
     # TODO: stock_now.tz_convert("America/New_York")
+    print(stock_now)
 
     """ Get Current Price """
     currentPrice = stock_now.iloc[-1]["Close"]
