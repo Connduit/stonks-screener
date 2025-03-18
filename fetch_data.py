@@ -96,6 +96,7 @@ def properRVOL5M(ticker):
     currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
 
     if (currentCandleVolume == 0):
+        print(f"ticker: {ticker.symbol} has 0 volume... recalculating")
         currentCandleVolume = stock_5m["Volume"].iloc[-2]
         timePassed = (time_close - time_open).total_seconds() * 1000
         time_total = timePassed
@@ -185,10 +186,7 @@ def getStuff(ticker):
 
     #print(stock_data_yesterday.between_time(datetime.time(1), datetime.time(10,59,59))) # this doesn't work unless dataframe includes date not just time
 
-    #import pandas as pd
-    #dt = pd.to_datetime("2025-03-14 09:30:00")
-    #print(stock_data_yesterday.loc[dt])
-    #print(stock_data_yesterday.loc["2025-03-14 09:30:00-04:00"])
+
     stock_now = ticker.history(period="1d", interval="1m", prepost=True) # TODO: see what happens after most market closes... past 8pm. Also what happens for stocks that are traadable 24hrs... TODO: do i even care what happens when the market is completly closed?
     #currentPrice = stock_now.iloc[-1]
     # TODO: stock_now.tz_convert("America/New_York", level=1)
@@ -260,41 +258,12 @@ def getStuff(ticker):
     changeFromClose = (now_close - prev_close)/prev_close*100 # convert to percentage
 
     shortInterest = ticker.get_info()["sharesShort"]
-
-
-    print()
     relativeVolumePercent = properRVOL5M(ticker)
 
 
 
     # TODO: note: can only fetch 8 days worth of 1min data at a time
     #stock_8d_1m = ticker.history(start=today-datetime.timedelta(days=7), interval="1m")  # 14 = 10 trading days if there's no holidays
-
-    """ last5min = sum(stock_now.between_time("15:55", "16:00")["Volume"])
-    stock_now_5m = ticker.history(period="1d", interval="5m")
-    #print(sum(stock_now_5m["Volume"])/last5min)
-
-    d = yf.download(symbol, interval="5m", period="5d")
-    # Filter for regular trading hours (9:30 AM - 4:00 PM)
-    d = d.between_time('09:30', '16:00')
-
-    # Calculate the average 5-minute volume for regular intervals
-    d['Avg_5m_Vol'] = d['Volume'].rolling(window=20).mean()
-
-    #print(d)
-
-    # Identify the most recent 5-minute candle's volume
-    last_volume = d['Volume'].iloc[-1]
-
-    # Compare the last 5-minute volume with the calculated average
-    #print(f"Last 5-Min Volume: {last_volume}")
-    #print(f"Average 5-Min Volume: {d['Avg_5m_Vol'].iloc[-1]}")
-    #print()
-    #print(d["Avg_5m_Vol"].iloc[-1]/last_volume)
-    #print()
-    #print(f"Relative Volume (RVOL): {last_volume / d['Avg_5m_Vol'].iloc[-1]:.2f}")
-    """
-
 
 
     # TODO: for news i should just make another webpage to brings u to a link of news acticles
