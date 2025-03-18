@@ -64,7 +64,7 @@ def getActiveVolume(ticker):
     timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
-    print(stock_10d["Volume"])
+    ### print(stock_10d["Volume"])
     # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
 
@@ -91,7 +91,7 @@ def properRVOL5M(ticker):
     timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_5m = ticker.history(period="1d", interval="5m")
-    print(stock_5m["Volume"])
+    ### print(stock_5m["Volume"])
     # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
     currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
 
@@ -105,6 +105,7 @@ def properRVOL5M(ticker):
     approximateCurrentVolume = currentCandleVolumeRatio * time_total
 
     average_volume = ((stock_5m["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    """
     print(f"currentCandleVolume = {currentCandleVolume}")
     print(f"timePassed = {timePassed}")
     print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
@@ -118,6 +119,7 @@ def properRVOL5M(ticker):
 
     #print(f"final5mins = {reg5mRVOL/volumeInPast5mins}")
     print(f"final5mins = {average_volume/approximateCurrentVolume}")
+    """
 
     return (average_volume/approximateCurrentVolume)*100 # TODO: NOTE: im like 99% sure this is correct now
     #return reg5mRVOL/volumeInPast5mins
@@ -140,16 +142,18 @@ def properRVOL(ticker):
     currentCandleVolumeRatio = currentCandleVolume / timePassed
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
     res = currentCandleVolumeRatio * time_total
+    average_volume = ((stock_10d["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    """
     print(stock_10d["Volume"])
 
-    average_volume = ((stock_10d["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    
     print(f"currentCandleVolume = {currentCandleVolume}")
     print(f"timePassed = {timePassed}")
     print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
     print(f"res = {res}")
     print(f"average_volume = {average_volume}")
     print(f"final = {res/average_volume}")
-
+    """
     
     return res/average_volume
     #return currentCandleVolumeRatio
