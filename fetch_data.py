@@ -105,12 +105,12 @@ def properRVOL5M(ticker):
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
     approximateCurrentVolume = currentCandleVolumeRatio * time_total
 
-    print(f"approximateCurrentVolume = {approximateCurrentVolume}")
+    ###print(f"approximateCurrentVolume = {approximateCurrentVolume}")
 
     average_volume1 = ((stock_5m["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
-    print(f"average_volume1 = {average_volume1}")
+    ###print(f"average_volume1 = {average_volume1}")
     average_volume = stock_5m["Volume"].iloc[:-1].tail(10).mean()
-    print(f"average_volume = {average_volume}")
+    ###print(f"average_volume = {average_volume}")
     """
     print(f"currentCandleVolume = {currentCandleVolume}")
     print(f"timePassed = {timePassed}")
@@ -162,6 +162,29 @@ def properRVOL(ticker):
     """
     
     return res/average_volume
+
+def relativeVolumeAtTime(ticker):
+    import datetime
+    today = datetime.date.today()
+    
+    # TODO: hard coded for 5 minute time frame... fix later
+    currentTime = datetime.datetime.now()
+    #time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
+    #time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
+    time_open = currentTime.replace(second=0, microsecond=0) - datetime.timedelta(minutes=currentTime.minute % 5)
+    #time_open = datetime.datetime(2025, 3, 18, 20, 0) # 8PM
+    #stock_5m = ticker.history(period="1d", interval="5m")
+    stock_5m = ticker.history(period="10d", interval="5m")
+    #stock10d5m = ticker.history(start=(currentTime - datetime.timedelta(days=10)).date(), end=currentTime.date(), interval="5m")
+
+    latest_volume = stock_5m["Volume"].iloc[-1]
+    stock_5m["Time"] = stock_5m.index.time
+    import pandas as pd
+    stock_10am = stock_5m[stock_5m["Time"] == pd.to_datetime("10:00:00").time()]
+    #print(stock_10am)
+    avg_vol = stock_10am["Volume"].iloc[:-1].tail(len(stock_10am["Volume"].iloc[:-1])).mean()
+    #print(avg_vol)
+    return stock_10am["Volume"].iloc[-1]/avg_vol
 
 
 # TODO: rename function to getColumnData?
@@ -264,6 +287,7 @@ def getStuff(ticker):
 
     shortInterest = ticker.get_info()["sharesShort"]
     relativeVolumePercent = properRVOL5M(ticker)
+    relativeVolumePercent = relativeVolumeAtTime(ticker)
 
 
 
