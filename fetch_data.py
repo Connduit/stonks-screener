@@ -143,7 +143,7 @@ def properRVOL(ticker):
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
     # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
-    currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
+    currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume? TODO: index error when trade day is still active
  
     currentCandleVolumeRatio = currentCandleVolume / timePassed
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
