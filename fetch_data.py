@@ -184,7 +184,7 @@ def relativeVolumeAtTime(ticker):
     #print(stock_10am)
     avg_vol = stock_10am["Volume"].iloc[:-1].tail(len(stock_10am["Volume"].iloc[:-1])).mean()
     #print(avg_vol)
-    return stock_10am["Volume"].iloc[-1]/avg_vol
+    return (stock_10am["Volume"].iloc[-1]/avg_vol)*100
 
 
 # TODO: rename function to getColumnData?
