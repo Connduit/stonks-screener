@@ -26,6 +26,8 @@
     - use go, svelte, js, ts, css, html, and wasm files when using live data from a paid api
     - maybe use azure web app?
 
+### Stuff to implemented for different scanners
+    - https://finviz.com/help/screener.ashx
 
 
 ### Links
