@@ -1,78 +1,78 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.1,
-            "currentVolume": -1100382972.75895,
-            "Gap": 0.07476806640625,
+            "currentPrice": 215.7100067138672,
+            "currentVolume": 33102499.0,
+            "Gap": 0.719356228188663,
             "floatShares": 14998187904,
-            "relativeVolume": 0.7401124804482596,
-            "relativeVolumePercent": 19.801291226360508,
-            "changeFromClose": -0.6121483918662383,
+            "relativeVolume": 0.5896747200770688,
+            "relativeVolumePercent": 548.3797029000535,
+            "changeFromClose": 1.4199088992407696,
             "shortInterest": 134441154,
-            "News": "Stalling rally, Magnificent 7 vs. ARKK, gold: Market Takeaways"
+            "News": "EU regulators target Apple, Google in latest Big Tech crackdown"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 383.5,
-            "currentVolume": -505815042.04980505,
-            "Gap": -0.41934778276886675,
+            "currentPrice": 387.92999267578125,
+            "currentVolume": 10279388.0,
+            "Gap": 0.5227901909282295,
             "floatShares": 7423649000,
-            "relativeVolume": 0.783693584456758,
-            "relativeVolumePercent": 26.78667312637424,
-            "changeFromClose": -1.3326532108777929,
+            "relativeVolume": 0.4307853877948886,
+            "relativeVolumePercent": 712.8890286073563,
+            "changeFromClose": 1.14987583136173,
             "shortInterest": 66334396,
-            "News": "Stalling rally, Magnificent 7 vs. ARKK, gold: Market Takeaways"
+            "News": "Nvidia's GTC fallout reminds 'Magnificent 7' investors of an important lesson"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 162.73,
-            "currentVolume": -639170350.076638,
+            "currentPrice": 167.34500122070312,
+            "currentVolume": 13149812.0,
             "Gap": -0.3662127535146421,
             "floatShares": 10917973500,
-            "relativeVolume": 1.174887776663854,
-            "relativeVolumePercent": 21.59893391458522,
+            "relativeVolume": 1.1748877766638535,
+            "relativeVolumePercent": 958.9650993698499,
             "changeFromClose": -2.3413633810331165,
             "shortInterest": 38855537,
-            "News": "Stalling rally, Magnificent 7 vs. ARKK, gold: Market Takeaways"
+            "News": "Google search, Play Store falling foul of Digital Markets Act rules, says EU"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 116.07,
-            "currentVolume": -7761598782.9868355,
-            "Gap": -1.2800123775805454,
+            "currentPrice": 118.77999877929688,
+            "currentVolume": 207686993.00000003,
+            "Gap": 1.6243610803455284,
             "floatShares": 23413264000,
-            "relativeVolume": 0.9258610577901241,
-            "relativeVolumePercent": 41.20833211681738,
-            "changeFromClose": -3.4300999882811274,
+            "relativeVolume": 0.6650243336660052,
+            "relativeVolumePercent": 437.1106975917082,
+            "changeFromClose": 2.9108555847425595,
             "shortInterest": 241358114,
-            "News": "Nvidia GTC: What could lift the chip stock back up in 2025?"
+            "News": "Stock market today: Nasdaq leads broad rally as markets cheer Fed interest rate decision"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 10.96,
-            "currentVolume": -4019292567.699727,
-            "Gap": -9.83900135459282,
+            "currentPrice": 10.545000076293945,
+            "currentVolume": 80195107.0,
+            "Gap": 1.2962906219996235,
             "floatShares": 281716348,
-            "relativeVolume": 1.6954954122104557,
-            "relativeVolumePercent": 44.19121384056061,
-            "changeFromClose": -3.398927585583311,
+            "relativeVolume": 0.7893683024484803,
+            "relativeVolumePercent": 449.738348243455,
+            "changeFromClose": -2.3611121290505,
             "shortInterest": 54448997,
-            "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
+            "News": "Quantum Computing Stocks Fall Ahead Of Nvidia Event"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.5848,
-            "currentVolume": -448916791.8862661,
-            "Gap": -27.329195857825226,
+            "currentPrice": 0.5600000023841858,
+            "currentVolume": 2051657.0,
+            "Gap": -1.96824945698276,
             "floatShares": 6559425,
-            "relativeVolume": 1.50489433081713,
-            "relativeVolumePercent": 20.55871617626068,
-            "changeFromClose": -60.86956586124379,
+            "relativeVolume": 0.1556859141398888,
+            "relativeVolumePercent": 322.7371705963938,
+            "changeFromClose": -11.111110059882801,
             "shortInterest": 33075,
             "News": "No News"
         }
