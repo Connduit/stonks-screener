@@ -1,79 +1,105 @@
 {
     "AAPL": [
         {
-            "currentPrice": 215.7100067138672,
-            "currentVolume": 33102499.0,
+            "currentPrice": 216.2,
+            "currentVolume": 54237276,
             "Gap": 0.719356228188663,
             "floatShares": 14998187904,
-            "relativeVolume": 0.5896747200770688,
-            "relativeVolumePercent": 548.3797029000535,
-            "changeFromClose": 1.4199088992407696,
+            "relativeVolume": 0.9660913408289922,
+            "relativeVolumePercent": 137.3877871428613,
+            "changeFromClose": 1.1989294383784261,
             "shortInterest": 134441154,
             "News": "EU regulators target Apple, Google in latest Big Tech crackdown"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 387.92999267578125,
-            "currentVolume": 10279388.0,
+            "currentPrice": 389.156,
+            "currentVolume": 18887696,
             "Gap": 0.5227901909282295,
             "floatShares": 7423649000,
-            "relativeVolume": 0.4307853877948886,
-            "relativeVolumePercent": 712.8890286073563,
-            "changeFromClose": 1.14987583136173,
+            "relativeVolume": 0.7914965551661612,
+            "relativeVolumePercent": 48.48291718925904,
+            "changeFromClose": 1.1211979645716943,
             "shortInterest": 66334396,
             "News": "Nvidia's GTC fallout reminds 'Magnificent 7' investors of an important lesson"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 167.34500122070312,
-            "currentVolume": 13149812.0,
-            "Gap": -0.3662127535146421,
+            "currentPrice": 167.3,
+            "currentVolume": 24851487,
+            "Gap": 0.7653501759399276,
             "floatShares": 10917973500,
-            "relativeVolume": 1.1748877766638535,
-            "relativeVolumePercent": 958.9650993698499,
-            "changeFromClose": -2.3413633810331165,
+            "relativeVolume": 1.223153124686232,
+            "relativeVolumePercent": 47.55996270542234,
+            "changeFromClose": 2.219217219515979,
             "shortInterest": 38855537,
-            "News": "Google search, Play Store falling foul of Digital Markets Act rules, says EU"
+            "News": "Google Search, Play Store falling foul of Digital Markets Act rules, says EU"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 118.77999877929688,
-            "currentVolume": 207686993.00000003,
+            "currentPrice": 118.7195,
+            "currentVolume": 270676243,
             "Gap": 1.6243610803455284,
             "floatShares": 23413264000,
-            "relativeVolume": 0.6650243336660052,
-            "relativeVolumePercent": 437.1106975917082,
-            "changeFromClose": 2.9108555847425595,
+            "relativeVolume": 0.8663577922344163,
+            "relativeVolumePercent": 69.88476343043182,
+            "changeFromClose": 1.8106179783115806,
             "shortInterest": 241358114,
-            "News": "Stock market today: Nasdaq leads broad rally as markets cheer Fed interest rate decision"
+            "News": "Stock market today: Nasdaq leads market rally as investors cheer Fed rate decision"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 10.545000076293945,
-            "currentVolume": 80195107.0,
+            "currentPrice": 10.5901,
+            "currentVolume": 89460761,
             "Gap": 1.2962906219996235,
             "floatShares": 281716348,
-            "relativeVolume": 0.7893683024484803,
-            "relativeVolumePercent": 449.738348243455,
-            "changeFromClose": -2.3611121290505,
+            "relativeVolume": 0.8800879195040225,
+            "relativeVolumePercent": 99.14245615181802,
+            "changeFromClose": -1.8518500530834543,
             "shortInterest": 54448997,
             "News": "Quantum Computing Stocks Fall Ahead Of Nvidia Event"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.5600000023841858,
-            "currentVolume": 2051657.0,
+            "currentPrice": 0.54,
+            "currentVolume": 2154740,
             "Gap": -1.96824945698276,
             "floatShares": 6559425,
-            "relativeVolume": 0.1556859141398888,
-            "relativeVolumePercent": 322.7371705963938,
-            "changeFromClose": -11.111110059882801,
+            "relativeVolume": 0.1633725373641304,
+            "relativeVolumePercent": 15.40651002670701,
+            "changeFromClose": -13.587304626853161,
             "shortInterest": 33075,
+            "News": "No News"
+        }
+    ],
+    "ADTX": [
+        {
+            "currentPrice": 10.1,
+            "currentVolume": 47731531,
+            "Gap": 28.400001525878903,
+            "floatShares": 56935,
+            "relativeVolume": 5.007543701823085,
+            "relativeVolumePercent": 70.33263165461396,
+            "changeFromClose": 33.73332977294922,
+            "shortInterest": 39180,
+            "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
+        }
+    ],
+    "XHLD": [
+        {
+            "currentPrice": 1.68,
+            "currentVolume": 203397949,
+            "Gap": 21.91452978912895,
+            "floatShares": 1505250,
+            "relativeVolume": 136.04031020713919,
+            "relativeVolumePercent": 5822.215943122638,
+            "changeFromClose": 171.79488746999263,
+            "shortInterest": 62231,
             "News": "No News"
         }
     ]

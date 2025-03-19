@@ -50,10 +50,6 @@ import os
     hasPrePostMarketData = self explanatory
 
 
-
-
-
-
 """
 
 def getActiveVolume(ticker):
@@ -68,7 +64,7 @@ def getActiveVolume(ticker):
     timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
-    print(stock_10d["Volume"])
+    ### print(stock_10d["Volume"])
     # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
     currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
 
@@ -95,11 +91,12 @@ def properRVOL5M(ticker):
     timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_5m = ticker.history(period="1d", interval="5m")
-    print(stock_5m["Volume"])
+    ### print(stock_5m["Volume"])
     # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
     currentCandleVolume = stock_5m["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
 
     if (currentCandleVolume == 0):
+        print(f"ticker: {ticker.get_info()['symbol']} has 0 volume... recalculating")
         currentCandleVolume = stock_5m["Volume"].iloc[-2]
         timePassed = (time_close - time_open).total_seconds() * 1000
         time_total = timePassed
@@ -108,7 +105,13 @@ def properRVOL5M(ticker):
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
     approximateCurrentVolume = currentCandleVolumeRatio * time_total
 
-    average_volume = ((stock_5m["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    ###print(f"approximateCurrentVolume = {approximateCurrentVolume}")
+
+    average_volume1 = ((stock_5m["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    ###print(f"average_volume1 = {average_volume1}")
+    average_volume = stock_5m["Volume"].iloc[:-1].tail(10).mean()
+    ###print(f"average_volume = {average_volume}")
+    """
     print(f"currentCandleVolume = {currentCandleVolume}")
     print(f"timePassed = {timePassed}")
     print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
@@ -122,6 +125,7 @@ def properRVOL5M(ticker):
 
     #print(f"final5mins = {reg5mRVOL/volumeInPast5mins}")
     print(f"final5mins = {average_volume/approximateCurrentVolume}")
+    """
 
     return (average_volume/approximateCurrentVolume)*100 # TODO: NOTE: im like 99% sure this is correct now
     #return reg5mRVOL/volumeInPast5mins
@@ -139,31 +143,49 @@ def properRVOL(ticker):
     time_total = (time_close - time_open).total_seconds() * 1000
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
     # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
-    currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume?
+    currentCandleVolume = stock_10d["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume? TODO: index error when trade day is still active
  
     currentCandleVolumeRatio = currentCandleVolume / timePassed
     #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
     res = currentCandleVolumeRatio * time_total
+    average_volume = ((stock_10d["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    """
     print(stock_10d["Volume"])
 
-    average_volume = ((stock_10d["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    
     print(f"currentCandleVolume = {currentCandleVolume}")
     print(f"timePassed = {timePassed}")
     print(f"currentCandleVolumeRatio = {currentCandleVolumeRatio}")
     print(f"res = {res}")
     print(f"average_volume = {average_volume}")
     print(f"final = {res/average_volume}")
-
+    """
     
     return res/average_volume
-    #return currentCandleVolumeRatio
-    # return currentCandleVolumeRatio / previousCandleVolumeRatio
-  
+
+def relativeVolumeAtTime(ticker):
+    import datetime
+    today = datetime.date.today()
     
-    #close_time = stock_10d.iloc[-1].name + datetime.timedelta(days=1)
-    
-    #return -10
-    #return currVol / pastVol
+    # TODO: hard coded for 5 minute time frame... fix later
+    currentTime = datetime.datetime.now()
+    #time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
+    #time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
+    time_open = currentTime.replace(second=0, microsecond=0) - datetime.timedelta(minutes=currentTime.minute % 5)
+    #time_open = datetime.datetime(2025, 3, 18, 20, 0) # 8PM
+    #stock_5m = ticker.history(period="1d", interval="5m")
+    stock_5m = ticker.history(period="10d", interval="5m")
+    #stock10d5m = ticker.history(start=(currentTime - datetime.timedelta(days=10)).date(), end=currentTime.date(), interval="5m")
+
+    latest_volume = stock_5m["Volume"].iloc[-1]
+    stock_5m["Time"] = stock_5m.index.time
+    import pandas as pd
+    stock_10am = stock_5m[stock_5m["Time"] == pd.to_datetime("10:00:00").time()]
+    #print(stock_10am)
+    avg_vol = stock_10am["Volume"].iloc[:-1].tail(len(stock_10am["Volume"].iloc[:-1])).mean()
+    #print(avg_vol)
+    return (stock_10am["Volume"].iloc[-1]/avg_vol)*100
+
 
 # TODO: rename function to getColumnData?
 #def getStuff():
@@ -192,20 +214,23 @@ def getStuff(ticker):
 
     #print(stock_data_yesterday.between_time(datetime.time(1), datetime.time(10,59,59))) # this doesn't work unless dataframe includes date not just time
 
-    #import pandas as pd
-    #dt = pd.to_datetime("2025-03-14 09:30:00")
-    #print(stock_data_yesterday.loc[dt])
-    #print(stock_data_yesterday.loc["2025-03-14 09:30:00-04:00"])
+
     stock_now = ticker.history(period="1d", interval="1m", prepost=True) # TODO: see what happens after most market closes... past 8pm. Also what happens for stocks that are traadable 24hrs... TODO: do i even care what happens when the market is completly closed?
     #currentPrice = stock_now.iloc[-1]
     # TODO: stock_now.tz_convert("America/New_York", level=1)
     # TODO: stock_now.tz_convert("America/New_York")
 
-    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: idk how we should handle this during post market? probs fine how it is? this only works if it's before 8pm
+
+    """ Get Current Price """
     currentPrice = stock_now.iloc[-1]["Close"]
 
-    ##currentVolume = stock_data_yesterday.iloc[-1]["Volume"]
-    currentVolume = stock_now.iloc[-1]["Volume"] # TODO: temp
+    stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")  # 14 = 10 trading days if there's no holidays... need to change to 17 days cuz weekend + holiday?
+    """ Get Current Volume """
+    #currentVolume = stock_10d["Volume"].iloc[-1] # TODO: if it is past 4pm, will this include post market volume?
+    currentVolume = ticker.get_info()["volume"] # TODO: this seems to get slightly more accurate/ up to date volume ?
+    #print(f"currentVolume = {currentVolume}")
+    #print(f"get_info() volume = {ticker.get_info()['volume']}")
+
     # TODO: this gap is wrong... should be prev_close - now_open
     #gap = stock_data_yesterday.iloc[-1]["Close"] - stock_data_yesterday.iloc[0]["Close"] # TODO: only works after market closes?? will def have to fix this... this will just equal 0 atm
     # TODO: see which is more efficient, storiong off get_info() or calling it multiple times
@@ -215,84 +240,34 @@ def getStuff(ticker):
 
     # TODO: need to check which is the correct volume... volume, regularMarketVolume, or volume from ticker.history??
     relativeVolume = ticker.get_info()["volume"]/ticker.get_info()["averageVolume"]
-    #stock_10d = ticker.history(start=today-datetime.timedelta(days=15), interval="1d")  # 14 = 10 trading days if there's no holidays
-    stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")  # 14 = 10 trading days if there's no holidays
 
-    #stock_10d = ticker.history(start=yesterday-datetime.timedelta(days=20), end="2025-03-14", interval="1d")  # 14 = 10 trading days if there's no holidays
+
+
+
     #stock_10d_download = yf.download("QBTS", period="11d", interval="1d")
-    #print(stock_10d_download)
 
     # TODO: NOTE: yfinance doesn't include pre/post market volume data for some reason?
-    avg = sum(stock_10d.head(10)["Volume"])/10
-    relativeVolume = sum(stock_10d.tail(1)["Volume"])/avg # TODO: .tail() returns a series so we need to call sum to convert it back to float... there has to be a better way to do this tho
 
     relativeVolume = properRVOL(ticker)
     
-    relativeVolumePercent = -1
-    stock_now_5m = ticker.history(period="1d", interval="5m")
-    x = stock_now_5m["Volume"].tail(11)
-    ##print(x)
-    ##print(x.head(10))
-    avg5m = sum(x.head(10))/10
-    #currentVolume5m = x.tail(1)
-    ##print(stock_now.between_time("15:55", "15:59")["Volume"])
-    #currentVolume5m = sum(stock_now.between_time("15:55", "15:59")["Volume"])/5 # average 1 min volume over the past 5 mins
-    currentVolume5m = sum(stock_now.between_time("15:55", "15:59")["Volume"])
-    ##print(avg5m)
-    ##print(currentVolume5m)
-    #popped_row = stock_now_5m.iloc[-1] # TODO: this is correct.. like im pretty sure
-    #stock_now_5m.drop(stock_now_5m.index[-1])
-    #print(stock_now_5m)
-    #print(sum(stock_now.between_time("15:55", "15:59")["Volume"])/5)
-    #av5m = sum(stock_now.between_time("15:55", "15:59")["Volume"])/5
-    #print(popped_row["Volume"])
-    #print(sum(stock_now_5m["Volume"])/len(stock_now_5m))
-    #print(sum(stock_now_5m["Volume"].tail(10))/10)
-    #print(av5m)
-    #relativeVolumePercent = (av5m - popped_row["Volume"])/av5m*100 # convert to percentage
-    relativeVolumePercent = (avg5m - currentVolume5m)/avg5m*100 # convert to percentage
-    #relativeVolumePercent = (currentVolume5m - avg5m)/currentVolume5m*100 # convert to percentage
-    ##print(relativeVolumePercent)
-    ##print()
-    ##print()
+    
 
     my_data = ticker.history(interval="5m", period="1d")
     #relvol5m = currentVolume5m/5
 
-    if symbol == "QBTS":
-        print("QBTS DATA:")
-
     # Calculate average volume for the last 10 intervals (excluding the current candle)
     # CORRECT STUFF: START - ACCORDING TO TRADINGVIEW
-    average_volume = my_data['Volume'].iloc[:-1].tail(10).mean()
-    cVol = my_data['Volume'].iloc[-1]
-    relvol5m = cVol/average_volume
+    #average_volume = my_data['Volume'].iloc[:-1].tail(10).mean()
+    #cVol = my_data['Volume'].iloc[-1]
+    #relvol5m = cVol/average_volume
     # CORRECT STUFF: END
     ##print(relvol5m)
     # Latest 5-minute volume
 
     last_volume = sum(stock_now.between_time("15:55", "15:59")["Volume"]) # TODO: equivalent to stock_now_5m["Volume"].iloc[-1]
 
-    # TODO: for some reason it looks like it's not looking at the 5 min interval
-
-    #test123 = stock_now.between_time("09:30", "16:00")['Volume'].iloc[:-1].tail(10).mean()
 
 
-    # Comparison
-    ##print(f"Latest 5-min Volume: {last_volume}")
-    ##print(f"Average 5-min Volume: {average_volume}")
-    ##print(f"Volume Surge: {last_volume / average_volume:.2f}x")
-
-   
-
-    #last_volume
-
-    # AvgVol = ta.sma(volume[1],10) # ON 5-min interval
-    #relativeVolumePercent = (AvgVol - current5minVol)/current5minVol
-
-    #stock_10d.tail(3)["Close"]
-    #print(stock_10d.tail(3)["Close"].head(2)) # TODO: is this the most efficent way to do this?
-    #print(stock_10d.tail(3)["Close"].head(2).iloc[0]) # TODO: is this the most efficent way to do this?
 
     #prev_close = stock_10d.tail(3)["Close"].head(2).iloc[1]
     prev_close = stock_10d.tail(2)["Close"].iloc[0]
@@ -302,66 +277,22 @@ def getStuff(ticker):
 
     #gap = (now_open - prev_close)/prev_close
     # TODO: add premarket gap (preday close to current price (if we're in premarket)) or regular gap if market is already open
+    # or just calculate gap as (current_price - prev_close)/prev_close if it is premarket
+    # or TODO: maybe it's ok that gap = 0 when time is: 8pm < currentTime < 4am
     gap = (now_open - prev_close)/prev_close*100 # convert to percentage
 
     now_close = stock_10d.tail(2)["Close"].iloc[-1]
+    # TODO: this only works if trade day is over
     changeFromClose = (now_close - prev_close)/prev_close*100 # convert to percentage
 
     shortInterest = ticker.get_info()["sharesShort"]
-
-
-    print()
     relativeVolumePercent = properRVOL5M(ticker)
+    relativeVolumePercent = relativeVolumeAtTime(ticker)
 
 
 
     # TODO: note: can only fetch 8 days worth of 1min data at a time
     #stock_8d_1m = ticker.history(start=today-datetime.timedelta(days=7), interval="1m")  # 14 = 10 trading days if there's no holidays
-    #print(sum(ticker.history(start="2025-03-07", end="2025-03-08", interval="1m").between_time("15:55","16:00")["Volume"]))
-    
-    #print(stock_now.between_time("15:55","16:00"))
-    #print(ticker.history(start="2025-03-12", end="2025-03-13", interval="1m").between_time("15:55","16:00"))
-    #avg10d = (sum(stock_now.between_time("15:55","16:00")["Volume"]) + 
-    """ last5min = sum(stock_now.between_time("15:55", "16:00")["Volume"])
-    stock_now_5m = ticker.history(period="1d", interval="5m")
-    #print(sum(stock_now_5m["Volume"])/last5min)
-
-    d = yf.download(symbol, interval="5m", period="5d")
-    # Filter for regular trading hours (9:30 AM - 4:00 PM)
-    d = d.between_time('09:30', '16:00')
-
-    # Calculate the average 5-minute volume for regular intervals
-    d['Avg_5m_Vol'] = d['Volume'].rolling(window=20).mean()
-
-    #print(d)
-
-    # Identify the most recent 5-minute candle's volume
-    last_volume = d['Volume'].iloc[-1]
-
-    # Compare the last 5-minute volume with the calculated average
-    #print(f"Last 5-Min Volume: {last_volume}")
-    #print(f"Average 5-Min Volume: {d['Avg_5m_Vol'].iloc[-1]}")
-    #print()
-    #print(d["Avg_5m_Vol"].iloc[-1]/last_volume)
-    #print()
-    #print(f"Relative Volume (RVOL): {last_volume / d['Avg_5m_Vol'].iloc[-1]:.2f}")
-    """
-
-
-
-
-    """
-    proper volume calculation: 
-        if market is closed... get volume from stock_data_yesterday
-        if market is open... get volume from stock_now.iloc[-1]
-
-        stock_now.between_time("09:30", "16:00")
-
-
-    gap:
-        TODO: maybe it's ok that gap = 0 when time is: 8pm < currentTime < 4am
-
-    """
 
 
     # TODO: for news i should just make another webpage to brings u to a link of news acticles
@@ -375,7 +306,7 @@ def getStuff(ticker):
     #news["canonicalUrl"]
     #news["canonicalUrl"]["url"]
 
-    currentVolume = getActiveVolume(ticker)
+
 
     # TODO: maybe i can just return as a dict so i dont have to call .to_dict(orient="records")... yea this def doesn't need to be a df
     finalDataFrame = {
@@ -396,7 +327,7 @@ def getStuff(ticker):
 
 
 # Fetch stock data
-symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS", "ANTE"] # TODO: fetch all stock symbols from file 
+symbols = ["AAPL", "MSFT", "GOOG", "NVDA", "QBTS", "ANTE", "ADTX", "XHLD"] # TODO: fetch all stock symbols from file 
 data = {} # TODO: this is data for the most active stocks
 
 # https://yfinance-python.org/reference/index.html
