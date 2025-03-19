@@ -1,78 +1,78 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.52999877929688,
-            "currentVolume": 16835321.0,
-            "Gap": 0.06542027553665304,
+            "currentPrice": 213.1,
+            "currentVolume": -1100382972.75895,
+            "Gap": 0.07476806640625,
             "floatShares": 14998187904,
-            "relativeVolume": 0.2939412076414527,
-            "relativeVolumePercent": 221.09400317345714,
-            "changeFromClose": -0.2196267386463201,
+            "relativeVolume": 0.7401124804482596,
+            "relativeVolumePercent": 19.801291226360508,
+            "changeFromClose": -0.6121483918662383,
             "shortInterest": 134441154,
-            "News": "Magnificent Seven Stocks: Nvidia Sells Off Ahead Of Jensen Huang Speech; Google, Meta, Tesla Tumble"
+            "News": "Stalling rally, Magnificent 7 vs. ARKK, gold: Market Takeaways"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 383.7699890136719,
-            "currentVolume": 5847762.0,
-            "Gap": -0.3653237414816547,
+            "currentPrice": 383.5,
+            "currentVolume": -505815042.04980505,
+            "Gap": -0.41934778276886675,
             "floatShares": 7423649000,
-            "relativeVolume": 0.2353434391321881,
-            "relativeVolumePercent": 236.72614462095817,
-            "changeFromClose": -1.2683362589485907,
+            "relativeVolume": 0.783693584456758,
+            "relativeVolumePercent": 26.78667312637424,
+            "changeFromClose": -1.3326532108777929,
             "shortInterest": 66334396,
-            "News": "Elon Musk and Sam Altman finally agree on something: When their courtroom showdown should start"
+            "News": "Stalling rally, Magnificent 7 vs. ARKK, gold: Market Takeaways"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 162.38999938964844,
-            "currentVolume": 13212857.000000002,
+            "currentPrice": 162.73,
+            "currentVolume": -639170350.076638,
             "Gap": -0.3662127535146421,
             "floatShares": 10917973500,
-            "relativeVolume": 0.6314351841231974,
-            "relativeVolumePercent": 294.5111844646556,
-            "changeFromClose": -2.5094601373428365,
+            "relativeVolume": 1.174887776663854,
+            "relativeVolumePercent": 21.59893391458522,
+            "changeFromClose": -2.3413633810331165,
             "shortInterest": 38855537,
-            "News": "BYD EV charging, Lucid, Alphabet-Wiz deal: Market Minute"
+            "News": "Stalling rally, Magnificent 7 vs. ARKK, gold: Market Takeaways"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 117.12069702148438,
-            "currentVolume": 122911994.0,
-            "Gap": -1.238179321219406,
+            "currentPrice": 116.07,
+            "currentVolume": -7761598782.9868355,
+            "Gap": -1.2800123775805454,
             "floatShares": 23413264000,
-            "relativeVolume": 0.38147154692380825,
-            "relativeVolumePercent": 160.88556725621214,
-            "changeFromClose": -2.015646099236639,
+            "relativeVolume": 0.9258610577901241,
+            "relativeVolumePercent": 41.20833211681738,
+            "changeFromClose": -3.4300999882811274,
             "shortInterest": 241358114,
-            "News": "Nvidia's GTC event could be a 'wake-up moment' for investors as the AI trade falters"
+            "News": "Nvidia GTC: What could lift the chip stock back up in 2025?"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 11.324999809265137,
-            "currentVolume": 99822826.00000001,
+            "currentPrice": 10.96,
+            "currentVolume": -4019292567.699727,
             "Gap": -9.83900135459282,
-            "floatShares": 241472404,
-            "relativeVolume": 1.0973266199922151,
-            "relativeVolumePercent": 510.47002533875576,
-            "changeFromClose": 1.2969543840014741,
+            "floatShares": 281716348,
+            "relativeVolume": 1.6954954122104557,
+            "relativeVolumePercent": 44.19121384056061,
+            "changeFromClose": -3.398927585583311,
             "shortInterest": 54448997,
             "News": "Quantum computing, Affirm, Netflix upgrade: Market Minute"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.7699999809265137,
-            "currentVolume": 11510854.0,
-            "Gap": -27.950313272384562,
+            "currentPrice": 0.5848,
+            "currentVolume": -448916791.8862661,
+            "Gap": -27.329195857825226,
             "floatShares": 6559425,
-            "relativeVolume": 1.0093937685301213,
-            "relativeVolumePercent": 1637.188895979579,
-            "changeFromClose": -52.173914653109485,
+            "relativeVolume": 1.50489433081713,
+            "relativeVolumePercent": 20.55871617626068,
+            "changeFromClose": -60.86956586124379,
             "shortInterest": 33075,
             "News": "No News"
         }
