@@ -1,104 +1,104 @@
 {
     "AAPL": [
         {
-            "currentPrice": 216.25999450683594,
-            "currentVolume": 13244651,
+            "currentPrice": 215.74000549316406,
+            "currentVolume": 13899814,
             "Gap": -0.5807470582134414,
             "floatShares": 14998187904,
-            "relativeVolume": 0.2329677926048141,
-            "relativeVolumePercent": 49.45185217735015,
-            "changeFromClose": 0.4738844952799769,
+            "relativeVolume": 0.2444008770163152,
+            "relativeVolumePercent": 75.73611363106193,
+            "changeFromClose": 0.23926750441603836,
             "shortInterest": 134441154,
-            "News": "March Madness tips off, Ted Lasso returns: Sports Report"
+            "News": "Apple TV+ streaming reportedly racks up $1B in losses each year"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 388.79998779296875,
-            "currentVolume": 4785860,
+            "currentPrice": 387.8399963378906,
+            "currentVolume": 4974661,
             "Gap": -0.5376262011446885,
             "floatShares": 7423649000,
-            "relativeVolume": 0.20420549322872153,
-            "relativeVolumePercent": 56.099098937834846,
-            "changeFromClose": 0.2526895080817048,
+            "relativeVolume": 0.2122613497157638,
+            "relativeVolumePercent": 357.57098002538584,
+            "changeFromClose": 0.005154198673191226,
             "shortInterest": 66334396,
             "News": "The secret to Nvidia\u2019s research success: Failing often and quickly"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 165.83999633789062,
-            "currentVolume": 7071988,
+            "currentPrice": 165.35000610351562,
+            "currentVolume": 7476034,
             "Gap": -1.4764264187379548,
             "floatShares": 10917973500,
-            "relativeVolume": 0.3379520510599011,
-            "relativeVolumePercent": 96.068638435422,
-            "changeFromClose": -0.2646153744505762,
+            "relativeVolume": 0.35725544430113526,
+            "relativeVolumePercent": 153.9543662855686,
+            "changeFromClose": -0.5592931697188833,
             "shortInterest": 38855537,
             "News": "The secret to Nvidia\u2019s research success: Failing often and quickly"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 119.96009826660156,
-            "currentVolume": 107849645,
+            "currentPrice": 119.59500122070312,
+            "currentVolume": 111927468,
             "Gap": -0.8466602668561292,
             "floatShares": 23413264000,
-            "relativeVolume": 0.3465907266799028,
-            "relativeVolumePercent": 77.38410412926103,
-            "changeFromClose": 2.076328874435107,
+            "relativeVolume": 0.3596795492255415,
+            "relativeVolumePercent": 330.917905370894,
+            "changeFromClose": 1.7571498471686553,
             "shortInterest": 241358114,
             "News": "CoreWeave now looks to raise $2.7B in IPO, down from $4B"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 9.994999885559082,
-            "currentVolume": 75234227,
+            "currentPrice": 10.039999961853027,
+            "currentVolume": 76824586,
             "Gap": -2.830190376778715,
             "floatShares": 281716348,
-            "relativeVolume": 0.7009054278993776,
-            "relativeVolumePercent": 175.96143165240107,
-            "changeFromClose": -5.849999991003073,
+            "relativeVolume": 0.7157574978302099,
+            "relativeVolumePercent": 279.6741275237633,
+            "changeFromClose": -5.283022636448748,
             "shortInterest": 54448997,
             "News": "Quantum Computing Stocks Fall Ahead Of Nvidia Event"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.529699981212616,
-            "currentVolume": 552999,
+            "currentPrice": 0.5256999731063843,
+            "currentVolume": 562503,
             "Gap": -3.7037110623015317,
             "floatShares": 6559425,
-            "relativeVolume": 0.04125909865493602,
-            "relativeVolumePercent": 2.0913515558551867,
-            "changeFromClose": -1.90741478440173,
+            "relativeVolume": 0.041968189401242105,
+            "relativeVolumePercent": 3531.338289962825,
+            "changeFromClose": -2.6481569968620366,
             "shortInterest": 33075,
             "News": "No News"
         }
     ],
     "ADTX": [
         {
-            "currentPrice": 10.510000228881836,
-            "currentVolume": 14549907,
+            "currentPrice": 10.637700080871582,
+            "currentVolume": 14662936,
             "Gap": 16.45065419872957,
             "floatShares": 56935,
-            "relativeVolume": 1.0197410929248818,
-            "relativeVolumePercent": 35.3490007820608,
-            "changeFromClose": 4.785648142469628,
+            "relativeVolume": 1.0276693127801002,
+            "relativeVolumePercent": 1394.1224361985282,
+            "changeFromClose": 6.058827159314103,
             "shortInterest": 39180,
             "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
         }
     ],
     "XHLD": [
         {
-            "currentPrice": 1.1302000284194946,
-            "currentVolume": 11437161,
+            "currentPrice": 1.090000033378601,
+            "currentVolume": 11698670,
             "Gap": -1.8867981112750467,
             "floatShares": 1505250,
-            "relativeVolume": 0.5013435748533074,
-            "relativeVolumePercent": 100.38992729742648,
-            "changeFromClose": -28.918238698528487,
+            "relativeVolume": 0.5128067217755474,
+            "relativeVolumePercent": 219.61055964922966,
+            "changeFromClose": -31.446540220351242,
             "shortInterest": 62231,
             "News": "No News"
         }
