@@ -29,6 +29,14 @@
 ### Stuff to implemented for different scanners
     - https://finviz.com/help/screener.ashx
 
+### Long Term
+	- switch from python to npm
+ 	- use paid api
+  	- dont use paid API, and just scape web data
+   	- TODO: if i continue to use python where i save off json... i should precalculate averages and stuff (during non trading hours, i.e., EOD)
+    		- Example: 
+      			- 10d volume averages. moving average at historical date/time X. (Should probs use alpaca for historical stuff)
+			- all intraday stuff will have to be calculated on the fly (probably with apis)
 
 ### Links
 
@@ -43,6 +51,8 @@
         https://site.financialmodelingprep.com/developer/docs/stable
         https://polygon.io/
         https://finnhub.io/dashboard
+	https://site.financialmodelingprep.com/top-stock-gainers
+ 	https://www.tiingo.com/documentation/fundamentals
 
     - possible inspiration
         https://stockfetcher.com/#
@@ -51,4 +61,6 @@
         https://www.stockrover.com/screening-strategies/
         https://youtu.be/9iowl419L4s?t=113
         https://youtu.be/7RbjGk9eNJU?t=758
+	https://media.warriortrading.com/2021/03/17110245/GapScanner.png
+ 	https://media.warriortrading.com/2020/12/10070038/APVO-1-Scanners-and-P-L.png
 
