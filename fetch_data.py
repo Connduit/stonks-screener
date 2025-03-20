@@ -196,11 +196,11 @@ def getRVOL(ticker, period, interval):
         time_total = (time_close - time_open).total_seconds() * 1000 # time duration of a candle
         lookback = period + ((period // 5)*2) # every 5 days add 2 more days (becuz sat and sun)? ... or should it be every 7 days?
         start_datetime = today - datetime.timedelta(days=lookback)
-    else if interval == "1m":
+    elif interval == "1m":
         time_total = 60 # 60 seconds == 1min
-    else if interval == "5m":
+    elif interval == "5m":
         time_total = 300 # 300 seconds == 5mins
-    else if interval == "1mo":
+    elif interval == "1mo":
         # finviz gets 3 months worth of 1 min intraday data? and uses that to calc:
         # Ratio between current volume and 3-month average value, intraday adjusted.
         # Relative Volume = Current Volume / 3-month Average Volume
