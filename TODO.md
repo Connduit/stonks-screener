@@ -49,6 +49,7 @@
         https://polygon.io/
         https://finnhub.io/dashboard
 	https://site.financialmodelingprep.com/top-stock-gainers
+ 	https://www.tiingo.com/documentation/fundamentals
 
     - possible inspiration
         https://stockfetcher.com/#
@@ -57,4 +58,6 @@
         https://www.stockrover.com/screening-strategies/
         https://youtu.be/9iowl419L4s?t=113
         https://youtu.be/7RbjGk9eNJU?t=758
+	https://media.warriortrading.com/2021/03/17110245/GapScanner.png
+ 	https://media.warriortrading.com/2020/12/10070038/APVO-1-Scanners-and-P-L.png
 
