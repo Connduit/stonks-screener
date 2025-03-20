@@ -1,11 +1,11 @@
 {
     "AAPL": [
         {
-            "currentPrice": 216.2,
+            "currentPrice": 214.7,
             "currentVolume": 54237276,
             "Gap": 0.719356228188663,
             "floatShares": 14998187904,
-            "relativeVolume": 0.9660913408289922,
+            "relativeVolume": 0.9678623122448609,
             "relativeVolumePercent": 137.3877871428613,
             "changeFromClose": 1.1989294383784261,
             "shortInterest": 134441154,
@@ -14,50 +14,50 @@
     ],
     "MSFT": [
         {
-            "currentPrice": 389.156,
+            "currentPrice": 386.37,
             "currentVolume": 18887696,
-            "Gap": 0.5227901909282295,
+            "Gap": 0.5240951770973654,
             "floatShares": 7423649000,
-            "relativeVolume": 0.7914965551661612,
+            "relativeVolume": 0.8031296632858783,
             "relativeVolumePercent": 48.48291718925904,
             "changeFromClose": 1.1211979645716943,
             "shortInterest": 66334396,
-            "News": "Nvidia's GTC fallout reminds 'Magnificent 7' investors of an important lesson"
+            "News": "The secret to Nvidia\u2019s research success: Failing often and quickly"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 167.3,
+            "currentPrice": 165.6099,
             "currentVolume": 24851487,
             "Gap": 0.7653501759399276,
             "floatShares": 10917973500,
-            "relativeVolume": 1.223153124686232,
+            "relativeVolume": 1.2271404637171,
             "relativeVolumePercent": 47.55996270542234,
             "changeFromClose": 2.219217219515979,
             "shortInterest": 38855537,
-            "News": "Google Search, Play Store falling foul of Digital Markets Act rules, says EU"
+            "News": "The secret to Nvidia\u2019s research success: Failing often and quickly"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 118.7195,
+            "currentPrice": 117.31,
             "currentVolume": 270676243,
-            "Gap": 1.6243610803455284,
+            "Gap": 1.5940365009321766,
             "floatShares": 23413264000,
-            "relativeVolume": 0.8663577922344163,
+            "relativeVolume": 0.8698461150140823,
             "relativeVolumePercent": 69.88476343043182,
             "changeFromClose": 1.8106179783115806,
             "shortInterest": 241358114,
-            "News": "Stock market today: Nasdaq leads market rally as investors cheer Fed rate decision"
+            "News": "The secret to Nvidia\u2019s research success: Failing often and quickly"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 10.5901,
+            "currentPrice": 10.2412,
             "currentVolume": 89460761,
             "Gap": 1.2962906219996235,
             "floatShares": 281716348,
-            "relativeVolume": 0.8800879195040225,
+            "relativeVolume": 0.8838640115376519,
             "relativeVolumePercent": 99.14245615181802,
             "changeFromClose": -1.8518500530834543,
             "shortInterest": 54448997,
@@ -66,24 +66,24 @@
     ],
     "ANTE": [
         {
-            "currentPrice": 0.54,
+            "currentPrice": 0.5438,
             "currentVolume": 2154740,
-            "Gap": -1.96824945698276,
+            "Gap": -1.5873000855468575,
             "floatShares": 6559425,
-            "relativeVolume": 0.1633725373641304,
+            "relativeVolume": 0.17053450116459629,
             "relativeVolumePercent": 15.40651002670701,
-            "changeFromClose": -13.587304626853161,
+            "changeFromClose": -14.285710230976514,
             "shortInterest": 33075,
             "News": "No News"
         }
     ],
     "ADTX": [
         {
-            "currentPrice": 10.1,
+            "currentPrice": 11.3997,
             "currentVolume": 47731531,
-            "Gap": 28.400001525878903,
+            "Gap": 28.26666514078776,
             "floatShares": 56935,
-            "relativeVolume": 5.007543701823085,
+            "relativeVolume": 5.036170553167383,
             "relativeVolumePercent": 70.33263165461396,
             "changeFromClose": 33.73332977294922,
             "shortInterest": 39180,
@@ -92,11 +92,11 @@
     ],
     "XHLD": [
         {
-            "currentPrice": 1.68,
+            "currentPrice": 1.6,
             "currentVolume": 203397949,
-            "Gap": 21.91452978912895,
+            "Gap": 21.880346269375714,
             "floatShares": 1505250,
-            "relativeVolume": 136.04031020713919,
+            "relativeVolume": 143.06668985305626,
             "relativeVolumePercent": 5822.215943122638,
             "changeFromClose": 171.79488746999263,
             "shortInterest": 62231,
