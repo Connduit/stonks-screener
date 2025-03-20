@@ -29,6 +29,11 @@
 ### Stuff to implemented for different scanners
     - https://finviz.com/help/screener.ashx
 
+### Long Term
+	- switch from python to npm
+ 	- use paid api
+  	- dont use paid API, and just scape web data
+
 
 ### Links
 
