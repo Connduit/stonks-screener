@@ -48,6 +48,7 @@
         https://site.financialmodelingprep.com/developer/docs/stable
         https://polygon.io/
         https://finnhub.io/dashboard
+	https://site.financialmodelingprep.com/top-stock-gainers
 
     - possible inspiration
         https://stockfetcher.com/#
