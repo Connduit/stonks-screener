@@ -108,6 +108,7 @@ except NameError:
 with ftplib.FTP('ftp.nasdaqtrader.com') as ftp:
     directory = 'symboldirectory'
     filename = 'nasdaqlisted.txt'
+    #filename = 'otherlisted.txt'
 
     try:
         ftp.login()
