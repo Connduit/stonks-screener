@@ -33,7 +33,10 @@
 	- switch from python to npm
  	- use paid api
   	- dont use paid API, and just scape web data
-
+   	- TODO: if i continue to use python where i save off json... i should precalculate averages and stuff (during non trading hours, i.e., EOD)
+    		- Example: 
+      			- 10d volume averages. moving average at historical date/time X. (Should probs use alpaca for historical stuff)
+			- all intraday stuff will have to be calculated on the fly (probably with apis)
 
 ### Links
 
