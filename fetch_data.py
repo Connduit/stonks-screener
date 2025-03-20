@@ -9,6 +9,8 @@ TODO: use yf.download instead?
 """
 import yfinance as yf
 # from yfinance import EquityQuery
+import pandas as pd
+import datetime
 import json
 import os
 
@@ -53,7 +55,7 @@ import os
 """
 
 def getActiveVolume(ticker):
-    import datetime
+
     today = datetime.date.today()
     
     currentTime = datetime.datetime.now()
@@ -81,7 +83,6 @@ def getActiveVolume(ticker):
 # TODO: merge/combine this function with properRVOL by adding addition params like "period", "interval", and other useful stuff?
 def properRVOL5M(ticker):
     # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
-    import datetime
     today = datetime.date.today()
     
     currentTime = datetime.datetime.now()
@@ -132,7 +133,6 @@ def properRVOL5M(ticker):
 
 def properRVOL(ticker):
     # TODO: this is hard coded for 1day interval atm... fix later once 1d is working
-    import datetime
     today = datetime.date.today()
     
     currentTime = datetime.datetime.now()
@@ -164,7 +164,6 @@ def properRVOL(ticker):
     return res/average_volume
 
 def relativeVolumeAtTime(ticker):
-    import datetime
     today = datetime.date.today()
     
     # TODO: hard coded for 5 minute time frame... fix later
@@ -179,13 +178,53 @@ def relativeVolumeAtTime(ticker):
 
     latest_volume = stock_5m["Volume"].iloc[-1]
     stock_5m["Time"] = stock_5m.index.time
-    import pandas as pd
+
     stock_10am = stock_5m[stock_5m["Time"] == pd.to_datetime("10:00:00").time()]
     #print(stock_10am)
     avg_vol = stock_10am["Volume"].iloc[:-1].tail(len(stock_10am["Volume"].iloc[:-1])).mean()
     #print(avg_vol)
     return (stock_10am["Volume"].iloc[-1]/avg_vol)*100
 
+# period = length, interval = timeframe
+def getRVOL(ticker, period, interval):
+    today = datetime.date.today()    
+    currentTime = datetime.datetime.now()
+    
+    if interval == "1d":
+        time_close = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 16, 0) # 4PM
+        time_open = datetime.datetime(currentTime.year, currentTime.month, currentTime.day, 9, 30) # 9:30AM
+        time_total = (time_close - time_open).total_seconds() * 1000 # time duration of a candle
+        lookback = period + ((period // 5)*2) # every 5 days add 2 more days (becuz sat and sun)? ... or should it be every 7 days?
+        start_datetime = today - datetime.timedelta(days=lookback)
+    else if interval == "1m":
+        time_total = 60 # 60 seconds == 1min
+    else if interval == "5m":
+        time_total = 300 # 300 seconds == 5mins
+    else if interval == "1mo":
+        # finviz gets 3 months worth of 1 min intraday data? and uses that to calc:
+        # Ratio between current volume and 3-month average value, intraday adjusted.
+        # Relative Volume = Current Volume / 3-month Average Volume
+        pass
+    else:
+        print("ERROR: bad interval")
+        return
+    
+
+    #stock_data = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")
+    stock_data = ticker.history(start=start_datetime, interval="1d")
+    
+    timePassed = (min(currentTime, time_close) - time_open).total_seconds() * 1000 # time passed since candle's open
+    
+    
+    # TODO: must check volume isn't 0. this could happen if we attempt to retreive volume right as a new interval starts
+    currentCandleVolume = stock_data["Volume"].iloc[-1] # rename to activeCandleVolume or activeVolume? TODO: index error when trade day is still active
+ 
+    currentCandleVolumeRatio = currentCandleVolume / timePassed
+    #currentCandleVolumeRatio = currentCandleVolume / (time_total * timePassed)
+    adjustedCurrentVolume = currentCandleVolumeRatio * time_total
+    average_volume = ((stock_data["Volume"].iloc[:-1].tail(10).mean())/(timePassed))*time_total
+    
+    return adjustedCurrentVolume/average_volume
 
 # TODO: rename function to getColumnData?
 #def getStuff():
@@ -205,7 +244,6 @@ def getStuff(ticker):
 
     # TODO: need to localalize times to be time of exchange (EST)?
     #from datetime import date
-    import datetime
     today = datetime.date.today()
     yesterday = today - datetime.timedelta(days=1)
 
@@ -249,14 +287,15 @@ def getStuff(ticker):
     # TODO: NOTE: yfinance doesn't include pre/post market volume data for some reason?
 
     relativeVolume = properRVOL(ticker)
+    #relativeVolume = getRVOL(ticker, "3", "1mo") # TODO: broken function not done yet
     
     
 
-    my_data = ticker.history(interval="5m", period="1d")
-    #relvol5m = currentVolume5m/5
+
 
     # Calculate average volume for the last 10 intervals (excluding the current candle)
     # CORRECT STUFF: START - ACCORDING TO TRADINGVIEW
+    # my_data = ticker.history(interval="5m", period="1d")
     #average_volume = my_data['Volume'].iloc[:-1].tail(10).mean()
     #cVol = my_data['Volume'].iloc[-1]
     #relvol5m = cVol/average_volume
@@ -287,7 +326,7 @@ def getStuff(ticker):
 
     shortInterest = ticker.get_info()["sharesShort"]
     relativeVolumePercent = properRVOL5M(ticker)
-    relativeVolumePercent = relativeVolumeAtTime(ticker)
+    # relativeVolumePercent = relativeVolumeAtTime(ticker) # TODO: fix this function... it's currently hard coded to look at 10am
 
 
 
@@ -321,7 +360,6 @@ def getStuff(ticker):
             "News" : [news_title]
     }
 
-    import pandas as pd
     return pd.DataFrame(finalDataFrame)
 
 
