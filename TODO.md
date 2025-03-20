@@ -54,6 +54,7 @@
 		https://site.financialmodelingprep.com/top-stock-gainers
  		https://www.tiingo.com/documentation/fundamentals
   		IMPORTANT: https://www.marketbeat.com/market-data/trading-halts/
+    				https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts
 
     - possible inspiration
         https://stockfetcher.com/#
