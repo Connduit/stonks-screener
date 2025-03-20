@@ -1,11 +1,11 @@
 {
     "AAPL": [
         {
-            "currentPrice": 216.15,
+            "currentPrice": 215.91,
             "currentVolume": 54237276,
             "Gap": 0.719356228188663,
             "floatShares": 14998187904,
-            "relativeVolume": 0.967862312244861,
+            "relativeVolume": 0.9678623122448607,
             "relativeVolumePercent": 137.3877871428613,
             "changeFromClose": 1.1989294383784261,
             "shortInterest": 134441154,
@@ -14,11 +14,11 @@
     ],
     "MSFT": [
         {
-            "currentPrice": 389.31,
+            "currentPrice": 389.19,
             "currentVolume": 18887696,
             "Gap": 0.5240951770973654,
             "floatShares": 7423649000,
-            "relativeVolume": 0.8031296632858784,
+            "relativeVolume": 0.8031296632858783,
             "relativeVolumePercent": 48.48291718925904,
             "changeFromClose": 1.1211979645716943,
             "shortInterest": 66334396,
@@ -27,11 +27,11 @@
     ],
     "GOOG": [
         {
-            "currentPrice": 167.5,
+            "currentPrice": 167.3,
             "currentVolume": 24851487,
             "Gap": 0.7653501759399276,
             "floatShares": 10917973500,
-            "relativeVolume": 1.2271404637170997,
+            "relativeVolume": 1.2271404637171,
             "relativeVolumePercent": 47.55996270542234,
             "changeFromClose": 2.219217219515979,
             "shortInterest": 38855537,
@@ -40,7 +40,7 @@
     ],
     "NVDA": [
         {
-            "currentPrice": 118.8,
+            "currentPrice": 118.92,
             "currentVolume": 270676243,
             "Gap": 1.5940365009321766,
             "floatShares": 23413264000,
@@ -53,11 +53,11 @@
     ],
     "QBTS": [
         {
-            "currentPrice": 10.58,
+            "currentPrice": 10.24,
             "currentVolume": 89460761,
             "Gap": 1.2962906219996235,
             "floatShares": 281716348,
-            "relativeVolume": 0.8838640115376516,
+            "relativeVolume": 0.8838640115376518,
             "relativeVolumePercent": 99.14245615181802,
             "changeFromClose": -1.8518500530834543,
             "shortInterest": 54448997,
@@ -66,7 +66,7 @@
     ],
     "ANTE": [
         {
-            "currentPrice": 0.538,
+            "currentPrice": 0.5261,
             "currentVolume": 2154740,
             "Gap": -1.5873000855468575,
             "floatShares": 6559425,
@@ -79,7 +79,7 @@
     ],
     "ADTX": [
         {
-            "currentPrice": 10.0401,
+            "currentPrice": 9.91,
             "currentVolume": 47731531,
             "Gap": 28.26666514078776,
             "floatShares": 56935,
@@ -92,11 +92,11 @@
     ],
     "XHLD": [
         {
-            "currentPrice": 1.72,
+            "currentPrice": 1.65,
             "currentVolume": 203397949,
             "Gap": 21.880346269375714,
             "floatShares": 1505250,
-            "relativeVolume": 143.0666898530563,
+            "relativeVolume": 143.06668985305623,
             "relativeVolumePercent": 5822.215943122638,
             "changeFromClose": 171.79488746999263,
             "shortInterest": 62231,
