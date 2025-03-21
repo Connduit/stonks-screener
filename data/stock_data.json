@@ -1,104 +1,104 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.8300018310547,
-            "currentVolume": 21640193,
+            "currentPrice": 217.6,
+            "currentVolume": 93387509,
             "Gap": -1.207382830534511,
             "floatShares": 14998187904,
-            "relativeVolume": 0.37819539490045456,
-            "relativeVolumePercent": 66.60916087872735,
-            "changeFromClose": -0.12611128667151583,
+            "relativeVolume": 1.6319078383468204,
+            "relativeVolumePercent": 12.61159594865853,
+            "changeFromClose": 1.9476870855058042,
             "shortInterest": 134441154,
-            "News": "Short sellers have made $15 billion betting against Tesla and Nvidia in 2025"
+            "News": "ChatGPT: Everything you need to know about the AI-powered chatbot"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 384.54998779296875,
-            "currentVolume": 8787705,
+            "currentPrice": 390.93,
+            "currentVolume": 38759185,
             "Gap": -0.9293251097963051,
             "floatShares": 7423649000,
-            "relativeVolume": 0.3828489834861426,
-            "relativeVolumePercent": 48.0151222934901,
-            "changeFromClose": -0.5919782252612876,
+            "relativeVolume": 1.688478159537532,
+            "relativeVolumePercent": 7.657129735199955,
+            "changeFromClose": 1.1425947341478244,
             "shortInterest": 66334396,
-            "News": "Short sellers have made $15 billion betting against Tesla and Nvidia in 2025"
+            "News": "ChatGPT: Everything you need to know about the AI-powered chatbot"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 164.66000366210938,
-            "currentVolume": 7344520,
+            "currentPrice": 166.43,
+            "currentVolume": 29408884,
             "Gap": -1.04816461408762,
             "floatShares": 10917973500,
-            "relativeVolume": 0.3494539562593982,
-            "relativeVolumePercent": 59.65072924490214,
-            "changeFromClose": -0.23629165855037162,
+            "relativeVolume": 1.399207735757133,
+            "relativeVolumePercent": 18.295754527162973,
+            "changeFromClose": 0.7270505459281221,
             "shortInterest": 38855537,
             "News": "3 of Goldman Sachs' best investing tips for currently volatile markets"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 116.37090301513672,
-            "currentVolume": 80779629,
+            "currentPrice": 117.72,
+            "currentVolume": 263619579,
             "Gap": -1.3262453491782036,
             "floatShares": 23413264000,
-            "relativeVolume": 0.26568245629597154,
-            "relativeVolumePercent": 64.82113168099968,
-            "changeFromClose": -1.821560606087913,
+            "relativeVolume": 0.8668739610863005,
+            "relativeVolumePercent": 19.512677652828526,
+            "changeFromClose": -0.7002462158125495,
             "shortInterest": 241358114,
-            "News": "As Nvidia's GTC wraps up, what's next for AI, quantum computing?"
+            "News": "Super Micro jumps after JPMorgan upgrade, lifts price target"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 8.46500015258789,
-            "currentVolume": 34103838,
-            "Gap": -2.830190376778715,
+            "currentPrice": 8.3999,
+            "currentVolume": 96853478,
+            "Gap": -4.948209116973263,
             "floatShares": 281716348,
-            "relativeVolume": 0.2813035210453217,
-            "relativeVolumePercent": 48.95250159709045,
-            "changeFromClose": -18.01887483348937,
+            "relativeVolume": 0.7980035714012054,
+            "relativeVolumePercent": 16.01682089255235,
+            "changeFromClose": -3.7974676598488277,
             "shortInterest": 54448997,
             "News": "As Nvidia's GTC wraps up, what's next for AI, quantum computing?"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.5070000290870667,
-            "currentVolume": 227190,
+            "currentPrice": 0.5188,
+            "currentVolume": 2133416,
             "Gap": 4.081628681073312,
             "floatShares": 6559425,
-            "relativeVolume": 0.016678400300694254,
-            "relativeVolumePercent": 27.422348484010207,
-            "changeFromClose": 3.469391677440105,
+            "relativeVolume": 0.15660949662764306,
+            "relativeVolumePercent": 196.38274458016946,
+            "changeFromClose": 4.122451779843315,
             "shortInterest": 33075,
             "News": "No News"
         }
     ],
     "ADTX": [
         {
-            "currentPrice": 9.739999771118164,
-            "currentVolume": 481600,
+            "currentPrice": 9.17,
+            "currentVolume": 976803,
             "Gap": -6.828807959692671,
             "floatShares": 56935,
-            "relativeVolume": 0.030200781517964525,
-            "relativeVolumePercent": 17.160799290681325,
-            "changeFromClose": -8.88680866749925,
+            "relativeVolume": 0.06124288364015749,
+            "relativeVolumePercent": 30.870436076456453,
+            "changeFromClose": -9.91580456081155,
             "shortInterest": 39180,
             "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
         }
     ],
     "XHLD": [
         {
-            "currentPrice": 1.7201000452041626,
-            "currentVolume": 28433544,
+            "currentPrice": 1.46,
+            "currentVolume": 58330034,
             "Gap": 14.343030058676797,
             "floatShares": 1505250,
-            "relativeVolume": 1.161846971585901,
-            "relativeVolumePercent": 25.756431663547147,
-            "changeFromClose": 72.52759091292795,
+            "relativeVolume": 2.382345332456036,
+            "relativeVolumePercent": 50.121318675396765,
+            "changeFromClose": 40.42126435503469,
             "shortInterest": 62231,
             "News": "No News"
         }
