@@ -1,19 +1,35 @@
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
 }
 
 th, td {
-  padding: 8px;
+  padding: 10px;
   text-align: left;
-  border: 1px solid #ddd;
+  border: 1px solid #333;
 }
 
 th {
   cursor: pointer;
-  background-color: #f4f4f4;
+  background-color: #2a2a2a;
 }
 
 th:hover {
-  background-color: #ddd;
+  background-color: #3a3a3a;
+}
+
+tr:nth-child(even) {
+  background-color: #252525;
+}
+
+tr:hover {
+  background-color: #333;
 }
