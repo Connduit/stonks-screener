@@ -384,7 +384,7 @@ for symbol in symbols:
     #data[symbol]["last_price"] = ticker.fast_info["lastPrice"]
     #data[symbol]["last_volume"] = ticker.fast_info["lastVolume"]
 
-with open("stock_data.json", "w+") as file:
+with open("../data/stock_data.json", "w+") as file: # path should be hard coded?
     json.dump(data, file, indent=4)
 
 print("Stock data saved successfully!")

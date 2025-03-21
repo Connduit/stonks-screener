@@ -1,5 +1,5 @@
 // TODO: turn this into an async function if needed?
-fetch('stock_data.json')
+fetch('../data/stock_data.json') // TODO: dont hard code? pass in arguement "path"
     .then(response => response.json())
     .then(data => {
 	const tableBody = document.querySelector('#stock-table tbody');

@@ -28,5 +28,5 @@ json_data = json.dumps(data)
 
 # Save the data to a file for use on the webpage
 # TODO: this wipes out all data in stock_data.json
-with open("stock_data.json", "w+") as file:
+with open("../data/stock_data.json", "w+") as file: # TODO: might not be able to open
     file.write(json_data)
