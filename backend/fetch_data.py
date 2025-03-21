@@ -128,7 +128,8 @@ def properRVOL5M(ticker):
     print(f"final5mins = {average_volume/approximateCurrentVolume}")
     """
 
-    return (average_volume/approximateCurrentVolume)*100 # TODO: NOTE: im like 99% sure this is correct now
+    return (average_volume/approximateCurrentVolume)
+    #return (average_volume/approximateCurrentVolume)*100 # TODO: NOTE: im like 99% sure this is correct now
     #return reg5mRVOL/volumeInPast5mins
 
 def properRVOL(ticker):
@@ -183,7 +184,8 @@ def relativeVolumeAtTime(ticker):
     #print(stock_10am)
     avg_vol = stock_10am["Volume"].iloc[:-1].tail(len(stock_10am["Volume"].iloc[:-1])).mean()
     #print(avg_vol)
-    return (stock_10am["Volume"].iloc[-1]/avg_vol)*100
+    return (stock_10am["Volume"].iloc[-1]/avg_vol)
+    #return (stock_10am["Volume"].iloc[-1]/avg_vol)*100
 
 # period = length, interval = timeframe
 def getRVOL(ticker, period, interval):
@@ -318,11 +320,13 @@ def getStuff(ticker):
     # TODO: add premarket gap (preday close to current price (if we're in premarket)) or regular gap if market is already open
     # or just calculate gap as (current_price - prev_close)/prev_close if it is premarket
     # or TODO: maybe it's ok that gap = 0 when time is: 8pm < currentTime < 4am
-    gap = (now_open - prev_close)/prev_close*100 # convert to percentage
+    gap = (now_open - prev_close)/prev_close
+    #gap = (now_open - prev_close)/prev_close*100 # convert to percentage
 
     now_close = stock_10d.tail(2)["Close"].iloc[-1]
     # TODO: this only works if trade day is over
-    changeFromClose = (now_close - prev_close)/prev_close*100 # convert to percentage
+    changeFromClose = (now_close - prev_close)/prev_close
+    #changeFromClose = (now_close - prev_close)/prev_close*100 # convert to percentage
 
     shortInterest = ticker.get_info()["sharesShort"]
     relativeVolumePercent = properRVOL5M(ticker)
