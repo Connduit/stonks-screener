@@ -134,8 +134,8 @@ date = content[-1].split('|')[0][:]
 date = date[len('File Creation Time: '):]
 date = datetime.datetime.strptime(date, '%m%d%Y%H:%M')
 content = content[1:-1]
-print(date)
-print(header)
+#print(date)
+#print(header)
 
 securities = []
 for c in content:
@@ -144,4 +144,4 @@ for c in content:
     for i in range(len(c)):
         security[header[i]] = c[i]
     securities.append(security)
-pprint(securities)
+#pprint(securities)
