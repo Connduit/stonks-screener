@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python fetch_data.py
+          python backend/fetch_data.py
 
       - name: Configure Git
         run: |

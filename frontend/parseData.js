@@ -1,5 +1,9 @@
 // TODO: turn this into an async function if needed?
-fetch('../data/stock_data.json') // TODO: dont hard code? pass in arguement "path"
+const path = require("path")
+const data_path = path.resolve(__dirname, "..", "data", "stock_data.json")
+
+//fetch('../data/stock_data.json') // TODO: dont hard code? pass in arguement "path"
+fetch(data_path)
     .then(response => response.json())
     .then(data => {
 	const tableBody = document.querySelector('#stock-table tbody');
