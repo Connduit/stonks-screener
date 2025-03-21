@@ -1,104 +1,104 @@
 {
     "AAPL": [
         {
-            "currentPrice": 214.1,
-            "currentVolume": 48270264,
-            "Gap": -0.5807470582134414,
+            "currentPrice": 213.72999572753906,
+            "currentVolume": 19517204,
+            "Gap": -1.207382830534511,
             "floatShares": 14998187904,
-            "relativeVolume": 0.8489808064904201,
-            "relativeVolumePercent": 15.248655281147656,
-            "changeFromClose": -0.529641033522759,
+            "relativeVolume": 0.34109117486120577,
+            "relativeVolumePercent": 1508.9653404289847,
+            "changeFromClose": -0.17282128231125107,
             "shortInterest": 134441154,
-            "News": "There could be a 'renaissance' in small tech stocks: Hot take from Opening Bid"
+            "News": "Short sellers have made $15 billion betting against Tesla and Nvidia in 2025"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 387.01,
-            "currentVolume": 18380423,
-            "Gap": -0.5376262011446885,
+            "currentPrice": 384.8999938964844,
+            "currentVolume": 8011699,
+            "Gap": -0.9293251097963051,
             "floatShares": 7423649000,
-            "relativeVolume": 0.7841975876452896,
-            "relativeVolumePercent": 9.842486751237628,
-            "changeFromClose": -0.25269737708731277,
+            "relativeVolume": 0.34904116810326985,
+            "relativeVolumePercent": 627.1149649048215,
+            "changeFromClose": -0.5014999637503172,
             "shortInterest": 66334396,
-            "News": "There could be a 'renaissance' in small tech stocks: Hot take from Opening Bid"
+            "News": "Short sellers have made $15 billion betting against Tesla and Nvidia in 2025"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 165.04,
-            "currentVolume": 19659425,
-            "Gap": -1.4764264187379548,
+            "currentPrice": 164.2050018310547,
+            "currentVolume": 6353485,
+            "Gap": -1.04816461408762,
             "floatShares": 10917973500,
-            "relativeVolume": 0.9393690275334917,
-            "relativeVolumePercent": 14.08431721041,
-            "changeFromClose": -0.7397135774409245,
+            "relativeVolume": 0.30233383139501685,
+            "relativeVolumePercent": 2111.333415180243,
+            "changeFromClose": -0.5149991443799444,
             "shortInterest": 38855537,
-            "News": "There could be a 'renaissance' in small tech stocks: Hot take from Opening Bid"
+            "News": "3 of Goldman Sachs' best investing tips for currently volatile markets"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 118.74,
-            "currentVolume": 244972880,
-            "Gap": -0.8466602668561292,
+            "currentPrice": 116.08999633789062,
+            "currentVolume": 60550641,
+            "Gap": -1.3262453491782036,
             "floatShares": 23413264000,
-            "relativeVolume": 0.7868366730378585,
-            "relativeVolumePercent": 22.08701994550228,
-            "changeFromClose": 0.8594300247455446,
+            "relativeVolume": 0.1990504653296114,
+            "relativeVolumePercent": 1129.1132718470105,
+            "changeFromClose": -2.0585526588501364,
             "shortInterest": 241358114,
-            "News": "There could be a 'renaissance' in small tech stocks: Hot take from Opening Bid"
+            "News": "3 of Goldman Sachs' best investing tips for currently volatile markets"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 8.4401,
-            "currentVolume": 174973429,
-            "Gap": -2.830190376778715,
+            "currentPrice": 8.799300193786621,
+            "currentVolume": 23729591,
+            "Gap": -4.948209116973263,
             "floatShares": 281716348,
-            "relativeVolume": 1.6296513143550404,
-            "relativeVolumePercent": 62.41772005657628,
-            "changeFromClose": -18.01887483348937,
+            "relativeVolume": 0.19606567475305406,
+            "relativeVolumePercent": 688.3113818721754,
+            "changeFromClose": 1.2462625348093885,
             "shortInterest": 54448997,
             "News": "There could be a 'renaissance' in small tech stocks: Hot take from Opening Bid"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.4775,
-            "currentVolume": 2132863,
-            "Gap": -3.7037110623015317,
+            "currentPrice": 0.535099983215332,
+            "currentVolume": 140085,
+            "Gap": 4.081628681073312,
             "floatShares": 6559425,
-            "relativeVolume": 0.15907272469626568,
-            "relativeVolumePercent": 162.60893584697192,
-            "changeFromClose": -9.870374252030725,
+            "relativeVolume": 0.010283875637672234,
+            "relativeVolumePercent": 111.40961513954377,
+            "changeFromClose": 9.204076081799952,
             "shortInterest": 33075,
             "News": "No News"
         }
     ],
     "ADTX": [
         {
-            "currentPrice": 10.38,
-            "currentVolume": 17078517,
-            "Gap": 16.45065419872957,
+            "currentPrice": 9.680000305175781,
+            "currentVolume": 387544,
+            "Gap": -6.828807959692671,
             "floatShares": 56935,
-            "relativeVolume": 1.1962429638100458,
-            "relativeVolumePercent": 35.32754990150699,
-            "changeFromClose": 6.580257876204324,
+            "relativeVolume": 0.02430259898795275,
+            "relativeVolumePercent": 228.53318194041893,
+            "changeFromClose": -9.44807591069433,
             "shortInterest": 39180,
             "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
         }
     ],
     "XHLD": [
         {
-            "currentPrice": 0.9999,
-            "currentVolume": 14969256,
-            "Gap": -1.8867981112750467,
+            "currentPrice": 1.4110000133514404,
+            "currentVolume": 13194666,
+            "Gap": 14.343030058676797,
             "floatShares": 1505250,
-            "relativeVolume": 0.6490537306184745,
-            "relativeVolumePercent": 61.99035244013732,
-            "changeFromClose": -37.27044246213812,
+            "relativeVolume": 0.5391583523034432,
+            "relativeVolumePercent": 549.2834394592236,
+            "changeFromClose": 41.52457803856355,
             "shortInterest": 62231,
             "News": "No News"
         }
