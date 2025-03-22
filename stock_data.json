@@ -1,104 +1,104 @@
 {
     "AAPL": [
         {
-            "currentPrice": 213.72999572753906,
-            "currentVolume": 19517204,
-            "Gap": -1.207382830534511,
+            "currentPrice": 217.8,
+            "currentVolume": 93387509,
+            "Gap": -1.1863654705800435,
             "floatShares": 14998187904,
-            "relativeVolume": 0.34109117486120577,
-            "relativeVolumePercent": 1508.9653404289847,
-            "changeFromClose": -0.17282128231125107,
+            "relativeVolume": 1.6418157700079177,
+            "relativeVolumePercent": -0.49346434781454573,
+            "changeFromClose": 1.9476870855058042,
             "shortInterest": 134441154,
-            "News": "Short sellers have made $15 billion betting against Tesla and Nvidia in 2025"
+            "News": "Apple's AI shakeup: They might not be 'moving the needle' on AI"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 384.8999938964844,
-            "currentVolume": 8011699,
-            "Gap": -0.9293251097963051,
+            "currentPrice": 391.51,
+            "currentVolume": 38759185,
+            "Gap": -0.93578615227407,
             "floatShares": 7423649000,
-            "relativeVolume": 0.34904116810326985,
-            "relativeVolumePercent": 627.1149649048215,
-            "changeFromClose": -0.5014999637503172,
+            "relativeVolume": 1.7238652848386633,
+            "relativeVolumePercent": -0.299324084257806,
+            "changeFromClose": 1.1425947341478244,
             "shortInterest": 66334396,
-            "News": "Short sellers have made $15 billion betting against Tesla and Nvidia in 2025"
+            "News": "ChatGPT: Everything you need to know about the AI-powered chatbot"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 164.2050018310547,
-            "currentVolume": 6353485,
-            "Gap": -1.04816461408762,
+            "currentPrice": 166.5,
+            "currentVolume": 29408884,
+            "Gap": -1.0118134735336055,
             "floatShares": 10917973500,
-            "relativeVolume": 0.30233383139501685,
-            "relativeVolumePercent": 2111.333415180243,
-            "changeFromClose": -0.5149991443799444,
+            "relativeVolume": 1.4201474528790234,
+            "relativeVolumePercent": -0.714691175639336,
+            "changeFromClose": 0.7270505459281221,
             "shortInterest": 38855537,
             "News": "3 of Goldman Sachs' best investing tips for currently volatile markets"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 116.08999633789062,
-            "currentVolume": 60550641,
-            "Gap": -1.3262453491782036,
-            "floatShares": 23413264000,
-            "relativeVolume": 0.1990504653296114,
-            "relativeVolumePercent": 1129.1132718470105,
-            "changeFromClose": -2.0585526588501364,
+            "currentPrice": 117.64,
+            "currentVolume": 263619579,
+            "Gap": -1.3414294729313225,
+            "floatShares": 23413020000,
+            "relativeVolume": 0.8745506878081392,
+            "relativeVolumePercent": -0.761599481571572,
+            "changeFromClose": -0.7002462158125495,
             "shortInterest": 241358114,
-            "News": "3 of Goldman Sachs' best investing tips for currently volatile markets"
+            "News": "Super Micro jumps after JPMorgan upgrade, lifts price target"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 8.799300193786621,
-            "currentVolume": 23729591,
+            "currentPrice": 8.45,
+            "currentVolume": 96853478,
             "Gap": -4.948209116973263,
             "floatShares": 281716348,
-            "relativeVolume": 0.19606567475305406,
-            "relativeVolumePercent": 688.3113818721754,
-            "changeFromClose": 1.2462625348093885,
+            "relativeVolume": 0.7992264628091371,
+            "relativeVolumePercent": -0.6247375931328083,
+            "changeFromClose": -3.7974676598488277,
             "shortInterest": 54448997,
-            "News": "There could be a 'renaissance' in small tech stocks: Hot take from Opening Bid"
+            "News": "As Nvidia's GTC wraps up, what's next for AI, quantum computing?"
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.535099983215332,
-            "currentVolume": 140085,
+            "currentPrice": 0.502,
+            "currentVolume": 2133416,
             "Gap": 4.081628681073312,
             "floatShares": 6559425,
-            "relativeVolume": 0.010283875637672234,
-            "relativeVolumePercent": 111.40961513954377,
-            "changeFromClose": 9.204076081799952,
+            "relativeVolume": 0.15674779703021172,
+            "relativeVolumePercent": -7.387275811556873,
+            "changeFromClose": 4.081628681073312,
             "shortInterest": 33075,
             "News": "No News"
         }
     ],
     "ADTX": [
         {
-            "currentPrice": 9.680000305175781,
-            "currentVolume": 387544,
+            "currentPrice": 9.63,
+            "currentVolume": 976803,
             "Gap": -6.828807959692671,
             "floatShares": 56935,
-            "relativeVolume": 0.02430259898795275,
-            "relativeVolumePercent": 228.53318194041893,
-            "changeFromClose": -9.44807591069433,
+            "relativeVolume": 0.06254679881145031,
+            "relativeVolumePercent": -1.2024628355702098,
+            "changeFromClose": -9.91580456081155,
             "shortInterest": 39180,
             "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
         }
     ],
     "XHLD": [
         {
-            "currentPrice": 1.4110000133514404,
-            "currentVolume": 13194666,
-            "Gap": 14.343030058676797,
+            "currentPrice": 1.4398,
+            "currentVolume": 58330034,
+            "Gap": 13.340021967032234,
             "floatShares": 1505250,
-            "relativeVolume": 0.5391583523034432,
-            "relativeVolumePercent": 549.2834394592236,
-            "changeFromClose": 41.52457803856355,
+            "relativeVolume": 2.3902714761179515,
+            "relativeVolumePercent": -1.9434816479138557,
+            "changeFromClose": 40.42126435503469,
             "shortInterest": 62231,
             "News": "No News"
         }
