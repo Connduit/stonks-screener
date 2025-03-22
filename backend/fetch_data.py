@@ -230,7 +230,7 @@ def getRVOL(ticker, period, interval):
 
 # TODO: rename function to getColumnData?
 #def getStuff():
-def getStuff(ticker):
+def getWarriorMostActive(ticker):
     """
     currentPrice
     volume on the day (if we're in active trading hours get volume so far)
@@ -243,6 +243,7 @@ def getStuff(ticker):
     short interest ???
 
     """
+    print(f"ticker = {ticker}")
 
     # TODO: need to localalize times to be time of exchange (EST)?
     #from datetime import date
@@ -263,12 +264,13 @@ def getStuff(ticker):
 
     """ Get Current Price """
     currentPrice = stock_now.iloc[-1]["Close"]
+    print(f"currentPrice = {currentPrice}")
 
     stock_10d = ticker.history(start=today-datetime.timedelta(days=16), interval="1d")  # 14 = 10 trading days if there's no holidays... need to change to 17 days cuz weekend + holiday?
     """ Get Current Volume """
     #currentVolume = stock_10d["Volume"].iloc[-1] # TODO: if it is past 4pm, will this include post market volume?
     currentVolume = ticker.get_info()["volume"] # TODO: this seems to get slightly more accurate/ up to date volume ?
-    #print(f"currentVolume = {currentVolume}")
+    print(f"currentVolume = {currentVolume}")
     #print(f"get_info() volume = {ticker.get_info()['volume']}")
 
     # TODO: this gap is wrong... should be prev_close - now_open
@@ -377,7 +379,7 @@ for symbol in symbols:
     ticker = yf.Ticker(symbol)
     # TODO: note: 1d is the smallest period
     #data[symbol] = ticker.history(period="1d").to_dict(orient='records') # TODO: instead of calling history... call .get_info() and then parse down to just the data I need in the front end
-    res = getStuff(ticker)
+    res = getWarriorMostActive(ticker)
     data[symbol] = res.to_dict(orient="records")
     #print(ticker.history(period="1d", interval="1m", prepost=True))
     #print(ticker.get_fast_info().last_price) # TODO: last price during active trade hours? 
@@ -387,12 +389,18 @@ for symbol in symbols:
     #print()
     #data[symbol]["last_price"] = ticker.fast_info["lastPrice"]
     #data[symbol]["last_volume"] = ticker.fast_info["lastVolume"]
+    print()
 
-data_path = os.path.dirname(__file__)
-data_path = os.path.dirname(data_path)
-data_path = os.path.join(data_path, "data", "stock_data.json")
 
-with open(data_path, "w+") as file: # path should be hard coded?
-    json.dump(data, file, indent=4)
+if __name__ == "__main__":
 
-print("Stock data saved successfully!")
+
+
+    data_path = os.path.dirname(__file__)
+    data_path = os.path.dirname(data_path)
+    data_path = os.path.join(data_path, "data", "stock_data.json")
+
+    with open(data_path, "w+") as file: # path should be hard coded?
+        json.dump(data, file, indent=4)
+
+    print("Stock data saved successfully!")

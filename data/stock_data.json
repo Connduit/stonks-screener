@@ -1,63 +1,63 @@
 {
     "AAPL": [
         {
-            "currentPrice": 217.56,
+            "currentPrice": 217.8,
             "currentVolume": 93387509,
-            "Gap": -0.012073828305345109,
+            "Gap": -0.011863654705800435,
             "floatShares": 14998187904,
-            "relativeVolume": 1.6319078383468204,
+            "relativeVolume": 1.6418157700079175,
             "relativeVolumePercent": 0.1261159594865853,
             "changeFromClose": 0.019476870855058042,
             "shortInterest": 134441154,
-            "News": "ChatGPT: Everything you need to know about the AI-powered chatbot"
+            "News": "A Trump plan for TikTok is coming together \u2014 and Oracle may play a starring role"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 391.1,
+            "currentPrice": 391.51,
             "currentVolume": 38759185,
-            "Gap": -0.009293251097963052,
+            "Gap": -0.0093578615227407,
             "floatShares": 7423649000,
-            "relativeVolume": 1.688478159537532,
+            "relativeVolume": 1.7238652848386633,
             "relativeVolumePercent": 0.07657129735199955,
             "changeFromClose": 0.011425947341478244,
             "shortInterest": 66334396,
-            "News": "ChatGPT: Everything you need to know about the AI-powered chatbot"
+            "News": "A Trump plan for TikTok is coming together \u2014 and Oracle may play a starring role"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 166.474,
+            "currentPrice": 166.5,
             "currentVolume": 29408884,
-            "Gap": -0.0104816461408762,
+            "Gap": -0.010118134735336055,
             "floatShares": 10917973500,
-            "relativeVolume": 1.399207735757133,
+            "relativeVolume": 1.4201474528790232,
             "relativeVolumePercent": 0.18295754527162975,
             "changeFromClose": 0.007270505459281222,
             "shortInterest": 38855537,
-            "News": "3 of Goldman Sachs' best investing tips for currently volatile markets"
+            "News": "A Trump plan for TikTok is coming together \u2014 and Oracle may play a starring role"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 117.7,
+            "currentPrice": 117.64,
             "currentVolume": 263619579,
-            "Gap": -0.013262453491782036,
-            "floatShares": 23413264000,
-            "relativeVolume": 0.8668739610863005,
+            "Gap": -0.013414294729313225,
+            "floatShares": 23413020000,
+            "relativeVolume": 0.8745506878081393,
             "relativeVolumePercent": 0.19512677652828525,
             "changeFromClose": -0.007002462158125495,
             "shortInterest": 241358114,
-            "News": "Super Micro jumps after JPMorgan upgrade, lifts price target"
+            "News": "Jim Cramer on NVIDIA (NVDA): \u2018Nothing\u2019s More Powerful Than Multiple Compression\u2019"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 8.4,
+            "currentPrice": 8.45,
             "currentVolume": 96853478,
             "Gap": -0.04948209116973264,
             "floatShares": 281716348,
-            "relativeVolume": 0.7980035714012054,
+            "relativeVolume": 0.7992264628091371,
             "relativeVolumePercent": 0.1601682089255235,
             "changeFromClose": -0.03797467659848828,
             "shortInterest": 54448997,
@@ -66,24 +66,24 @@
     ],
     "ANTE": [
         {
-            "currentPrice": 0.5188,
+            "currentPrice": 0.502,
             "currentVolume": 2133416,
             "Gap": 0.04081628681073312,
             "floatShares": 6559425,
-            "relativeVolume": 0.15660949662764306,
-            "relativeVolumePercent": 1.9638274458016947,
-            "changeFromClose": 0.041224517798433155,
+            "relativeVolume": 0.15674779703021174,
+            "relativeVolumePercent": 1.895229448662925,
+            "changeFromClose": 0.04081628681073312,
             "shortInterest": 33075,
             "News": "No News"
         }
     ],
     "ADTX": [
         {
-            "currentPrice": 9.28,
+            "currentPrice": 9.63,
             "currentVolume": 976803,
             "Gap": -0.06828807959692672,
             "floatShares": 56935,
-            "relativeVolume": 0.06124288364015749,
+            "relativeVolume": 0.06254679881145032,
             "relativeVolumePercent": 0.30870436076456453,
             "changeFromClose": -0.09915804560811549,
             "shortInterest": 39180,
@@ -92,12 +92,12 @@
     ],
     "XHLD": [
         {
-            "currentPrice": 1.44,
+            "currentPrice": 1.4398,
             "currentVolume": 58330034,
-            "Gap": 0.14343030058676798,
+            "Gap": 0.13340021967032234,
             "floatShares": 1505250,
-            "relativeVolume": 2.382345332456036,
-            "relativeVolumePercent": 0.5012131867539676,
+            "relativeVolume": 2.3902714761179515,
+            "relativeVolumePercent": 0.49923409586937195,
             "changeFromClose": 0.40421264355034686,
             "shortInterest": 62231,
             "News": "No News"
