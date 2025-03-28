@@ -44,6 +44,10 @@ start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 stream = StockDataStream(API_KEY, SECRET_KEY)
 print("StockDataStream() created")
 
+async def on_quote(data):
+    print("inside: on_quote()")
+    print("do nothing")
+
 # Callback function to handle incoming trade data
 async def on_trade(data):
     print("inside: on_trade()")
@@ -61,6 +65,8 @@ async def main():
     print("inside main()")
     # Start the WebSocket stream
     stream.subscribe_trades(on_trade, "AAPL")  # Stream AAPL trade data
+    stream.subscribe_quotes(on_quote, "TSLA")
+    print("subbed to trades")
     
     # Run both the WebSocket and the timeout function concurrently
     task1 = asyncio.create_task(stream.run())   # Run WebSocket in background
