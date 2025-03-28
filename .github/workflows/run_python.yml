@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-      - debug-branch
       - restyle
 
 jobs:
@@ -29,6 +28,7 @@ jobs:
       - name: Run Python script
         run: |
           python backend/fetch_data.py
+          python backend/sandbox.py
 
       - name: Configure Git
         run: |
