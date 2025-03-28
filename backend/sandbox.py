@@ -3,7 +3,7 @@ from alpaca.trading.client import TradingClient
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.historical.screener import ScreenerClient
 from alpaca.data.requests import StockBarsRequest, TimeFrame, MostActivesRequest, MarketMoversRequest
-from alpaca.data.live import StockDataStream
+
 
 
 from datetime import datetime, timedelta
@@ -36,7 +36,7 @@ start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 #MostActivesRequest()
 #MarketMoversRequest()
 
-from alpaca.data.live import StockDataStream
+from alpaca.data.live.stock import StockDataStream
 import asyncio
 import os
 
