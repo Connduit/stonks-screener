@@ -37,7 +37,7 @@ jobs:
           
       - name: Commit and push changes
         run: |
-          git add stock_data.json
+          git add data/stock_data.json
           git status
           git diff --cached --quiet || git commit -m "Update stock data"
           git status
