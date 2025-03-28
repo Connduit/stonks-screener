@@ -33,9 +33,12 @@ start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 from alpaca.data.live import StockDataStream
 import asyncio
 
+# Replace with your Alpaca API credentials
+API_KEY = 'PKVYRNH1J4SJ7WUIGHBF'
+API_SECRET = 'LQ7H9QSaFU3Xx6zzL3fHwN9NOlBN8XmloVd9R1mS'
 
 # Initialize Alpaca Data Client for real-time data
-data_client = StockDataStream(API_KEY, SECRET_KEY)
+data_client = StockDataStream(API_KEY, API_SECRET)
 
 # Function to check stock conditions (top gainers, volume, etc.)
 def check_conditions(data):
@@ -44,7 +47,6 @@ def check_conditions(data):
     volume = data.size
     price_change = ((price - data.prev_close) / data.prev_close) * 100  # Percentage change
 
-    # Example conditions: top gainers (> 5%) and high volume (> 1M)
     if price_change > 5:
         print(f"Top Gainer: {symbol} | Price: ${price} | Change: {price_change:.2f}%")
     
@@ -55,12 +57,14 @@ def check_conditions(data):
 async def trade_callback(data):
     check_conditions(data)
 
-# Subscribe to trade updates for specific tickers
+# Main function to start WebSocket streaming
 async def main():
-    # Subscribe to trades for a list of stocks
-    await data_client.subscribe_trades(trade_callback, 'AAPL', 'TSLA', 'AMZN', 'NVDA', 'MSFT')
-    await data_client._run()  # Use the internal _run() method to process WebSocket data
+    # Subscribe to trade updates
+    data_client.subscribe_trades(trade_callback, 'AAPL', 'TSLA', 'AMZN', 'NVDA', 'MSFT')
+    
+    # Correct WebSocket run method
+    await data_client.run()  # ✅ Correct Method
 
-# Run the event loop to process WebSocket data
+# Run the event loop
 asyncio.run(main())
 
