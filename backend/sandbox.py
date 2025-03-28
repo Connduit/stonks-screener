@@ -41,5 +41,5 @@ start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 async def quote_handler(quote):
     print(quote)
 stream = StockDataStream(API_KEY, SECRET_KEY)
-stream = subscribe_quotes(quote_handler, "TSLA")
+stream = stream.subscribe_quotes(quote_handler, "TSLA")
 stream.run()
