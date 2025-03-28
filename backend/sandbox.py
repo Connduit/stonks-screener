@@ -66,6 +66,11 @@ async def main():
     # Wait for both tasks to complete
     await asyncio.gather(task1, task2)
 
+# Check if an event loop is already running
 if __name__ == "__main__":
-    asyncio.run(main())
-
+    try:
+        # If an event loop is already running, use it instead of asyncio.run()
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(main())
+    except RuntimeError:  # If no event loop is running, start a new one
+        asyncio.run(main())
