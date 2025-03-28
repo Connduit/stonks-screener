@@ -40,6 +40,19 @@ start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 
 async def quote_handler(quote):
     print(quote)
+
 stream = StockDataStream(API_KEY, SECRET_KEY)
-stream = stream.subscribe_quotes(quote_handler, "TSLA")
-stream.run()
+
+async def main():
+    #stream.subscribe_trades(on_trade, "AAPL")
+    symbols = ["TSLA", "AAPL", "NVDA", "SPY"]
+    stream.subscribe_trades(quote_handler, *symbols)
+    #stream.subscribe_quotes(quote_handler, "AAPL")
+    #stream.subscribe_bars(on_bar, "AAPL")
+
+    # Run the stream
+    await stream.run()
+
+if __name__ == "__main__":
+    print('fart')
+    asyncio.run(stream.run())
