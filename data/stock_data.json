@@ -1,38 +1,38 @@
 {
     "AAPL": [
         {
-            "currentPrice": 220.06500244140625,
-            "currentVolume": 9019474,
+            "currentPrice": 219.94000244140625,
+            "currentVolume": 9198669,
             "Gap": -0.009832494832734092,
             "floatShares": 14998187904,
-            "relativeVolume": 0.1809443403707485,
-            "relativeVolumePercent": 0.7841588567010173,
-            "changeFromClose": -0.016908660079996,
+            "relativeVolume": 0.1845620918652361,
+            "relativeVolumePercent": 1.5861557765183045,
+            "changeFromClose": -0.017422421482847512,
             "shortInterest": 129678474,
             "News": "Trump is set on tariffing chips. It\u2019s not so simple."
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 384.5799865722656,
-            "currentVolume": 3006299,
+            "currentPrice": 384.4599914550781,
+            "currentVolume": 3039304,
             "Gap": -0.006400737584995146,
             "floatShares": 7423574660,
-            "relativeVolume": 0.14597665031764756,
-            "relativeVolumePercent": 1.2976628472127942,
-            "changeFromClose": -0.01536177020398835,
+            "relativeVolume": 0.1476073593412085,
+            "relativeVolumePercent": 2.04008381431218,
+            "changeFromClose": -0.015668993106627522,
             "shortInterest": 64256703,
             "News": "Magnificent Seven Stocks: Amazon, Meta, Nvidia, Tesla Sell Off"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 160.05999755859375,
-            "currentVolume": 6325527,
+            "currentPrice": 160.02000427246094,
+            "currentVolume": 6431638,
             "Gap": -0.0025726497388504892,
             "floatShares": 10917851600,
-            "relativeVolume": 1.0446048146957467,
-            "relativeVolumePercent": 0.9957535531418361,
+            "relativeVolume": 0.3025482210625405,
+            "relativeVolumePercent": 1.6675946622759805,
             "changeFromClose": -0.018307990724949506,
             "shortInterest": 44488045,
             "News": "Reddit\u2019s 50% Plunge Fails to Entice Dip Buyers as Growth Slows"
@@ -40,26 +40,26 @@
     ],
     "NVDA": [
         {
-            "currentPrice": 109.55999755859375,
-            "currentVolume": 68305004,
-            "Gap": -0.021184982567276456,
+            "currentPrice": 109.37300109863281,
+            "currentVolume": 69341547,
+            "Gap": 0.0004935861529673401,
             "floatShares": 23412532000,
-            "relativeVolume": 0.904182814747502,
-            "relativeVolumePercent": 1.2129660943293543,
-            "changeFromClose": -0.02048173160426326,
+            "relativeVolume": 0.271893215919852,
+            "relativeVolumePercent": 1.8978791247585922,
+            "changeFromClose": -0.01794848779074357,
             "shortInterest": 258072746,
             "News": "Trump is set on tariffing chips. It\u2019s not so simple."
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 7.355000019073486,
-            "currentVolume": 13553691,
-            "Gap": -0.01692869837647047,
+            "currentPrice": 7.31820011138916,
+            "currentVolume": 13766987,
+            "Gap": -0.013027356134509721,
             "floatShares": 281716348,
-            "relativeVolume": 0.10697357485676942,
-            "relativeVolumePercent": 0.7597348554879847,
-            "changeFromClose": -0.025392989906044057,
+            "relativeVolume": 0.10865703035406898,
+            "relativeVolumePercent": 1.7871721846717457,
+            "changeFromClose": -0.0920347729042446,
             "shortInterest": 50063142,
             "News": "Quantum Computing Stocks Fall. Here's A Look At Upcoming News Events."
         }
@@ -79,26 +79,26 @@
     ],
     "ADTX": [
         {
-            "currentPrice": 4.894999980926514,
-            "currentVolume": 150457,
+            "currentPrice": 4.920000076293945,
+            "currentVolume": 150981,
             "Gap": -0.044606666191247514,
             "floatShares": 56935,
-            "relativeVolume": 0.009366523052913406,
-            "relativeVolumePercent": 0.7337769647099612,
-            "changeFromClose": -0.2060016202408519,
+            "relativeVolume": 0.009399144054792526,
+            "relativeVolumePercent": 0.766350483855514,
+            "changeFromClose": -0.2019464547060386,
             "shortInterest": 29345,
             "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
         }
     ],
     "XHLD": [
         {
-            "currentPrice": 1.100000023841858,
-            "currentVolume": 843940,
+            "currentPrice": 1.117900013923645,
+            "currentVolume": 875861,
             "Gap": -0.08823528953443707,
             "floatShares": 1505250,
-            "relativeVolume": 0.020086459563931684,
-            "relativeVolumePercent": 1.214025619049825,
-            "changeFromClose": -0.28104572260699034,
+            "relativeVolume": 0.020848675768065948,
+            "relativeVolumePercent": 1.598113514990641,
+            "changeFromClose": -0.26934638246548187,
             "shortInterest": 239807,
             "News": "No News"
         }
