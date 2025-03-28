@@ -36,10 +36,9 @@ start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 
 #MostActivesRequest()
 #MarketMoversRequest()
+#############################################
 
 
-API_KEY = "PKVYRNH1J4SJ7WUIGHBF"
-SECRET_KEY = "LQ7H9QSaFU3Xx6zzL3fHwN9NOlBN8XmloVd9R1mS"
 
 # Create the WebSocket client
 stream = StockDataStream(API_KEY, SECRET_KEY)
@@ -57,16 +56,16 @@ async def stop_after_timeout(timeout_seconds):
 
 # Main function to run the WebSocket
 async def main():
+    # Start the WebSocket stream
     stream.subscribe_trades(on_trade, "AAPL")  # Stream AAPL trade data
     
     # Run both the WebSocket and the timeout function concurrently
-    await asyncio.gather(
-        stream.run(),          # Keeps the WebSocket alive
-        stop_after_timeout(60)  # Stop the stream after 60 seconds
-    )
+    task1 = asyncio.create_task(stream.run())   # Run WebSocket in background
+    task2 = asyncio.create_task(stop_after_timeout(60))  # Timeout after 60 seconds
+    
+    # Wait for both tasks to complete
+    await asyncio.gather(task1, task2)
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-
 
