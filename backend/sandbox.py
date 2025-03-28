@@ -38,54 +38,8 @@ start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 #MarketMoversRequest()
 #############################################
 
-
-
-# Create the WebSocket client
+async def quote_handler(quote):
+    print(quote)
 stream = StockDataStream(API_KEY, SECRET_KEY)
-print("StockDataStream() created")
-
-async def on_quote(data):
-    print("inside: on_quote()")
-    print("do nothing")
-
-# Callback function to handle incoming trade data
-async def on_trade(data):
-    print("inside: on_trade()")
-    print(f"{data.symbol} - Price: {data.price}, Volume: {data.size}, Timestamp: {data.timestamp}")
-
-# Function to stop the stream after a timeout
-async def stop_after_timeout(timeout_seconds):
-    print(f"Waiting {timeout_seconds} seconds before stopping the stream...")
-    await asyncio.sleep(timeout_seconds)  # Wait for the specified timeout
-    await stream.stop()                   # Gracefully stop the WebSocket
-    print("Stream stopped.")
-
-# Main function to run the WebSocket
-async def main():
-    print("inside main()")
-    # Start the WebSocket stream
-    stream.subscribe_trades(on_trade, "AAPL")  # Stream AAPL trade data
-    stream.subscribe_quotes(on_quote, "TSLA")
-    print("subbed to trades")
-    
-    # Run both the WebSocket and the timeout function concurrently
-    task1 = asyncio.create_task(stream.run())   # Run WebSocket in background
-    print("run task1 (main logic)")
-    task2 = asyncio.create_task(stop_after_timeout(60))  # Timeout after 60 seconds
-    print("run task2 (wait for timeout)")
-    
-    # Wait for both tasks to complete
-    await asyncio.gather(task1, task2)
-    print("done waiting for gather()")
-
-# Check if an event loop is already running
-if __name__ == "__main__":
-    print("inside if main")
-    try:
-        print("inside try")
-        # If an event loop is already running, use it instead of asyncio.run()
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(main())
-    except RuntimeError:  # If no event loop is running, start a new one
-        print("inside runtime error")
-        asyncio.run(main())
+stream = subscribe_quotes(quote_handler, "TSLA")
+stream.run()
