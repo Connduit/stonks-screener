@@ -37,10 +37,10 @@ SECRET_KEY = "LQ7H9QSaFU3Xx6zzL3fHwN9NOlBN8XmloVd9R1mS"
 BASE_URL = 'https://paper-api.alpaca.markets'  # or use live URL if you are on a live account
 
 # Initialize Alpaca Trading Client for API requests
-trading_client = TradingClient(API_KEY, API_SECRET, base_url=BASE_URL)
+trading_client = TradingClient(API_KEY, SECRET_KEY, base_url=BASE_URL)
 
 # Initialize Alpaca Data Client for real-time data
-data_client = StockDataStream(API_KEY, API_SECRET, base_url=BASE_URL)
+data_client = StockDataStream(API_KEY, SECRET_KEY, base_url=BASE_URL)
 
 # Function to check stock conditions (top gainers, volume, etc.)
 def check_conditions(data):
