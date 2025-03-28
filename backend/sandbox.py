@@ -70,10 +70,13 @@ async def main():
     
     # Run both the WebSocket and the timeout function concurrently
     task1 = asyncio.create_task(stream.run())   # Run WebSocket in background
+    print("run task1 (main logic)")
     task2 = asyncio.create_task(stop_after_timeout(60))  # Timeout after 60 seconds
+    print("run task2 (wait for timeout"))
     
     # Wait for both tasks to complete
     await asyncio.gather(task1, task2)
+    print("done waiting for gather()")
 
 # Check if an event loop is already running
 if __name__ == "__main__":
