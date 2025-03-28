@@ -28,14 +28,10 @@ start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 
 ###
 from alpaca.data.live import StockDataStream
-from alpaca.trading.client import TradingClient
 import asyncio
 
 
-# Initialize Alpaca Trading Client for API requests (used for trading actions)
-trading_client = TradingClient(API_KEY, SECRET_KEY, paper=True)
-
-# Initialize Alpaca Data Client for real-time data (this handles live market data)
+# Initialize Alpaca Data Client for real-time data
 data_client = StockDataStream(API_KEY, SECRET_KEY)
 
 # Function to check stock conditions (top gainers, volume, etc.)
@@ -60,7 +56,8 @@ async def trade_callback(data):
 async def main():
     # Subscribe to trades for a list of stocks
     await data_client.subscribe_trades(trade_callback, 'AAPL', 'TSLA', 'AMZN', 'NVDA', 'MSFT')
-    await data_client.run()
+    await data_client._run()  # Use the internal _run() method to process WebSocket data
 
 # Run the event loop to process WebSocket data
 asyncio.run(main())
+
