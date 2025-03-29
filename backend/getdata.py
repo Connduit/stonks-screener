@@ -26,7 +26,13 @@ data = worksheet.get_all_records()
 import json
 json_data = json.dumps(data)
 
+
+import os
+data_path = os.path.dirname(__file__)
+data_path = os.path.dirname(data_path)
+data_path = os.path.join(data_path, "data", "stock_data.json")
+
 # Save the data to a file for use on the webpage
 # TODO: this wipes out all data in stock_data.json
-with open("stock_data.json", "w+") as file:
+with open(data_path, "w+") as file: # TODO: might not be able to open
     file.write(json_data)

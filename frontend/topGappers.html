@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data STUFF </title>
+	<link rel="stylesheet", href="styles.css">
+</head>
+<body>
+
+    <h1>Stock Data</h1>
+    <table id="stock-table">
+        <thead>
+            <tr>
+				<th onclick="sortTable(0)">Stock</th>
+				<th onclick="sortTable(1)">Price</th>
+            	<!-- TODO: work on formatting... add M for million, etc... -->
+				<th onclick="sortTable(2)">Volume</th>
+				<th onclick="sortTable(3)">Gap</th>
+				<th onclick="sortTable(4)">Change From Close (%)</th>
+				<th onclick="sortTable(5)">Float</th>
+				<th onclick="sortTable(6)">Short Interest</th>
+				<th onclick="sortTable(7)">Relative Volume (Daily)</th>
+				<th onclick="sortTable(8)">Relative Volume Percent (5min)</th>
+                <th>News - TODO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Stock data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="parseData.js"></script>
+    <script src="sortTable.js"></script>
+    <script src="formatNumber.js"></script>
+</body>
+</html>

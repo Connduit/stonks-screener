@@ -45,7 +45,7 @@ def get_polygon_tickers():
     
     #print(tickers["results"])
 
-    #return tickers['results']
+    #return tickers["results"]
 
 data = get_polygon_tickers()
 #with open("ticker_symbols.json", "w+") as file:
@@ -68,7 +68,7 @@ data = get_polygon_tickers()
 #   Test Issue      Indicates whether or not it is a test security (y/n).
 #   Finan. Status   Indicates when an issuer has failed to submit its
 #                   regulatory filings on a timely basis, has failed to meet
-#                   NASDAQ's continuing listing standards, and/or has filed for
+#                   NASDAQ"s continuing listing standards, and/or has filed for
 #                   bankruptcy. Values include:
 #       D = Deficient: Issuer Failed to Meet NASDAQ Continued Listing rqmts
 #       E = Delinquent: Issuer Missed Regulatory Filing Deadline
@@ -93,55 +93,59 @@ data = get_polygon_tickers()
 
 # Header
 # Symbol|Security Name|Market Category|Test Issue|Financial Status|Round Lot Size|ETF|NextShares
-# Values separated by pipes ('|') and rows separated be newlines
+# Values separated by pipes ("|") and rows separated be newlines
 
 import ftplib
 import os
 import datetime
 from pprint import pprint
 
-try:
-    DIR_PATH = os.path.dirname(os.path.realpath(__file__))
-except NameError:
-    DIR_PATH = os.getcwd()  # for colab
-
-with ftplib.FTP('ftp.nasdaqtrader.com') as ftp:
-    directory = 'symboldirectory'
-    filename = 'nasdaqlisted.txt'
-    #filename = 'otherlisted.txt'
-
+def downloadTickers(filename="nasdaqlisted.txt"):
     try:
-        ftp.login()
-        ftp.cwd(f'/{directory}/')
-        with open(f'{DIR_PATH}/{filename}', 'wb') as f:
-            res = ftp.retrbinary("RETR " + filename, f.write)
-            if not res.startswith('226 Transfer complete'):
-                print('Download failed')
-                if os.path.isfile(f'{DIR_PATH}/{filename}'):
-                    os.remove(f'{DIR_PATH}/{filename}')
+        DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+        DIR_PATH = os.path.join(DIR_PATH, "..", "data")
+    except NameError:
+        DIR_PATH = os.getcwd()  # for colab
 
-    except ftplib.all_errors as e:
-        print('FTP error:', e)
-        if os.path.isfile(f'{DIR_PATH}/{filename}'):
-            os.remove(f'{DIR_PATH}/{filename}')
+    with ftplib.FTP("ftp.nasdaqtrader.com") as ftp:
+        directory = "symboldirectory"
 
-# read into a dictionary
-with open(f'{DIR_PATH}/{filename}', 'r') as f:
-    content = f.read().splitlines()
+        try:
+            ftp.login()
+            ftp.cwd(f"/{directory}/")
+            with open(f"{DIR_PATH}/{filename}", "wb") as f:
+                res = ftp.retrbinary("RETR " + filename, f.write)
+                if not res.startswith("226 Transfer complete"):
+                    print("Download failed")
+                    if os.path.isfile(f"{DIR_PATH}/{filename}"):
+                        os.remove(f"{DIR_PATH}/{filename}")
 
-header = content[0].split('|')
-date = content[-1].split('|')[0][:]
-date = date[len('File Creation Time: '):]
-date = datetime.datetime.strptime(date, '%m%d%Y%H:%M')
-content = content[1:-1]
-#print(date)
-#print(header)
+        except ftplib.all_errors as e:
+            print("FTP error:", e)
+            if os.path.isfile(f"{DIR_PATH}/{filename}"):
+                os.remove(f"{DIR_PATH}/{filename}")
 
-securities = []
-for c in content:
-    c = c.split('|')
-    security = {}
-    for i in range(len(c)):
-        security[header[i]] = c[i]
-    securities.append(security)
-#pprint(securities)
+    # read into a dictionary
+    with open(f"{DIR_PATH}/{filename}", "r") as f:
+        content = f.read().splitlines()
+
+    header = content[0].split("|")
+    date = content[-1].split("|")[0][:]
+    date = date[len("File Creation Time: "):]
+    date = datetime.datetime.strptime(date, "%m%d%Y%H:%M")
+    content = content[1:-1]
+
+    securities = []
+    for c in content:
+        c = c.split("|")
+        security = {}
+        for i in range(len(c)):
+            security[header[i]] = c[i]
+        securities.append(security)
+
+
+if __name__ == "__main__":
+    nasdaqlisted = "nasdaqlisted.txt"
+    otherlisted = "otherlisted.txt"
+    downloadTickers(nasdaqlisted)
+    downloadTickers(otherlisted)
