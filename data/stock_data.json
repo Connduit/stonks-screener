@@ -1,104 +1,104 @@
 {
     "AAPL": [
         {
-            "currentPrice": 220.34620666503906,
-            "currentVolume": 10919370,
-            "Gap": -0.009832494832734092,
+            "currentPrice": 217.22,
+            "currentVolume": 39525987,
+            "Gap": -0.00973869946450752,
             "floatShares": 14998187904,
-            "relativeVolume": 0.21915424203314524,
-            "relativeVolumePercent": 1.3038086564376372,
-            "changeFromClose": -0.015652442899002156,
+            "relativeVolume": 0.7982201805300495,
+            "relativeVolumePercent": 0.15135048892048925,
+            "changeFromClose": -0.02658035311502189,
             "shortInterest": 129678474,
-            "News": "Trump is set on tariffing chips. It\u2019s not so simple."
+            "News": "Why Mag 7 is a 'boy band' that needs to 'breakup'"
         }
     ],
     "MSFT": [
         {
-            "currentPrice": 383.3399963378906,
-            "currentVolume": 3667061,
+            "currentPrice": 377.74,
+            "currentVolume": 21502861,
             "Gap": -0.006400737584995146,
             "floatShares": 7423574660,
-            "relativeVolume": 0.17809540645824296,
-            "relativeVolumePercent": 1.380309769317678,
-            "changeFromClose": -0.01853651104326475,
+            "relativeVolume": 1.0495612239595853,
+            "relativeVolumePercent": 0.17811125982398646,
+            "changeFromClose": -0.03016027237513698,
             "shortInterest": 64256703,
-            "News": "CoreWeave stock whimpers to IPO debut"
+            "News": "CoreWeave stock seesaws, ends flat after IPO in AI trade test"
         }
     ],
     "GOOG": [
         {
-            "currentPrice": 159.69000244140625,
-            "currentVolume": 7920968,
-            "Gap": -0.010421786291957136,
+            "currentPrice": 155.874,
+            "currentVolume": 34786595,
+            "Gap": -0.01048269869276408,
             "floatShares": 10917851600,
-            "relativeVolume": 0.3726323682926726,
-            "relativeVolumePercent": 0.7021664259711564,
-            "changeFromClose": -0.02675523732726801,
+            "relativeVolume": 1.637988655483332,
+            "relativeVolumePercent": 0.4176675859664192,
+            "changeFromClose": -0.04887862130035049,
             "shortInterest": 44488045,
-            "News": "Reddit\u2019s 50% Plunge Fails to Entice Dip Buyers as Growth Slows"
+            "News": "Alphabet, Wolfspeed, Nikola: Market Minute"
         }
     ],
     "NVDA": [
         {
-            "currentPrice": 109.6449966430664,
-            "currentVolume": 81247358,
-            "Gap": -0.021184982567276456,
+            "currentPrice": 109.01,
+            "currentVolume": 227835915,
+            "Gap": 0.000538432723947172,
             "floatShares": 23412532000,
-            "relativeVolume": 0.3185832268318802,
-            "relativeVolumePercent": 1.712606482048295,
-            "changeFromClose": -0.02048173160426326,
+            "relativeVolume": 0.8984636716335594,
+            "relativeVolumePercent": 0.37244146895250946,
+            "changeFromClose": -0.015794688426907587,
             "shortInterest": 258072746,
-            "News": "Trump is set on tariffing chips. It\u2019s not so simple."
+            "News": "CoreWeave stock seesaws, ends flat after IPO in AI trade test"
         }
     ],
     "QBTS": [
         {
-            "currentPrice": 7.414999961853027,
-            "currentVolume": 17250700,
+            "currentPrice": 7.5197,
+            "currentVolume": 34671815,
             "Gap": -0.013027356134509721,
             "floatShares": 281716348,
-            "relativeVolume": 0.1361525098795356,
-            "relativeVolumePercent": 1.3955622089071114,
-            "changeFromClose": -0.08002486652405726,
+            "relativeVolume": 0.27810542734474103,
+            "relativeVolumePercent": 0.27712344109583514,
+            "changeFromClose": -0.05955340830285855,
             "shortInterest": 50063142,
             "News": "Quantum Computing Stocks Fall. Here's A Look At Upcoming News Events."
         }
     ],
     "ANTE": [
         {
-            "currentPrice": 0.4000000059604645,
-            "currentVolume": 87700,
-            "Gap": 0.012499987892806711,
+            "currentPrice": 0.3661,
+            "currentVolume": 234727,
+            "Gap": 0.024999975785613422,
             "floatShares": 6559425,
-            "relativeVolume": 0.006200430141584737,
-            "relativeVolumePercent": 2.371285753957234,
-            "changeFromClose": 0.0,
+            "relativeVolume": 0.01778798363731744,
+            "relativeVolumePercent": 21.29765100671141,
+            "changeFromClose": -0.02500005029141828,
             "shortInterest": 26616,
             "News": "No News"
         }
     ],
     "ADTX": [
         {
-            "currentPrice": 4.974999904632568,
-            "currentVolume": 168533,
+            "currentPrice": 4.93,
+            "currentVolume": 311129,
             "Gap": -0.044606666191247514,
             "floatShares": 56935,
-            "relativeVolume": 0.010491200571898457,
-            "relativeVolumePercent": 8.362346556588319,
-            "changeFromClose": -0.19302515240612883,
+            "relativeVolume": 0.01945399187571418,
+            "relativeVolumePercent": 0.25036587441148106,
+            "changeFromClose": -0.18896998687131553,
             "shortInterest": 29345,
             "News": "Aditxt subsidiary Persanta engages Dominary Securities for IPO"
         }
     ],
     "XHLD": [
         {
-            "currentPrice": 1.093400001525879,
-            "currentVolume": 1013752,
+            "currentPrice": 1.2,
+            "currentVolume": 2384259,
             "Gap": -0.08823528953443707,
             "floatShares": 1505250,
-            "relativeVolume": 0.024130982835436663,
-            "relativeVolumePercent": 6.789868692070031,
-            "changeFromClose": -0.28535946276345836,
+            "relativeVolume": 0.057240957297293824,
+            "relativeVolumePercent": 0.23810444874274664,
+            "changeFromClose": -0.18300652067034578,
             "shortInterest": 239807,
             "News": "No News"
         }
