@@ -26,7 +26,7 @@ def parseTickers(filename="nasdaqlisted.txt"):
         content = content[1:-1]
         for c in content:
             [Symbol, Security_Name, Market_Category, Test_Issue, Financial_Status, Round_Lot_Size, ETF, NextShares] = c.split("|")
-            if (Test_Issue == "N" and (Financial_Status == "N" or Financial_Status == "D" or Financial_Status == "E" or Financial_Status == "H")):
+            if (Test_Issue == "N" and (Financial_Status == "N" or Financial_Status == "D" or Financial_Status == "E" or Financial_Status == "H") and ETF == "N"):
                 tickers.append(Symbol)
                 # TODO: more filtering options below...
                 #if "common stock" in Security_Name.lower():
@@ -52,7 +52,7 @@ def parseTickers(filename="nasdaqlisted.txt"):
 
         for c in content:
             [ACT_Symbol, Security_Name, Exchange, CQS_Symbol, ETF, Round_Lot_Size, Test_Issue, NASDAQ_Symbol] = c.split("|")
-            if (Test_Issue == "N" and ACT_Symbol == CQS_Symbol == NASDAQ_Symbol and (Exchange == "A" or Exchange == "N" or Exchange == "P")):
+            if (Test_Issue == "N" and ACT_Symbol == CQS_Symbol == NASDAQ_Symbol and (Exchange == "A" or Exchange == "N" or Exchange == "P") and ETF == "N"):
                 tickers.append(NASDAQ_Symbol)
                 # TODO: more filtering options below...
                 #if "common stock" in Security_Name.lower():

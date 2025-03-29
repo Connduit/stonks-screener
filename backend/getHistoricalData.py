@@ -15,7 +15,7 @@ stocks = ["NVDA", "QBTS"]
 from datetime import datetime, timedelta
 end_time = datetime.now().date()
 #start_time = 
-request_params = StockBarsRequest(symbol_or_symbols="NVDA", timeframe=TimeFrame.Minute,)
+#request_params = StockBarsRequest(symbol_or_symbols="NVDA", timeframe=TimeFrame.Minute,)
 
 
 from tradingview_screener import Query, col
