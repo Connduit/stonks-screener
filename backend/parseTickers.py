@@ -4,7 +4,7 @@ import datetime
 
 
 #def parseTickers(file, symbol, security, marketCategory):
-def parseTickers(filename):
+def parseTickers(filename="nasdaqlisted.txt"):
 
     try:
         DIR_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -41,9 +41,6 @@ def parseTickers(filename):
     Z = BATS Global Markets (BATS)
     V = Investors' Exchange, LLC (IEXG)
     """
-    print(len(tickers))
-    print(len(list(set(tickers))))
-
     #with open("otherlisted.txt", "r") as file:
     with open(f"{DIR_PATH}/otherlisted.txt", "r") as file:
         content = file.read().splitlines()
@@ -62,13 +59,8 @@ def parseTickers(filename):
                 #if "depositary" in Security_Name.lower():
                 #if "warrant" in Security_Name.lower():
 
-
-    print(len(tickers))
-    print(len(list(set(tickers))))
-
     with open(f"{DIR_PATH}/tickers.json", "w+") as file:
         json.dump(tickers, file)
-
 
 
 if __name__ == "__main__":

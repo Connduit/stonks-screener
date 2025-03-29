@@ -41,4 +41,4 @@ jobs:
           git status
           git diff --cached --quiet || git commit -m "Update stock data"
           git status
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Connduit/stonks-screener-mess.git
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Connduit/stonks-screener.git
