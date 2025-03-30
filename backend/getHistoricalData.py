@@ -1,3 +1,9 @@
+"""
+TODO: this file should be turned into a function where i can past in dates as parameters.
+That way i can get both current data and historical data
+"""
+
+
 from alpaca.trading.client import TradingClient
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.requests import StockBarsRequest, TimeFrame 
