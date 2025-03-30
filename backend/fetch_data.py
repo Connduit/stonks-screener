@@ -1,4 +1,8 @@
 """
+NOTE: This uses yfinance and NOT alpaca
+
+"""
+"""
 fetch data and parse it and store it as a json
 
 TODO: maybe use function like get_fast_info to quickly see if stock is legit,
