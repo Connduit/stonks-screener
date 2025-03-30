@@ -4,10 +4,11 @@ from alpaca.data.requests import StockBarsRequest
 from alpaca.data.timeframe import TimeFrame
 from datetime import datetime, timedelta
 import pandas as pd
+import os
 
 # Initialize Alpaca client
-API_KEY = "PKVYRNH1J4SJ7WUIGHBF"
-SECRET_KEY = "LQ7H9QSaFU3Xx6zzL3fHwN9NOlBN8XmloVd9R1mS"
+API_KEY = os.environ.get("API_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Create data client
 data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
