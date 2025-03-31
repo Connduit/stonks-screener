@@ -32,11 +32,13 @@ data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
 screener_client = ScreenerClient(API_KEY, SECRET_KEY)
 stock_data_stream_client = StockDataStream(API_KEY, SECRET_KEY)
 
+# TODO: options... make multiple request_params for each AssestExchange i want (faster but more api calls), 
+# or i can have a single request_params that gets all Assets from every exchange and filter out the exchanges i don't want later (slower but less api calls)
 request_params = GetAssetsRequest(
     status=AssetStatus.ACTIVE,
     asset_class=AssetClass.US_EQUITY,
     exchange=AssetExchange.NASDAQ#,
-    #attributes=#Comma separated values to query for more than one attribute. (probs used for when i want to include multiple exchanges
+    #attributes=#Comma separated values to query for more than one attribute. attrbutes are in alpacatrading.models.Asset .attributes memeber field
 )
 #latest_trades_dict = {k: v.price for k,v in latest_trades_dict.items() if v.price >= min_price and v.price <= max_price}
 all_assets = trading_client.get_all_assets(request_params)
@@ -44,7 +46,7 @@ all_asset_tickers = [asset.symbol for asset in all_assets]
 #print(all_assets)
 print(type(all_assets))
 print(len(all_assets))
-print(len(all_asset_tickers))
+print(len(all_asset_tickers)) # length of data/tickers.json is 6680
 print(all_asset_tickers)
 
 
