@@ -40,7 +40,7 @@ request_params = GetAssetsRequest(
 )
 #latest_trades_dict = {k: v.price for k,v in latest_trades_dict.items() if v.price >= min_price and v.price <= max_price}
 all_assets = trading_client.get_all_assets(request_params)
-all_asset_tickers = [asset["symbol"] for asset in all_assets]
+all_asset_tickers = [type(asset) for asset in all_assets]
 #print(all_assets)
 print(type(all_assets))
 print(len(all_assets))
