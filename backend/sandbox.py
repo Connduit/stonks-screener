@@ -29,6 +29,16 @@ trading_client = TradingClient(API_KEY, SECRET_KEY, paper=True)
 data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
 screener_client = ScreenerClient(API_KEY, SECRET_KEY)
 stock_data_stream_client = StockDataStream(API_KEY, SECRET_KEY)
+"""
+GetAssetsRequest(
+    status=ACTIVE,
+    asset_class=US_EQUITY,
+    exchange=AssestExchange TODO:,
+    attributes=#Comma separated values to query for more than one attribute. (probs used for when i want to include multiple exchanges
+)
+"""
+all_assets = trading_client.get_all_assets()
+print(all_assets)
 
 
 if __name__ == "__main__":
