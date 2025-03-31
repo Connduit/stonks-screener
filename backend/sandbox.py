@@ -3,7 +3,7 @@ from alpaca.trading.client import TradingClient
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.historical.screener import ScreenerClient
 from alpaca.data.requests import StockBarsRequest, TimeFrame, MostActivesRequest, MarketMoversRequest
-from alpaca.trading.requests import GetCalendarRequest
+from alpaca.trading.requests import GetCalendarRequest, GetAssetsRequest
 
 from alpaca.data.live.stock import StockDataStream
 
