@@ -36,8 +36,8 @@ stock_data_stream_client = StockDataStream(API_KEY, SECRET_KEY)
 # or i can have a single request_params that gets all Assets from every exchange and filter out the exchanges i don't want later (slower but less api calls)
 request_params = GetAssetsRequest(
     status=AssetStatus.ACTIVE,
-    asset_class=AssetClass.US_EQUITY,
-    exchange=AssetExchange.NASDAQ#,
+    asset_class=AssetClass.US_EQUITY#,
+    #exchange=AssetExchange.NASDAQ#,
     #attributes=#Comma separated values to query for more than one attribute. attrbutes are in alpacatrading.models.Asset .attributes memeber field
 )
 #latest_trades_dict = {k: v.price for k,v in latest_trades_dict.items() if v.price >= min_price and v.price <= max_price}
