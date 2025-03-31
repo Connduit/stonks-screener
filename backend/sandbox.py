@@ -7,6 +7,8 @@ from alpaca.trading.requests import GetCalendarRequest
 
 from alpaca.data.live.stock import StockDataStream
 
+from alpaca.trading.enums import AssetStatus, AssetClass, AssetExchange
+
 from datetime import datetime, timedelta
 import os
 import json
@@ -29,15 +31,15 @@ trading_client = TradingClient(API_KEY, SECRET_KEY, paper=True)
 data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
 screener_client = ScreenerClient(API_KEY, SECRET_KEY)
 stock_data_stream_client = StockDataStream(API_KEY, SECRET_KEY)
-"""
-GetAssetsRequest(
-    status=ACTIVE,
-    asset_class=US_EQUITY,
-    exchange=AssestExchange TODO:,
-    attributes=#Comma separated values to query for more than one attribute. (probs used for when i want to include multiple exchanges
+
+request_params = GetAssetsRequest(
+    status=AssetStatus.ACTIVE,
+    asset_class=AssetClass.US_EQUITY,
+    exchange=AssetExchange.NASDAQ#,
+    #attributes=#Comma separated values to query for more than one attribute. (probs used for when i want to include multiple exchanges
 )
-"""
-all_assets = trading_client.get_all_assets()
+
+all_assets = trading_client.get_all_assets(request_params)
 print(all_assets)
 
 
