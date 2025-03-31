@@ -41,6 +41,8 @@ request_params = GetAssetsRequest(
 
 all_assets = trading_client.get_all_assets(request_params)
 print(all_assets)
+print(type(all_assets))
+print(len(all_assets))
 
 
 if __name__ == "__main__":
