@@ -30,6 +30,10 @@ data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
 screener_client = ScreenerClient(API_KEY, SECRET_KEY)
 stock_data_stream_client = StockDataStream(API_KEY, SECRET_KEY)
 
+#GetAssetsRequest
+all_assets = trading_client.get_all_assets()
+print(all_assets)
+
 
 if __name__ == "__main__":
     pass
