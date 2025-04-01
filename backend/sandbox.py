@@ -71,7 +71,7 @@ for chunk in chunk_list(all_asset_tickers, 200):
     bars = data_client.get_stock_bars(request_params)
     #print(bars.df.index)
     #print(bars.df.columns) # Index(['open', 'high', 'low', 'close', 'volume', 'trade_count', 'vwap'], dtype='object')
-    df_latest_per_ticker = df.groupby(level=0).apply(lambda x: x.xs(x.index.get_level_values(1).max(), level=1))
+    df_latest_per_ticker = bars.df.groupby(level=0).apply(lambda x: x.xs(x.index.get_level_values(1).max(), level=1))
     filtered_df = df_latest_per_ticker[df_latest_per_ticker['volume'] > 15_000_000]
     print(df_latest_per_ticker)
     print(filtered_df)
