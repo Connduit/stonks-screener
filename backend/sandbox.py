@@ -55,12 +55,15 @@ def chunk_list(tickers, size):
     for i in range(0, len(tickers), size):
         yield tickers[i:i + size]
 
+end_date = datetime.now().strftime('%Y-%m-%d')
+start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
+
 filtered_tickers = []
 for chunk in chunk_list(all_asset_tickers, 200):
     request_params = StockBarsRequest(
         symbol_or_symbols=chunk,
         timeframe=TimeFrame.Day,
-        start=most_recent_trade_day,
+        start=start_date,
         #start=start_date,
         end=end_date,
         limit=200
