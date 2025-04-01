@@ -51,6 +51,23 @@ print(len(all_assets))
 print(len(all_asset_tickers)) # length of data/tickers.json is 6680, but get_all_assets after being filtered returns 7940 as length
 print(all_asset_tickers)
 
+def chunk_list(tickers, size):
+    for i in range(0, len(tickers), size):
+        yield tickers[i:i + size]
+
+filtered_tickers = []
+for chunk in chunk_list(all_assets_tickers, 200):
+    request_params = StockBarsRequest(
+        symbol_or_symbols=chunk,
+        timeframe=TimeFrame.Day,
+        start=most_recent_trade_day,
+        #start=start_date,
+        end=end_date,
+        limit=200
+    )
+    bars = data_client.get_stock_bars(request_params)
+    print(bars.df)
+
 
 if __name__ == "__main__":
     pass
