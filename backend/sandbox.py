@@ -56,7 +56,7 @@ def chunk_list(tickers, size):
         yield tickers[i:i + size]
 
 filtered_tickers = []
-for chunk in chunk_list(all_assets_tickers, 200):
+for chunk in chunk_list(all_asset_tickers, 200):
     request_params = StockBarsRequest(
         symbol_or_symbols=chunk,
         timeframe=TimeFrame.Day,
