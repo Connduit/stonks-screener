@@ -3,6 +3,7 @@ from alpaca.trading.client import TradingClient
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.historical.screener import ScreenerClient
 from alpaca.data.requests import StockBarsRequest, TimeFrame, MostActivesRequest, MarketMoversRequest
+from alpaca.trading.requests import GetCalendarRequest
 
 from alpaca.data.live.stock import StockDataStream
 
@@ -11,48 +12,34 @@ import os
 import json
 import requests
 import asyncio
+import pandas as pd
 
 
 
-API_KEY = "PKVYRNH1J4SJ7WUIGHBF"
-SECRET_KEY = "LQ7H9QSaFU3Xx6zzL3fHwN9NOlBN8XmloVd9R1mS"
+API_KEY = os.environ.get("API_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+try:
+    DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+    DIR_PATH = os.path.join(DIR_PATH, "..", "data")
+except NameError:
+    DIR_PATH = os.getcwd()
 
 trading_client = TradingClient(API_KEY, SECRET_KEY, paper=True)
 data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
 screener_client = ScreenerClient(API_KEY, SECRET_KEY)
 stock_data_stream_client = StockDataStream(API_KEY, SECRET_KEY)
+"""
+GetAssetsRequest(
+    status=ACTIVE,
+    asset_class=US_EQUITY,
+    exchange=AssestExchange TODO:,
+    attributes=#Comma separated values to query for more than one attribute. (probs used for when i want to include multiple exchanges
+)
+"""
+all_assets = trading_client.get_all_assets()
+print(all_assets)
 
-stocks = ["NVDA", "QBTS"]
-#tickers = {}
-tickers = []
-
-print(os.getcwd())
-
-end_date = datetime.now().strftime('%Y-%m-%d')
-start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
-
-#most_active_request_params = MostActivesRequest()
-#market_movers_request_params = MarketMoversRequest()
-
-#MostActivesRequest()
-#MarketMoversRequest()
-#############################################
-
-async def quote_handler(quote):
-    print(quote)
-
-stream = StockDataStream(API_KEY, SECRET_KEY)
-
-async def main():
-    #stream.subscribe_trades(on_trade, "AAPL")
-    symbols = ["TSLA", "AAPL", "NVDA", "SPY"]
-    stream.subscribe_trades(quote_handler, *symbols)
-    #stream.subscribe_quotes(quote_handler, "AAPL")
-    #stream.subscribe_bars(on_bar, "AAPL")
-
-    # Run the stream
-    await stream.run()
 
 if __name__ == "__main__":
-    print('fart')
-    asyncio.run(stream.run())
+    pass

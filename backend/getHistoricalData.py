@@ -1,68 +1,82 @@
+"""
+TODO: this file should be turned into a function where i can past in dates as parameters.
+That way i can get both current data and historical data
+"""
+
+
 from alpaca.trading.client import TradingClient
 from alpaca.data.historical import StockHistoricalDataClient
-from alpaca.data.requests import StockBarsRequest, TimeFrame
-
-
-
-api_key = "PKVYRNH1J4SJ7WUIGHBF"
-api_secret = "LQ7H9QSaFU3Xx6zzL3fHwN9NOlBN8XmloVd9R1mS"
-
-trading_client = TradingClient(api_key, api_secret, paper=True)
-data_client = StockHistoricalDataClient(api_key, api_secret)
-
-stocks = ["NVDA", "QBTS"]
+from alpaca.data.requests import StockBarsRequest, TimeFrame 
+from alpaca.trading.requests import GetCalendarRequest
 
 from datetime import datetime, timedelta
-end_time = datetime.now().date()
-#start_time = 
-request_params = StockBarsRequest(symbol_or_symbols="NVDA", timeframe=TimeFrame.Minute,)
+import os
+import json
+import pandas as pd
 
 
-from tradingview_screener import Query, col
+
+API_KEY = os.environ.get("API_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+try:
+    DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+    DIR_PATH = os.path.join(DIR_PATH, "..", "data")
+except NameError:
+    DIR_PATH = os.getcwd()
+
+trading_client = TradingClient(API_KEY, SECRET_KEY, paper=True)
+data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
+
+tickers = []
 
 
-all_stocks = Query().get_scanner_data()
-print(all_stocks)
+with open(f"{DIR_PATH}/tickers.json", "r") as file:
+    tickers = json.load(file)
 
-my_query = (Query()
- .select(
-     'name',
-     'description',
-     'logoid',
-     'update_mode',
-     'type',
-     'typespecs',
-     'market_cap_basic',
-     'fundamental_currency_code',
-     'close',
-     'pricescale',
-     'minmov',
-     'fractional',
-     'minmove2',
-     'currency',
-     'change',
-     'volume',
-     'price_earnings_ttm',
-     'earnings_per_share_diluted_ttm',
-     'earnings_per_share_diluted_yoy_growth_ttm',
-     'dividends_yield_current',
-     'sector.tr',
-     'sector',
-     'market',
-     'recommendation_mark',
-     'relative_volume_10d_calc',
- )
- .where(
-     col('exchange').isin(['AMEX', 'CBOE', 'NASDAQ', 'NYSE']),
-     col('is_primary') == True,
-     col('typespecs').has('common'),
-     col('typespecs').has_none_of('preferred'),
-     col('type') == 'stock',
- )
- .order_by('name', ascending=True, nulls_first=False)
- .limit(100)
- .set_markets('america')
- .set_property('preset', 'all_stocks')
- .set_property('symbols', {'query': {'types': ['stock', 'fund', 'dr', 'structured']}}))
+end_date = datetime.now().strftime('%Y-%m-%d')
+start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
+#start_date = (datetime.now() - timedelta(days=2)).strftime('%Y-%m-%d')
 
-print(my_query.get_scanner_data())
+calendar_filters = GetCalendarRequest(start=start_date, end=end_date)
+# has member vars: date, open, close
+#calendar = trading_client.get_calendar(calendar_filters)
+most_recent_trade_day = trading_client.get_calendar(calendar_filters)[-1].date
+
+# NOTE: Can only request 200 data points at a time which 
+# means if the timeframe == Day, we can only request 200
+# tickers at a time
+# TODO: figure out if 200 is the correct max size
+def chunk_list(tickers, size):
+    for i in range(0, len(tickers), size):
+        yield tickers[i:i + size]
+
+df = pd.DataFrame()
+
+# TODO: figure
+for chunk in chunk_list(tickers, 200):
+    request_params = StockBarsRequest(
+        symbol_or_symbols=chunk,
+        timeframe=TimeFrame.Day,
+        start=most_recent_trade_day,
+        #start=start_date,
+        end=end_date,
+        limit=200
+    )
+    bars = data_client.get_stock_bars(request_params)
+    # TODO: remove vwap column here?
+    df = pd.concat([df, bars.df])
+
+#bars = data_client.get_stock_bars(request_params)
+#data = bars.df
+
+# TODO: remove vwap column here (outside of loop)?
+
+df.to_csv(f"{DIR_PATH}/historicalData.csv") # historicalStockData.csv
+
+#df.to_json("historicalData.json", orient="index", indent=2)
+df_symbol = df.reset_index()
+df_symbol.set_index("symbol").to_json(f"{DIR_PATH}/historicalData.json", orient="index", indent=2) # historicalStockData.json
+
+if __name__ == "__main__":
+    pass
