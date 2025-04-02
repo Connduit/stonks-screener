@@ -85,6 +85,8 @@ for chunk in chunk_list(all_asset_tickers, 200):
 print(filtered_tickers)
 print(filtered_bars)
 print(len(filtered_bars))
+print(filtered_bars.index)
+print(filtered_bars.columns)
 
 
 if __name__ == "__main__":
