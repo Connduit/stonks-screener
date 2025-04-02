@@ -104,6 +104,7 @@ for chunk in chunk_list(all_asset_tickers, 200):
 #print(filtered_bars.columns)
 
 #print(filtered_bars)
+print(filtered_tickers)
 print(filtered_bars.droplevel(0).sort_index())
 
 if __name__ == "__main__":
