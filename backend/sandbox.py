@@ -102,5 +102,14 @@ for chunk in chunk_list(all_asset_tickers, 200):
 #print(filtered_bars)
 print(filtered_bars.droplevel(0).sort_index())
 
+request_params = StockBarsRequest(
+        symbol_or_symbols="DGLY",
+        timeframe=TimeFrame.Day,
+        start=start_date,
+        end=end_date
+    )
+bars = data_client.get_stock_bars(request_params)
+print(bars.df)
+
 if __name__ == "__main__":
     pass
