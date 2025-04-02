@@ -109,7 +109,7 @@ request_params = StockBarsRequest(
         end=end_date
     )
 bars = data_client.get_stock_bars(request_params)
-print(bars.df)
+print(bars.df["volume"])
 
 if __name__ == "__main__":
     pass
