@@ -59,6 +59,8 @@ end_date = datetime.now().strftime('%Y-%m-%d')
 start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 
 filtered_tickers = []
+filtered_bars = pd.DataFrame()
+
 for chunk in chunk_list(all_asset_tickers, 200):
     request_params = StockBarsRequest(
         symbol_or_symbols=chunk,
@@ -77,8 +79,12 @@ for chunk in chunk_list(all_asset_tickers, 200):
     #print(df_latest_per_ticker)
     #print(filtered_df.index)
     filtered_tickers.append(filtered_df.index)
+    filtered_bars = pd.concat([filtered_bars, filtered_df], ignore_index=True)
+    
 
 print(filtered_tickers)
+print(filtered_bars)
+print(len(filtered_bars))
 
 
 if __name__ == "__main__":
