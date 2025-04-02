@@ -75,9 +75,9 @@ for chunk in chunk_list(all_asset_tickers, 200):
     #print(bars.df.columns) # Index(['open', 'high', 'low', 'close', 'volume', 'trade_count', 'vwap'], dtype='object')
     df_latest_per_ticker = bars.df.groupby(level=0).apply(lambda x: x.xs(x.index.get_level_values(1).max(), level=1))
     # df_latest_per_ticker = 
-    print(bars.df.index)
-    print(bars.df.index.get_level_values("symbol"))
-    print(bars.df.index.get_level_values("timestamp"))
+    #print(bars.df.index)
+    #print(bars.df.index.get_level_values("symbol"))
+    #print(bars.df.index.get_level_values("timestamp"))
     #print(bars.df.index.get_level_values(1).max()) # gets the most recent datetime to use as an index for each ticker
     #print(bars.df.index.get_level_values("timestamp"))
     
@@ -85,8 +85,8 @@ for chunk in chunk_list(all_asset_tickers, 200):
     #print(bars.df.index.get_level_values("symbol"))
     filtered_df = df_latest_per_ticker[df_latest_per_ticker['volume'] > 15_000_000]
     #print(df_latest_per_ticker)
-    print(filtered_df.index)
-    print(filtered_df.droplevel(0))
+    #print(filtered_df.index)
+    #print(filtered_df.droplevel(0))
     filtered_tickers.append(filtered_df.index)
     #filtered_tickers.append(filtered_df.index.get_level_values("symbol")) # // TODO: used level number because "symbol" index is used multiple times as key
     filtered_bars = pd.concat([filtered_bars, filtered_df])
@@ -98,8 +98,9 @@ for chunk in chunk_list(all_asset_tickers, 200):
 #print(len(filtered_bars))
 #print(filtered_bars.index)
 #print(filtered_bars.columns)
-#print(filtered_bars)
-print(filtered_bars.droplevel(0))
+
+print(filtered_bars)
+#print(filtered_bars.droplevel(0))
 
 if __name__ == "__main__":
     pass
