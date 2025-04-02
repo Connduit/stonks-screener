@@ -79,7 +79,7 @@ for chunk in chunk_list(all_asset_tickers, 200):
     #print(df_latest_per_ticker)
     #print(filtered_df.index)
     filtered_tickers.append(filtered_df.index)
-    filtered_bars = pd.concat([filtered_bars, filtered_df], ignore_index=True)
+    filtered_bars = pd.concat([filtered_bars, filtered_df])
     
 
 print(filtered_tickers)
