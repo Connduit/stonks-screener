@@ -75,13 +75,15 @@ for chunk in chunk_list(all_asset_tickers, 200):
     bars = data_client.get_stock_bars(request_params)
     #print(bars.df.index)
     #print(bars.df.columns) # Index(['open', 'high', 'low', 'close', 'volume', 'trade_count', 'vwap'], dtype='object')
+    print(bars.df)
+    
     df_latest_per_ticker = bars.df.groupby(level=0).apply(lambda x: x.xs(x.index.get_level_values(1).max(), level=1))
     # df_latest_per_ticker = 
     #print(bars.df.index)
     #print(bars.df.index.get_level_values("symbol"))
     #print(bars.df.index.get_level_values("timestamp"))
     #print(bars.df.index.get_level_values(1).max()) # gets the most recent datetime to use as an index for each ticker
-    #print(bars.df.index.get_level_values("timestamp"))
+    print(bars.df.index.get_level_values("timestamp"))
     
 
     #print(bars.df.index.get_level_values("symbol"))
