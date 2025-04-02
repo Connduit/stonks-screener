@@ -52,7 +52,7 @@ all_asset_tickers = [asset.symbol for asset in all_assets if (asset.exchange == 
 #print(len(all_assets))
 #print(len(all_asset_tickers)) # length of data/tickers.json is 6680, but get_all_assets after being filtered returns 7940 as length
 #print(all_asset_tickers)
-#print("DGLY" in all_asset_tickers)
+print("DGLY" in all_asset_tickers)
 
 def chunk_list(tickers, size):
     for i in range(0, len(tickers), size):
