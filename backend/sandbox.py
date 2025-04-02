@@ -81,10 +81,12 @@ for chunk in chunk_list(all_asset_tickers, 200):
     #print(bars.df.index.get_level_values(1).max()) # gets the most recent datetime to use as an index for each ticker
     #print(bars.df.index.get_level_values("timestamp"))
     
+
     #print(bars.df.index.get_level_values("symbol"))
     filtered_df = df_latest_per_ticker[df_latest_per_ticker['volume'] > 15_000_000]
     #print(df_latest_per_ticker)
     print(filtered_df.index)
+    print(filtered_df.droplevel(0))
     #filtered_tickers.append(filtered_df.index)
     filtered_tickers.append(filtered_df.index.get_level_values("symbol"))
     filtered_bars = pd.concat([filtered_bars, filtered_df])
