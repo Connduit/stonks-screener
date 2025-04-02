@@ -75,6 +75,7 @@ for chunk in chunk_list(all_asset_tickers, 200):
     #print(bars.df.columns) # Index(['open', 'high', 'low', 'close', 'volume', 'trade_count', 'vwap'], dtype='object')
     df_latest_per_ticker = bars.df.groupby(level=0).apply(lambda x: x.xs(x.index.get_level_values(1).max(), level=1))
     # df_latest_per_ticker = 
+    print(df_latest_per_ticker)
     filtered_df = df_latest_per_ticker[df_latest_per_ticker['volume'] > 15_000_000]
     #print(df_latest_per_ticker)
     #print(filtered_df.index)
@@ -82,11 +83,12 @@ for chunk in chunk_list(all_asset_tickers, 200):
     filtered_bars = pd.concat([filtered_bars, filtered_df])
     
 
-print(filtered_tickers)
-print(filtered_bars)
-print(len(filtered_bars))
-print(filtered_bars.index)
-print(filtered_bars.columns)
+# TODO: index of filtered_bars is a multiindex of [symbol, symbol]... change to just a single index?
+#print(filtered_tickers)
+#print(filtered_bars)
+#print(len(filtered_bars))
+#print(filtered_bars.index)
+#print(filtered_bars.columns)
 
 
 if __name__ == "__main__":
