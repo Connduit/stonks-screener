@@ -45,7 +45,8 @@ all_assets = trading_client.get_all_assets(request_params)
 #all_asset_tickers = [asset.symbol for asset in all_assets]
 # TODO: figure out the difference between ARCA and NYSEARCA. 
 # TODO: NOTE: NASDAQ does NOT include NASDAQ_CM??
-all_asset_tickers = [asset.symbol for asset in all_assets if (asset.exchange == AssetExchange.NASDAQ or asset.exchange == AssetExchange.NYSE or asset.exchange == AssetExchange.AMEX) and asset.tradable == True]
+# TODO: figure out what asset.tradable actually means cuz a lot of assets are tradable even tho they're set to false....
+all_asset_tickers = [asset.symbol for asset in all_assets if (asset.exchange == AssetExchange.NASDAQ or asset.exchange == AssetExchange.NYSE or asset.exchange == AssetExchange.AMEX)] #and asset.tradable == True]
 #print(all_assets)
 #print(type(all_assets))
 #print(len(all_assets))
