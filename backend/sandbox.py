@@ -81,7 +81,7 @@ for chunk in chunk_list(all_asset_tickers, 200):
     print("DGLY" in bars.df.index.get_level_values("symbol"))
     df_latest_per_ticker = bars.df.groupby(level=0).apply(lambda x: x.xs(x.index.get_level_values(1).max(), level=1))
     # df_latest_per_ticker = 
-    #print(bars.df.index)
+    print(bars.df.index)
     #print(bars.df.index.get_level_values("symbol"))
     #print(bars.df.index.get_level_values("timestamp"))
     #print(bars.df.index.get_level_values(1).max()) # gets the most recent datetime to use as an index for each ticker
