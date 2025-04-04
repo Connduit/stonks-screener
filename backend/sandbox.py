@@ -43,13 +43,17 @@ request_params = GetAssetsRequest(
 #latest_trades_dict = {k: v.price for k,v in latest_trades_dict.items() if v.price >= min_price and v.price <= max_price}
 all_assets = trading_client.get_all_assets(request_params)
 #all_asset_tickers = [asset.symbol for asset in all_assets]
-# TODO: figure out the difference between ARCA and NYSEARCA
-all_asset_tickers = [asset.symbol for asset in all_assets if (asset.exchange == AssetExchange.NASDAQ or asset.exchange == AssetExchange.NYSE or asset.exchange == AssetExchange.AMEX) and asset.tradable == True]
+# TODO: figure out the difference between ARCA and NYSEARCA. 
+# TODO: NOTE: NASDAQ does NOT include NASDAQ_CM??
+# TODO: figure out what asset.tradable actually means cuz a lot of assets are tradable even tho they're set to false....
+all_asset_tickers = [asset.symbol for asset in all_assets if (asset.exchange == AssetExchange.NASDAQ or asset.exchange == AssetExchange.NYSE or asset.exchange == AssetExchange.AMEX)] #and asset.tradable == True]
 #print(all_assets)
 #print(type(all_assets))
 #print(len(all_assets))
 #print(len(all_asset_tickers)) # length of data/tickers.json is 6680, but get_all_assets after being filtered returns 7940 as length
 #print(all_asset_tickers)
+print("DGLY" in all_asset_tickers)
+print("-------------------")
 
 def chunk_list(tickers, size):
     for i in range(0, len(tickers), size):
@@ -59,6 +63,8 @@ end_date = datetime.now().strftime('%Y-%m-%d')
 start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
 
 filtered_tickers = []
+filtered_bars = pd.DataFrame()
+
 for chunk in chunk_list(all_asset_tickers, 200):
     request_params = StockBarsRequest(
         symbol_or_symbols=chunk,
@@ -71,15 +77,40 @@ for chunk in chunk_list(all_asset_tickers, 200):
     bars = data_client.get_stock_bars(request_params)
     #print(bars.df.index)
     #print(bars.df.columns) # Index(['open', 'high', 'low', 'close', 'volume', 'trade_count', 'vwap'], dtype='object')
+    #print(bars.df)
+    print("DGLY" in bars.df.index.get_level_values("symbol"))
+    print("TSLA" in bars.df.index.get_level_values("symbol"))
+    print(len(bars.df))
     df_latest_per_ticker = bars.df.groupby(level=0).apply(lambda x: x.xs(x.index.get_level_values(1).max(), level=1))
+    print(len(df_latest_per_ticker))
     # df_latest_per_ticker = 
+    #print(bars.df.index)
+    #print(bars.df.index.get_level_values("timestamp"))
+    #print(bars.df.index.get_level_values("symbol"))
+    #print(bars.df.index.get_level_values("timestamp"))
+    #print(bars.df.index.get_level_values(1).max()) # gets the most recent datetime to use as an index for each ticker
+    
+
+    #print(bars.df.index.get_level_values("symbol"))
     filtered_df = df_latest_per_ticker[df_latest_per_ticker['volume'] > 15_000_000]
     #print(df_latest_per_ticker)
     #print(filtered_df.index)
-    filtered_tickers.append(filtered_df.index)
+    #print(filtered_df.droplevel(0))
+    filtered_tickers.append(filtered_df.index.get_level_values(0))
+    #filtered_tickers.append(filtered_df.index.get_level_values("symbol")) # // TODO: used level number because "symbol" index is used multiple times as key
+    filtered_bars = pd.concat([filtered_bars, filtered_df])
+    
 
-print(filtered_tickers)
+# TODO: index of filtered_bars is a multiindex of [symbol, symbol]... change to just a single index?
+#print(filtered_tickers)
+#print(filtered_bars)
+#print(len(filtered_bars))
+#print(filtered_bars.index)
+#print(filtered_bars.columns)
 
+#print(filtered_bars)
+#print(filtered_tickers)
+#print(filtered_bars.droplevel(0).sort_index())
 
 if __name__ == "__main__":
     pass
