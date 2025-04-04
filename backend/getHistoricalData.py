@@ -1,6 +1,8 @@
 """
 TODO: this file should be turned into a function where i can past in dates as parameters.
 That way i can get both current data and historical data
+
+# TODO: add function: readHistoricalData and writeHistoricalData
 """
 
 
@@ -14,8 +16,6 @@ import os
 import json
 import pandas as pd
 
-
-
 API_KEY = os.environ.get("API_KEY")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
@@ -28,55 +28,73 @@ except NameError:
 trading_client = TradingClient(API_KEY, SECRET_KEY, paper=True)
 data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
 
-tickers = []
+# TODO: parmas should be date and type of request?
+def writeHistoricalData():
+    tickers = []
 
 
-with open(f"{DIR_PATH}/tickers.json", "r") as file:
-    tickers = json.load(file)
+    with open(f"{DIR_PATH}/tickers.json", "r") as file:
+        tickers = json.load(file)
 
-end_date = datetime.now().strftime('%Y-%m-%d')
-start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
-#start_date = (datetime.now() - timedelta(days=2)).strftime('%Y-%m-%d')
+    end_date = datetime.now().strftime('%Y-%m-%d')
+    start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
+    #start_date = (datetime.now() - timedelta(days=2)).strftime('%Y-%m-%d')
 
-calendar_filters = GetCalendarRequest(start=start_date, end=end_date)
-# has member vars: date, open, close
-#calendar = trading_client.get_calendar(calendar_filters)
-most_recent_trade_day = trading_client.get_calendar(calendar_filters)[-1].date
+    calendar_filters = GetCalendarRequest(start=start_date, end=end_date)
+    # has member vars: date, open, close
+    #calendar = trading_client.get_calendar(calendar_filters)
+    # TODO: [-1] only works if if trade day isn't active ?? idk
+    # most_recent_trade_day = trading_client.get_calendar(calendar_filters)[-1].date
+    #most_recent_trade_day = trading_client.get_calendar(calendar_filters)[-2].date
+    most_recent_trade_day = trading_client.get_calendar(calendar_filters)[0].date
 
-# NOTE: Can only request 200 data points at a time which 
-# means if the timeframe == Day, we can only request 200
-# tickers at a time
-# TODO: figure out if 200 is the correct max size
-def chunk_list(tickers, size):
-    for i in range(0, len(tickers), size):
-        yield tickers[i:i + size]
+    # NOTE: Can only request 200 data points at a time which 
+    # means if the timeframe == Day, we can only request 200
+    # tickers at a time
+    # TODO: figure out if 200 is the correct max size
+    def chunk_list(tickers, size):
+        for i in range(0, len(tickers), size):
+            yield tickers[i:i + size]
 
-df = pd.DataFrame()
+    df = pd.DataFrame()
 
-# TODO: figure
-for chunk in chunk_list(tickers, 200):
-    request_params = StockBarsRequest(
-        symbol_or_symbols=chunk,
-        timeframe=TimeFrame.Day,
-        start=most_recent_trade_day,
-        #start=start_date,
-        end=end_date,
-        limit=200
-    )
-    bars = data_client.get_stock_bars(request_params)
-    # TODO: remove vwap column here?
-    df = pd.concat([df, bars.df])
+    # TODO: figure
+    for chunk in chunk_list(tickers, 200):
+        request_params = StockBarsRequest(
+            symbol_or_symbols=chunk,
+            timeframe=TimeFrame.Day,
+            start=most_recent_trade_day, # TODO: change this: ideally it would be 10 to 30 days?
+            #start=start_date,
+            end=end_date,
+            limit=200
+        )
+        bars = data_client.get_stock_bars(request_params)
+        # TODO: remove vwap column here?
+        df = pd.concat([df, bars.df])
 
-#bars = data_client.get_stock_bars(request_params)
-#data = bars.df
+    #bars = data_client.get_stock_bars(request_params)
+    #data = bars.df
 
-# TODO: remove vwap column here (outside of loop)?
+    # TODO: remove vwap column here (outside of loop)?
 
-df.to_csv(f"{DIR_PATH}/historicalData.csv") # historicalStockData.csv
+    df.to_csv(f"{DIR_PATH}/historicalData.csv") # historicalStockData.csv
 
-#df.to_json("historicalData.json", orient="index", indent=2)
-df_symbol = df.reset_index()
-df_symbol.set_index("symbol").to_json(f"{DIR_PATH}/historicalData.json", orient="index", indent=2) # historicalStockData.json
+    #df.to_json("historicalData.json", orient="index", indent=2)
+    # TODO: this breaks when data comes from more than one day 
+    df_symbol = df.reset_index()
+    df_symbol.set_index("symbol").to_json(f"{DIR_PATH}/historicalData.json", orient="index", indent=2) # historicalStockData.json
+
+
+# TODO: no params needed? we're just reading data?
+def readHistoricalData():
+    #df = pd.read_json(f"{DIR_PATH}/historicalData.json")
+    df = pd.read_csv(f"{DIR_PATH}/historicalData.csv")
+    return df
 
 if __name__ == "__main__":
-    pass
+    #main()
+    #if os.path.getmtime(f"{DIR_PATH}/historicalData.csv") > 1 day:
+        #writeHistoricalData()
+
+    writeHistoricalData()
+    #readHistoricalData()
