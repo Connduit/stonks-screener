@@ -13,7 +13,11 @@ def chunk_list(tickers, size):
 def main():
     tickers = getTickers() # TODO: tickers not really needed in this file?
     historical_df = readHistoricalData()
-    #print(len(tickers))
+    #historical_df.groupby("symbol")
+
+    #historical_df.groupby("column_name").agg({'col_name1':'mean', 'col_name2':'sum'})
+    historical_df[f"movAvg_{3}"] = historical_df.groupby("symbol")["close"].transform(lambda df: df.rolling(window=3).mean())
+    print(len(tickers))
 
 
 if __name__ == "__main__":

@@ -28,6 +28,7 @@ except NameError:
 trading_client = TradingClient(API_KEY, SECRET_KEY, paper=True)
 data_client = StockHistoricalDataClient(API_KEY, SECRET_KEY)
 
+# TODO: time of when file was last updated should be appended to the bottom / last line of the file?
 # TODO: parmas should be date and type of request?
 def writeHistoricalData():
     tickers = []
@@ -36,7 +37,8 @@ def writeHistoricalData():
     with open(f"{DIR_PATH}/tickers.json", "r") as file:
         tickers = json.load(file)
 
-    end_date = datetime.now().strftime('%Y-%m-%d')
+    #end_date = datetime.now().strftime('%Y-%m-%d')
+    end_date = datetime.now().date()
     start_date = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
     #start_date = (datetime.now() - timedelta(days=2)).strftime('%Y-%m-%d')
 
@@ -46,7 +48,7 @@ def writeHistoricalData():
     # TODO: [-1] only works if if trade day isn't active ?? idk
     # most_recent_trade_day = trading_client.get_calendar(calendar_filters)[-1].date
     #most_recent_trade_day = trading_client.get_calendar(calendar_filters)[-2].date
-    most_recent_trade_day = trading_client.get_calendar(calendar_filters)[0].date
+    start_date = trading_client.get_calendar(calendar_filters)[0].date
 
     # NOTE: Can only request 200 data points at a time which 
     # means if the timeframe == Day, we can only request 200
@@ -58,15 +60,18 @@ def writeHistoricalData():
 
     df = pd.DataFrame()
 
+    chunk_limit = 200
+    n_days = (end_date - start_date).days
+    chunk_limit = int(chunk_limit / n_days) # TODO: int() rounds the number... this should use math.floor
     # TODO: figure
-    for chunk in chunk_list(tickers, 200):
+    for chunk in chunk_list(tickers, chunk_limit):
         request_params = StockBarsRequest(
             symbol_or_symbols=chunk,
             timeframe=TimeFrame.Day,
-            start=most_recent_trade_day, # TODO: change this: ideally it would be 10 to 30 days?
-            #start=start_date,
-            end=end_date,
-            limit=200
+            #start=most_recent_trade_day, # TODO: change this: ideally it would be 10 to 30 days?
+            start=start_date,
+            end=end_date#,
+            #limit=chunk_limit
         )
         bars = data_client.get_stock_bars(request_params)
         # TODO: remove vwap column here?
@@ -81,14 +86,16 @@ def writeHistoricalData():
 
     #df.to_json("historicalData.json", orient="index", indent=2)
     # TODO: this breaks when data comes from more than one day 
-    df_symbol = df.reset_index()
-    df_symbol.set_index("symbol").to_json(f"{DIR_PATH}/historicalData.json", orient="index", indent=2) # historicalStockData.json
+    #df_symbol = df.reset_index()
+    #df_symbol.set_index("symbol").to_json(f"{DIR_PATH}/historicalData.json", orient="index", indent=2) # historicalStockData.json
 
 
 # TODO: no params needed? we're just reading data?
 def readHistoricalData():
     #df = pd.read_json(f"{DIR_PATH}/historicalData.json")
-    df = pd.read_csv(f"{DIR_PATH}/historicalData.csv")
+    #df = pd.read_csv(f"{DIR_PATH}/historicalData.csv")
+    #df = pd.read_csv(f"{DIR_PATH}/historicalData.csv", index_col="timestamp")
+    df = pd.read_csv(f"{DIR_PATH}/historicalData.csv", parse_dates=["timestamp"], index_col=["symbol","timestamp"])
     return df
 
 if __name__ == "__main__":
