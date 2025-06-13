@@ -54,22 +54,31 @@ def chunk_list(tickers, size):
 
 df = pd.DataFrame()
 latest_trades_dict = {}
-
 # StockLatestQuoteRequest
 # StockLatestTradeRequest
 
 #StockLatestQuoteRequest ... get_stock_latest_quote
 #StockLatestTradeRequest ... get_stock_latest_trade
 
+# TODO: this chunk logic should be it's own function or even class that can take in any type of request
 for chunk in chunk_list(tickers, 200):
     #request_params = StockLatestQuoteRequest(
-    request_params = StockLatestTradeRequest(
+    # request_bars = StockBarsRequest(
+        #symbol_or_symbols=chunk,
+        #timeframe=TimeFrame.Minute
+    #)
+    request_latest_trade = StockLatestTradeRequest(
+        symbol_or_symbols=chunk,
+        timeframe=TimeFrame.Minute
+    )
+    request_latest_bar = StockLatestBarRequest(
         symbol_or_symbols=chunk,
         timeframe=TimeFrame.Minute
     )
     #bars = data_client.get_stock_latest_quote(request_params)
-    latest_trades = data_client.get_stock_latest_trade(request_params)
-
+    latest_trades = data_client.get_stock_latest_trade(request_latest_trade)
+    bars = data_client.get_stock_latest_bar(request_latest_bar)
+    latest_trades = bars
     #df = pd.concat([df, pd.DataFrame(latest_trades)])
     latest_trades_dict.update(latest_trades)
 
@@ -82,7 +91,7 @@ min_price = 0.01
 latest_trades_dict = {k: v.price for k,v in latest_trades_dict.items() if v.price >= min_price and v.price <= max_price}
 #df = pd.DataFrame(list(latest_trades_dict.items()), columns=["symbol", "price"])
 #df.set_index("symbol", inplace=True)
-print(latest_trades_dict)
+print(len(latest_trades_dict))
 
 #df.to_csv(f"{DIR_PATH}/historicalData.csv") # historicalStockData.csv
 
